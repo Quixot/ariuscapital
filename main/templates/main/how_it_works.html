@@ -1,0 +1,74 @@
+{% extends 'main/base.html' %}
+{% load static %}
+
+
+{% block content %}
+
+<!--<div class="container">-->
+<!--    <div class="d-block p-4 p-sm-5 h-bg-gray-round">-->
+<!--        <center>-->
+<!--            <h1>{{title}}</h1>-->
+<!--        </center>-->
+<!--    </div>-->
+<!--</div>-->
+
+
+<!-- =======================
+Как это работает  -->
+<section class="bg-dark ">
+    <div class="container ">
+        <div class="row">
+            <div class="col-md-8 mx-auto text-center ">
+                <h2 class="h1 text-white">Как это работает</h2>
+                <p class="lead">На сайте Arius Capital ты заполняешь анкету инвестора. Далее наш менеджер связывается с
+                    тобой и, учитывая сроки проекта и доходность, помогает подобрать максимально выгодный для тебя
+                    вариант инвестиций</p>
+            </div>
+        </div>
+        <div class="row">
+            <div class="col-md-3">
+                <div class="feature-box h-100 text-center px-4 py-5">
+                    <div class="feature-box-icon"><img class="w-25"
+                                                       src="{% static 'assets/images/icons/focus.svg' %}" alt="">
+                    </div>
+                    <h3 class="feature-box-title text-white">01</h3>
+                    <p class="lead">Кликни на кнопку «Стань инвестором» и заполни анкету инвестора</p>
+                </div>
+            </div>
+            <div class="col-md-3">
+                <div class="feature-box h-100 text-center px-4 py-5">
+                    <div class="feature-box-icon"><img class="w-25" src="{% static 'assets/images/icons/idea-1.svg' %}"
+                                                       alt=""></div>
+                    <h3 class="feature-box-title text-white">02</h3>
+                    <p class="lead">Наш менеджер свяжется с тобой
+                        и поможет подобрать подходящий объект для инвестирования</p>
+                </div>
+            </div>
+            <div class="col-md-3">
+                <div class="feature-box h-100 text-center px-4 py-5">
+                    <div class="feature-box-icon"><img class="w-25"
+                                                       src="{% static 'assets/images/icons/editor.svg' %}" alt="">
+                    </div>
+                    <h3 class="feature-box-title text-white">03</h3>
+                    <p class="lead">Внеси инвестиции через кассу банка или посредством интернет-банкинга (Приват24,
+                        Монобанк и т.д.)</p>
+                </div>
+            </div>
+            <div class="col-md-3">
+                <div class="feature-box h-100 text-center px-4 py-5">
+                    <div class="feature-box-icon"><img class="w-25"
+                                                       src="{% static 'assets/images/icons/envelope.svg' %}" alt="">
+                    </div>
+                    <h3 class="feature-box-title text-white">04</h3>
+                    <p class="lead">Получи на электронную почту письмо-подтверждение, что ты стал инвестором!</p>
+                </div>
+            </div>
+        </div>
+    </div>
+</section>
+<div class="row">&nbsp;</div>
+<div class="row">&nbsp;</div>
+<div class="row">&nbsp;</div>
+<!-- =======================
+Как это работает  -->
+{% endblock content %}

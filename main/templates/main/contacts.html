@@ -1,0 +1,51 @@
+{% extends 'main/base.html' %}
+{% load static %}
+
+
+{% block content %}
+
+
+<div class="container">
+    <div class="d-block p-4 p-sm-5 h-bg-gray-round">
+        <center>
+            <h1>{{title}}</h1>
+        </center>
+    </div>
+</div>
+
+
+<!-- =======================
+	why-us -->
+<section class="p-4">
+    <div class="container">
+        <div class="row g-0 my-round overflow-hidden">
+            <!--why us left-->
+            <div class="col-lg-6 d-none d-lg-block bg-light"
+                 style="background:url({% static 'images/close-up-portrait-of.jpg' %}) no-repeat; background-size:cover;">
+            </div>
+            <!--why us right-->
+            <div class="col-lg-6 col-md-12 bg-grad px-4 py-5 p-lg-5 all-text-white">
+                <div class="h-100">
+                    <div class="title text-start p-0">
+
+                        <h2>Работаем с инвесторами по всей Украине</h2>
+                        <p class="h5 pt-5"><a href="mailto:info@ariuscapital.co">info@ariuscapital.co</a></p>
+                        <p class="h5">г.Киев, ул.Борисоглебская 15Б</p>
+                        <div class="copyright-links primary-hover pt-6 ">
+                            <ul class="social-icons  ">
+                                <li class="social-icons-item  mb-0"><a class="social-icons-link" href="#"><img src="{% static 'images/WHATSAPP_2.svg' %}" alt=""></a></li>
+                                <li class="social-icons-item  mb-0"><a class="social-icons-link" href="#"><img src="{% static 'images/96c7aa675366e035c9bf.svg' %}" alt=""></a></li>
+                                <li class="social-icons-item  mb-0"><a class="social-icons-link" href="#"><img src="{% static 'images/8b1d7fc0db2024468741.svg' %}" alt=""></a></li>
+                            </ul>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+</section>
+<!-- why-us
+=======================  -->
+
+
+{% endblock content %}

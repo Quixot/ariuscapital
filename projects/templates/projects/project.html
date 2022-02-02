@@ -1,0 +1,118 @@
+{% extends 'main/base.html' %}
+{% load static %}
+
+{% block content %}
+
+<section>
+    <div class="container">
+        <div class="row mb-4" data-sticky-container>
+            <!-- portfolio images -->
+            <div class="col-md-8">
+                <a class="mb-4 d-block" href="{{ project.image_path }}" data-glightbox=""
+                   data-gallery="portfolio"><img src="{{ project.image_path }}" alt=""></a>
+
+            </div>
+            <!-- portfolio details -->
+            <div class="col-md-4">
+                <div data-sticky data-margin-top="80" data-sticky-for="767">
+                    <h2>{{ project.title }} </h2>
+                    <p><strong>Суть сделки: </strong>{{ project.deal_sence }} </p>
+                    <p><strong>Почему эта сделка: </strong>{{ project.deal_why }} </p>
+                    <p><strong>Адрес: </strong>{{ project.address }}</p>
+<!--                    <table class="table table-borderless">-->
+<!--                        <tbody>-->
+<!--                        <tr>-->
+<!--                            <th scope="row">Адрес:</th>-->
+<!--                            <td class="text-body"></td>-->
+<!--                        </tr>-->
+<!--                        <tr>-->
+<!--                            <th scope="row">Awards:</th>-->
+<!--                            <td class="text-body">-->
+<!--                                <span class="d-block font-base"> Pineapple Award Design</span>-->
+<!--                                <span class="d-block mt-2"> Project of the Year </span>-->
+<!--                                <span class="d-block mt-2"> Designer of the Year</span>-->
+<!--                            </td>-->
+<!--                        </tr>-->
+<!--                        </tbody>-->
+<!--                    </table>-->
+                    <a class="btn btn-grad" href="#!">Инвестировать в объект</a>
+                </div>
+            </div>
+            <!-- portfolio details End -->
+        </div>
+
+        <div class="row mt-4">
+            <!-- portfolio testimonial -->
+            <div class="col-md-6">
+                <h4 class="mb-4">Client testimonial</h4>
+                <blockquote class="blockquote" cite="#">
+                    <h5 class="mb-2 text-light-gray">Design everything on the assumption that people are not heartless
+                        or stupid but marvelously capable, given the chance. Mr be cottage so related minuter is.
+                        Delicate say and blessing ladyship exertion few Margaret. Delight herself welcome against
+                        smiling its for. Suspected discovery by he affection household of principle perfectly he.</h5>
+                    <cite>– Allen Smith</cite>
+                </blockquote>
+            </div>
+            <!-- portfolio information -->
+            <div class="col-md-6">
+                <h4 class="mb-4">Additional information</h4>
+                <p>Residence certainly elsewhere something she preferred cordially law. Age his surprise formerly Mrs
+                    perceive few standstill moderate. Of in power match on truth worse voice would. Large an it sense
+                    shall an match learn. By expect it result silent in formal of. Ask eat questions abilities described
+                    elsewhere assurance.</p>
+                <p> Appetite in unlocked advanced breeding position concerns as. Cheerful get shutters yet for repeated
+                    screened. An no am cause hopes at three. Prevent behaved fertile he is mistake on. </p>
+            </div>
+        </div>
+
+<!--        <div class="row">-->
+<!--            <div class="col-md-12">-->
+<!--                &lt;!&ndash; tag and share &ndash;&gt;-->
+<!--                <div class="divider mb-4"></div>-->
+<!--                <div class="row">-->
+<!--                    <div class="tags col-12 col-sm-8 text-center text-sm-start">-->
+<!--                        <a class="mb-2 mb-sm-0" href="#">studio</a>-->
+<!--                        <a class="mb-2 mb-sm-0" href="#">events</a>-->
+<!--                        <a class="mb-2 mb-sm-0" href="#">WordPress</a>-->
+<!--                        <a class="mb-2 mb-sm-0" href="#">gadgets</a>-->
+<!--                        <a class="mb-2 mb-sm-0" href="#">office</a>-->
+<!--                    </div>-->
+<!--                    <div class="col-12 col-sm-4 text-center text-sm-end">-->
+<!--                        <ul class="social-icons si-colored-bg light">-->
+<!--                            <li class="social-icons-item social-facebook mb-0"><a class="social-icons-link" href="#"><i-->
+<!--                                    class="fab fa-facebook-f"></i></a></li>-->
+<!--                            <li class="social-icons-item social-twitter mb-0"><a class="social-icons-link" href="#"><i-->
+<!--                                    class="fab fa-twitter"></i></a></li>-->
+<!--                            <li class="social-icons-item social-gplus mb-0"><a class="social-icons-link" href="#"><i-->
+<!--                                    class="fab fa-google-plus-g"></i></a></li>-->
+<!--                            <li class="social-icons-item social-linkedin mb-0"><a class="social-icons-link" href="#"><i-->
+<!--                                    class="fab fa-linkedin-in"></i></a></li>-->
+<!--                        </ul>-->
+<!--                    </div>-->
+<!--                </div>-->
+<!--                <div class="divider mt-4"></div>-->
+
+<!--                &lt;!&ndash; navigation &ndash;&gt;-->
+<!--                <div class="row post-navigation mt-5">-->
+<!--                    <div class="col-5 position-relative">-->
+<!--                        <a href="#" class="post-prev">-->
+<!--                            <p class="m-2 m-lg-0">Previous Post</p>-->
+<!--                            <h6 class="text-truncate d-none d-lg-block">The Pink Chair</h6></a>-->
+<!--                    </div>-->
+<!--                    <div class="col-2">-->
+<!--                        <a href="portfolio-grid-column-3.html" class="all-post" title="View all post"> <i-->
+<!--                                class="fa fa-th"></i> </a>-->
+<!--                    </div>-->
+<!--                    <div class="col-5 position-relative">-->
+<!--                        <a href="#" class="post-next">-->
+<!--                            <p class="m-2 m-lg-0">Next Post</p>-->
+<!--                            <h6 class="text-truncate d-none d-lg-block">Black & white</h6></a>-->
+<!--                    </div>-->
+<!--                </div>-->
+<!--            </div>-->
+<!--        </div>-->
+    </div>
+    <!-- portfolio End -->
+</section>
+
+{% endblock content %}

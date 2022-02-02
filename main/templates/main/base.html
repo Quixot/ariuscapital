@@ -1,0 +1,306 @@
+{% load static %}
+<!doctype html>
+<html lang="en">
+<head>
+    <title>{{ title }}</title>
+    <meta charset="utf-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge"/>
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <meta name="author" content="Webestica.com">
+    <meta name="description" content="Creative Multipurpose Bootstrap Template">
+
+    <!-- Favicon -->
+    <link rel="shortcut icon" href="{% static 'images/sign_1.png' %}">
+
+    <!-- Google Font -->
+    <link href="https://fonts.googleapis.com/css?family=Poppins:300,400,500,600,700,800,900%7CPlayfair+Display:400,400i,700,700i%7CRoboto:400,400i,500,700"
+          rel="stylesheet">
+
+    <!-- Plugins CSS -->
+    <link rel="stylesheet" type="text/css" href="{% static 'assets/vendor/font-awesome/css/all.min.css' %}"/>
+    <link rel="stylesheet" type="text/css" href="{% static 'assets/vendor/themify-icons/css/themify-icons.css' %}"/>
+    <link rel="stylesheet" type="text/css" href="{% static 'assets/vendor/animate/animate.min.css' %}"/>
+    <link rel="stylesheet" type="text/css" href="{% static 'assets/vendor/glightbox/css/glightbox.css' %}">
+    <link rel="stylesheet" type="text/css" href="{% static 'assets/vendor/tiny-slider/tiny-slider.css' %}">
+    <link rel="stylesheet" type="text/css" href="{% static 'assets/vendor/aos/aos.css' %}">
+
+    <!-- Theme CSS -->
+    <link rel="stylesheet" type="text/css" href="{% static 'assets/css/style.css' %}"/>
+    <link rel="stylesheet" type="text/css" href="{% static 'css/styles.css' %}">
+
+</head>
+
+<body>
+<div class="preloader">
+    <img src="{% static 'assets/images/preloader.svg' %}" alt="Pre-loader">
+</div>
+
+<!-- =======================
+header Start-->
+<header class="header-static navbar-sticky navbar-light">
+    <!-- Search -->
+    <div class="top-search collapse bg-light" id="search-open" data-bs-parent="#search">
+        <div class="container">
+            <div class="row position-relative">
+                <div class="col-md-8 mx-auto py-5">
+                    <form action="/search/">
+                        <div class="input-group">
+                            <input class="form-control rounded-start border-end-0 mb-0" type="text" name="q" autofocus
+                                   placeholder="Что Вы ищите?">
+                            <button type="button" class="btn btn-grad m-0">Найти</button>
+                        </div>
+                    </form>
+                    <p class="small mt-2 mb-0"><strong>например </strong>покупка участка </p>
+                </div>
+                <a class="position-absolute top-0 end-0 mt-3 me-3 text-end" data-bs-toggle="collapse"
+                   href="#search-open"><i class="fa fa-window-close"></i></a>
+            </div>
+        </div>
+    </div>
+    <!-- End Search -->
+
+    <!-- Navbar top start-->
+    <div class="navbar-top d-none d-lg-block">
+        <div class="container">
+            <div class="d-flex justify-content-between align-items-center">
+                <!-- navbar top Left-->
+                <div class="d-flex align-items-center">
+                    <!-- Language -->
+                    <!--						<div class="dropdown">-->
+                    <!--						  <a class="dropdown-toggle" href="#" role="button" id="dropdownLanguage" data-bs-toggle="dropdown" aria-haspopup="true" aria-expanded="false"> <img class="dropdown-item-icon" src="{% static 'assets/images/flags/uk.svg' %}" alt=""> English </a>-->
+                    <!--						  <div class="dropdown-menu mt-2 shadow" aria-labelledby="dropdownLanguage">-->
+                    <!--						  	<span class="dropdown-item-text">Select language</span>-->
+                    <!--						  	<div class="dropdown-divider"></div>-->
+                    <!--						    <a class="dropdown-item" href="#"><img class="dropdown-item-icon" src="{% static 'assets/images/flags/sp.svg' %}" alt=""> Español</a>-->
+                    <!--						    <a class="dropdown-item" href="#"><img class="dropdown-item-icon" src="{% static 'assets/images/flags/fr.svg' %}" alt=""> Français</a>-->
+                    <!--						    <a class="dropdown-item" href="#"><img class="dropdown-item-icon" src="{% static 'assets/images/flags/gr.svg' %}" alt=""> Deutsch</a>-->
+                    <!--						  </div>-->
+                    <!--						</div>-->
+                    <!-- Top info -->
+                    <ul class="nav list-unstyled ">
+                        <!--                        <li class="nav-item me-3">-->
+                        <!--                            <a class="navbar-link" href="#"><strong>Телефон:</strong> +380 (67) 406 4817 </a>-->
+                        <!--                        </li>-->
+                        <li class="nav-item me-3">
+                            <a class="navbar-link" href="#"><strong>Email:</strong> info@ariuscapital.co</a>
+                        </li>
+                    </ul>
+                </div>
+
+                <!-- navbar top Right-->
+                <div class="d-flex align-items-center">
+                    <!-- Top Account -->
+                    <div class="dropdown mx-3">
+                        <a class="dropdown-toggle" href="#" role="button" id="dropdownAccount" data-bs-toggle="dropdown"
+                           aria-haspopup="true" aria-expanded="false"><i class="ti-user me-2"></i>Аккаунт </a>
+                        <div class="dropdown-menu mt-2 shadow" aria-labelledby="dropdownAccount">
+                            <a class="dropdown-item" href="sign-in.html">Войти</a>
+                            <a class="dropdown-item" href="sign-up.html">Зарегистрироваться</a>
+                            <a class="dropdown-item" href="#">Настройки</a>
+                        </div>
+                    </div>
+                    <!-- top link -->
+                    <ul class="nav">
+                        <!--              <li class="nav-item">-->
+                        <!--                  <a class="navbar-link mx-3" href="contact.html">Contact</a>-->
+                        <!--              </li>-->
+                    </ul>
+                    <!-- top social -->
+                    <ul class="social-icons">
+                        <li class="social-icons-item social-facebook m-0">
+                            <a class="social-icons-link w-auto px-2" href="https://www.facebook.com/ariuscapital"><i
+                                    class="fab fa-facebook-f"></i></a>
+                        </li>
+                        <li class="social-icons-item social-instagram m-0">
+                            <a class="social-icons-link w-auto px-2" href="https://instagram.com/ariuscapital"><i
+                                    class="fab fa-instagram"></i></a>
+                        </li>
+                        <!--							<li class="social-icons-item social-twitter m-0">-->
+                        <!--								<a class="social-icons-link w-auto ps-2" href="#"><i class="fab fa-twitter"></i></a>-->
+                        <!--							</li>-->
+                    </ul>
+                </div>
+            </div>
+        </div>
+    </div>
+    <!-- Navbar top End-->
+
+    <!-- Logo Nav Start -->
+    <nav class="navbar navbar-expand-lg">
+        <div class="container">
+            <!-- Logo -->
+            <a class="navbar-brand" href="{% url 'home' %}">
+                <!-- Logo -->
+                <img class="navbar-brand-item" src="{% static 'images/logo_arius.svg' %}" alt="Logo">
+            </a>
+            <!-- Menu opener button -->
+            <button class="navbar-toggler ms-auto" type="button" data-bs-toggle="collapse"
+                    data-bs-target="#navbarCollapse" aria-controls="navbarCollapse" aria-expanded="false"
+                    aria-label="Toggle navigation">
+                <span class="navbar-toggler-icon"></span>
+            </button>
+            <!-- Main Menu Start -->
+            <div class="collapse navbar-collapse" id="navbarCollapse">
+                <ul class="navbar-nav navbar-nav-scroll navbar-nav-scroll ms-auto">
+                    <!-- Menu item 1 Как это работает-->
+                    <li class="nav-item ">
+                        <a class="nav-link {% if sign == 'howitworks' %}active{% endif %} "
+                           href="{% url 'how-it-works' %}" id="howitworksMenu" aria-haspopup="true"
+                           aria-expanded="false">Как это работает</a>
+                    </li>
+
+                    <!-- Menu item 2 Наши проекты-->
+                    <li class="nav-item ">
+                        <a class="nav-link {% if sign == 'projects' %}active{% endif %}" href="{% url 'projects' %}"
+                           id="ourprojectsMenu" aria-haspopup="true" aria-expanded="false">Наши проекты</a>
+                    </li>
+
+                    <!-- Menu item 3 О компании-->
+                    <li class="nav-item ">
+                        <a class="nav-link {% if sign == 'about' %}active{% endif %}" href="{% url 'about' %}"
+                           id="aboutMenu" aria-haspopup="true" aria-expanded="false">О компании</a>
+                    </li>
+
+                    <!-- Menu item 4 Сообщество-->
+                    <li class="nav-item ">
+                        <a class="nav-link {% if sign == 'community' %}active{% endif %}" href="{% url 'community' %}"
+                           id="communityMenu" aria-haspopup="true" aria-expanded="false">Сообщество</a>
+                    </li>
+
+                    <!-- Menu item 5 Контакты-->
+                    <li class="nav-item ">
+                        <a class="nav-link {% if sign == 'contacts' %}active{% endif %}" href="{% url 'contacts' %}"
+                           id="contactsMenu" aria-haspopup="true" aria-expanded="false">Контакты</a>
+                    </li>
+
+                </ul>
+            </div>
+            <!-- Main Menu End -->
+            <!-- Header Extras Start-->
+            <div class="navbar-nav">
+                <!-- extra item Search-->
+                <div class="nav-item search border-0 ps-3 pe-0 px-lg-2" id="search">
+                    <a class="nav-link" data-bs-toggle="collapse" href="#search-open"><i class="ti-search"> </i></a>
+                </div>
+                <!-- extra item Btn-->
+                <div class="nav-item border-0 d-none d-lg-inline-block align-self-center">
+                    <a href="#" class=" btn btn-sm btn-grad mb-0">Стань инвестором!</a>
+                </div>
+            </div>
+            <!-- Header Extras End-->
+        </div>
+    </nav>
+    <!-- Logo Nav End -->
+</header>
+<!-- =======================
+header End-->
+
+{% block content %}
+
+{% endblock content %}
+
+<!-- =======================
+footer  -->
+<footer class="footer footer-dark section-pt position-relative pt-4 mt-5">
+    <div class="position-absolute top-0 start-0 w-100">
+        <svg width="100%" height="70" viewBox="0 0 500 70" preserveAspectRatio="none" style="margin-top: -70px">
+            <path d="M0,70 L0,40 Q250,-40 500,40 L580,70 Z" fill="#343a40"/>
+        </svg>
+    </div>
+    <div class="footer-content pb-3">
+        <div class="container">
+            <div class="row">
+                <!-- Footer widget 1 -->
+                <div class="col-md-6">
+                    <div class="widget">
+
+                        <p class="">Компания Arius Capital основана профессиональными участниками рынка
+                            недвижимости, обладающих уникальным, богатым опытом.</p>
+                        <p>За последние 10 лет работы в этой сфере, мы участвовали в большом количестве сделок и имеем
+                            хорошее понимание рынка, его тенденций и возможностей.</p>
+                        <a href="index.html" class="footer-logo">
+                            <!-- footer logo Start -->
+                            <img class="footer-logo-item" src="{% static 'images/sign_1.png' %}" alt="">
+                            <!-- footer logo End -->
+                        </a>
+                    </div>
+                </div>
+                <!-- Footer widget 2 -->
+                <div class="col-md-4 col-sm-6">
+                    <div class="widget address"
+                         style="background-image: url('{% static 'assets/images/world-map.png' %}'); background-position: 50% 20px; background-repeat: no-repeat; background-size: contain;">
+                        <ul class="list-group list-group-borderless">
+                            <li class="d-flex mb-3"><i class="me-3 display-8 ti-map-alt"></i>г.Киев, ул.Борисоглебская
+                                15Б
+                            </li>
+                            <!--                            <li class="d-flex mb-3"><i class="me-3 display-8 ti-headphone-alt"></i> +380 (67) 406 4817-->
+                            <!--                            </li>-->
+                            <li class="d-flex mb-3"><i class="me-3 display-8 ti-email"></i>info@ariuscapital.co</li>
+                            <li class="d-flex mb-3"><i class="me-3 display-8 ti-time"></i>
+                                <p>Пон - Пт: <strong>09:00 - 18:00</strong> <br>Суб, Воск: <strong>Закрыто</strong></p>
+                            </li>
+                        </ul>
+                    </div>
+                </div>
+                <!-- Footer widget 3 -->
+                <div class="col-md-2 col-sm-6">
+                    <div class="widget">
+                        <h6>Быстрое меню</h6>
+                        <ul class="nav flex-column primary-hover">
+                            <li class="nav-item"><a class="nav-link" href="{% url 'how-it-works' %}">Как это
+                                работает</a></li>
+                            <li class="nav-item"><a class="nav-link" href="{% url 'projects' %}">Наши проекты</a></li>
+                            <li class="nav-item"><a class="nav-link" href="{% url 'about' %}">О компании</a></li>
+                            <li class="nav-item"><a class="nav-link" href="{% url 'community' %}">Сообщество</a></li>
+                            <li class="nav-item"><a class="nav-link" href="{% url 'contacts' %}">Контакты</a></li>
+                        </ul>
+                    </div>
+                </div>
+                <!-- Footer widget 4 -->
+
+            </div>
+        </div>
+    </div>
+    <div class="divider mt-3"></div>
+    <!--footer copyright -->
+    <div class="footer-copyright py-3">
+        <div class="container">
+            <div class="d-md-flex justify-content-between align-items-center py-3 text-center text-md-start">
+                <!-- copyright text -->
+                <div class="copyright-text">©2022 <a href="#!"> Auris Capital.</a></div>
+                <!-- copyright links-->
+                <div class="copyright-links primary-hover mt-3 mt-md-0">
+                    <ul class="social-icons si-colored-bg light">
+                        <li class="social-icons-item social-facebook mb-0"><a class="social-icons-link" href="#"><i
+                                class="fab fa-facebook-f"></i></a></li>
+                        <li class="social-icons-item social-twitter mb-0"><a class="social-icons-link" href="#"><i
+                                class="fab fa-twitter"></i></a></li>
+                        <li class="social-icons-item social-gplus mb-0"><a class="social-icons-link" href="#"><i
+                                class="fab fa-google-plus-g"></i></a></li>
+                        <li class="social-icons-item social-linkedin mb-0"><a class="social-icons-link" href="#"><i
+                                class="fab fa-linkedin-in"></i></a></li>
+                    </ul>
+                </div>
+            </div>
+        </div>
+    </div>
+</footer>
+<!-- =======================
+footer  -->
+
+<!-- Back to top -->
+<div><a href="#" class="back-top btn btn-grad"><i class="ti-angle-up"></i></a></div>
+
+<!-- Bootstrap JS -->
+<script src="{% static 'assets/vendor/bootstrap/dist/js/bootstrap.bundle.min.js' %}"></script>
+
+<!--Vendors-->
+<script src="{% static 'assets/vendor/aos/aos.js' %}"></script>
+<script src="{% static 'assets/vendor/glightbox/js/glightbox.js' %}"></script>
+<script src="{% static 'assets/vendor/tiny-slider/tiny-slider.js' %}"></script>
+
+<!--Template Functions-->
+<script src="{% static 'assets/js/functions.js' %}"></script>
+
+</body>
+</html>

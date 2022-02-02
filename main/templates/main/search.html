@@ -1,0 +1,85 @@
+{% extends 'main/base.html' %}
+{% load static %}
+
+
+{% block content %}
+
+<div class="container">
+    <div class="d-block p-4 p-sm-5 h-bg-gray-round">
+        <center>
+            <h1>Результаты поиска: <i>"{{ request.GET.q }}"</i></h1>
+        </center>
+    </div>
+</div>
+
+
+<!-- =======================
+blog -->
+
+{% if projects %}
+<section class="blog-page pb-0">
+    <div class="container">
+        <div class="row">
+            <div class="col-md-12 blog-grid blog-grid-3 portfolio-wrap"
+                 data-isotope='{ "itemSelector": ".post-item", "layoutMode": "fitRows" }'>
+
+                {% for el in projects %}
+
+                <!-- Post item  with image-->
+                <div class="post-item">
+                    <div class="post-item-wrap">
+                        <div class="post-image">
+                            <a href="/projects/project/{{ el.id }}"> <img src="{{ el.image_path }}" alt="{{ el.title }}"
+                                              style="width: 100%; height: 15vw; object-fit: cover;"> </a>
+                            <span class="post-meta-category bg-grad"><a href="#">{{ el.type }}</a></span>
+                            <span class=" bg-secondary" style="padding: 2px 7px;
+    color: #ffffff;
+    display: inline-block;
+    position: absolute;
+
+    left: 0;
+    z-index: 9;
+    font-size: 0.8125rem;bottom:10%"><a href="#">{{ el.access }}</a></span>
+                        </div>
+                        <div class="post-item-desc">
+
+                            <h4><a href="/projects/project/{{ el.id }}">{{ el.title }}</a></h4>
+
+                            <span class="d-inline-block" tabindex="0" data-bs-toggle="popover"
+                                  data-bs-trigger="hover focus" data-bs-placement="top"
+                                  data-bs-content="Сумма инвестиции в проект">
+                                <span class="badge bg-secondary " style="font-size: 1rem;">{{ el.price }} usd.</span>
+                            </span>
+                            <span class="d-inline-block" tabindex="0" data-bs-toggle="popover"
+                                  data-bs-trigger="hover focus" data-bs-placement="top"
+                                  data-bs-content="Срок инвестиции">
+                                <span class="badge bg-secondary "
+                                      style="font-size: 1rem;">{{ el.investment_term }} мес.</span>
+                            </span>
+                            <span class="d-inline-block" tabindex="0" data-bs-toggle="popover"
+                                  data-bs-trigger="hover focus" data-bs-placement="top"
+                                  data-bs-content="Процент доходности">
+                                <span class="badge bg-secondary " style="font-size: 1rem;">{{ el.income }}%</span>
+                            </span>
+
+                            <p class="py-3"><strong>Суть сделки:&nbsp;</strong>{{ el.deal_sence }}</p>
+
+                            <p><strong>Почему эта сдела:&nbsp;</strong>{{ el.deal_why }}</p>
+
+                            <p><strong>Адрес&nbsp;</strong>{{ el.address }}</p>
+
+                            <a class="btn btn-grad" href="/projects/project/{{ el.id }}">Инвестировать в объект</a>
+                        </div>
+                    </div>
+                </div>
+
+                {% endfor %}
+
+            </div>
+        </div>
+    </div>
+</section>
+
+{% endif %}
+
+{% endblock content %}
