@@ -35,7 +35,7 @@ class Project(models.Model):
     type = models.ForeignKey(Project_type, on_delete=models.CASCADE)
     # created = models.DateTimeField(auto_now_add=True, auto_now=False)
     # updated = models.DateTimeField(auto_now_add=False, auto_now=True)
-
+    temp_persend = models.IntegerField(default=50)
 
     def __str__(self):
         return self.title

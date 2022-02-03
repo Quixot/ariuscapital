@@ -32,7 +32,7 @@ blog -->
                             <a href="/projects/project/{{ el.id }}"> <img src="{{ el.image_path }}" alt="{{ el.title }}"
                                                                           style="width: 100%; height: 15vw; object-fit: cover; border-radius: 6px 6px 0 0">
                             </a>
-                            <span class="post-meta-category {% if el.type.id == 1 %}bg-grad{% else %}bg-danger{% endif %}"><a
+                            <span class="post-meta-category {% if el.type.id == 2 %}bg-danger{% else %}bg-grad{% endif %}"><a
                                     href="#">{{ el.access }}</a></span>
                             <span class="post-meta-category-bottom bg-secondary"><a href="#">{{ el.type }}</a></span>
                         </div>

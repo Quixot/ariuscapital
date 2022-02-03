@@ -678,6 +678,10 @@ blog -->
     #tns1-iw {
     margin: 1px -30px 7px 1px;
 }
+
+
+
+
 </style>
 
 <section class="blog pb-5">
@@ -706,8 +710,7 @@ blog -->
                                                                                   alt="{{ el.title }}"
                                                                                   style="width: 100%; height: 15vw; object-fit: cover; border-radius: 6px 6px 0 0">
                                     </a>
-                                    <span class="post-meta-category {% if el.type.id == 1 %}bg-grad{% else %}bg-danger{% endif %}"><a
-                                            href="#">{{ el.access }}</a></span>
+
                                     <span class="post-meta-category-bottom bg-secondary"><a
                                             href="#">{{ el.type }}</a></span>
                                 </div>
@@ -715,30 +718,52 @@ blog -->
 
                                     <h4><a href="/projects/project/{{ el.id }}">{{ el.title }}</a></h4>
 
-                                    <span class="d-inline-block" tabindex="0" data-bs-toggle="popover"
-                                          data-bs-trigger="hover focus" data-bs-placement="top"
-                                          data-bs-content="Сумма инвестиции в проект">
-                                <span class="badge bg-secondary " style="font-size: 1rem;">{{ el.price }} usd.</span>
-                            </span>
-                                    <span class="d-inline-block" tabindex="0" data-bs-toggle="popover"
-                                          data-bs-trigger="hover focus" data-bs-placement="top"
-                                          data-bs-content="Срок инвестиции">
-                                <span class="badge bg-secondary "
-                                      style="font-size: 1rem;">{{ el.investment_term }} мес.</span>
-                            </span>
-                                    <span class="d-inline-block" tabindex="0" data-bs-toggle="popover"
-                                          data-bs-trigger="hover focus" data-bs-placement="top"
-                                          data-bs-content="Процент доходности">
-                                <span class="badge bg-secondary " style="font-size: 1rem;">{{ el.income }}%</span>
-                            </span>
 
-<!--                                    <div>-->
-<!--                                        <p class="py-3"><strong>Суть сделки:&nbsp;</strong>{{ el.deal_sence }}</p>-->
-<!--                                    </div>-->
+                                    <!--                                    <div>-->
+                                    <!--                                        <p class="py-3"><strong>Суть сделки:&nbsp;</strong>{{ el.deal_sence }}</p>-->
+                                    <!--                                    </div>-->
 
                                     <!--                            <p><strong>Почему эта сдела:&nbsp;</strong>{{ el.deal_why }}</p>-->
 
                                     <!--                            <p><strong>Адрес&nbsp;</strong>{{ el.address }}</p>-->
+
+
+                                    <!-- counter -->
+                                    <section class="py-4 ">
+                                        <div class="container">
+                                            <div class="row">
+                                                <!-- count item -->
+                                                <div class="col-4">
+                                                    <div class="text-center mb-4 mb-sm-0" tabindex="0" data-bs-toggle="popover"
+                                                         data-bs-trigger="hover focus" data-bs-placement="top"
+                                                         data-bs-content="Сумма инвестиции в проект">
+                                                        <h5>{{ el.price }} usd.</h5>
+
+                                                    </div>
+                                                </div>
+                                                <!-- count item -->
+                                                <div class="col-4">
+                                                    <div class="text-center mb-4 mb-sm-0" tabindex="0" data-bs-toggle="popover"
+                                                         data-bs-trigger="hover focus" data-bs-placement="top"
+                                                         data-bs-content="Срок инвестиции">
+                                                        <h5>{{ el.investment_term }} мес.</h5>
+
+                                                    </div>
+                                                </div>
+                                                <!-- count item -->
+                                                <div class="col-4">
+                                                    <div class="text-center" tabindex="0" data-bs-toggle="popover"
+                                                            data-bs-trigger="hover focus" data-bs-placement="top"
+                                                            data-bs-content="Процент доходности">
+                                                        <h5>{{ el.income }} %</h5>
+
+                                                    </div>
+                                                </div>
+
+                                            </div>
+                                        </div>
+                                    </section>
+                                    <!-- counter -->
 
 
                                     <div class="progress-text-in progress-dark-grad">
@@ -748,9 +773,11 @@ blog -->
                                             <div class="progress">
                                                 <div class="progress-bar aos aos-init" data-aos="slide-right"
                                                      data-aos-delay="200" data-aos-duration="1000"
-                                                     data-aos-easing="ease-in-out" role="progressbar" aria-valuenow="85"
-                                                     aria-valuemin="0" aria-valuemax="100" style="width:85%"><span
-                                                        class="progress-percent">85%</span>
+                                                     data-aos-easing="ease-in-out" role="progressbar"
+                                                     aria-valuenow="{{ el.temp_persend }}"
+                                                     aria-valuemin="0" aria-valuemax="100"
+                                                     style="width:{{ el.temp_persend }}%"><span
+                                                        class="progress-percent">{{ el.temp_persend }}%</span>
                                                 </div>
                                             </div>
                                         </div>
@@ -774,7 +801,10 @@ blog -->
                     </div>
                 </div>
             </div>
-            <div class="col pt-5"><center><a href="{% url 'projects' %}" class=" btn btn-sm btn-grad mb-0"><h3>Посмотреть все проекты</h3></a></center></div>
+            <div class="col pt-5">
+                <center><a href="{% url 'projects' %}" class=" btn btn-sm btn-grad mb-0"><h3>Посмотреть все проекты</h3>
+                </a></center>
+            </div>
         </div>
     </div>
 </section>
