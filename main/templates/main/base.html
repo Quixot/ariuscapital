@@ -201,13 +201,9 @@ header End-->
 
 <!-- =======================
 footer  -->
-<footer class="footer footer-dark section-pt position-relative pt-4 mt-5">
-    <div class="position-absolute top-0 start-0 w-100">
-        <svg width="100%" height="70" viewBox="0 0 500 70" preserveAspectRatio="none" style="margin-top: -70px">
-            <path d="M0,70 L0,40 Q250,-40 500,40 L580,70 Z" fill="#343a40"/>
-        </svg>
-    </div>
-    <div class="footer-content pb-3">
+<footer class="footer footer-dark section-pt position-relative pt-1 mt-3">
+
+    <div class="footer-content pb-3 pt-5">
         <div class="container">
             <div class="row">
                 <!-- Footer widget 1 -->
@@ -218,7 +214,7 @@ footer  -->
                             недвижимости, обладающих уникальным, богатым опытом.</p>
                         <p>За последние 10 лет работы в этой сфере, мы участвовали в большом количестве сделок и имеем
                             хорошее понимание рынка, его тенденций и возможностей.</p>
-                        <a href="index.html" class="footer-logo">
+                        <a href="{% url 'home' %}" class="footer-logo">
                             <!-- footer logo Start -->
                             <img class="footer-logo-item" src="{% static 'images/sign_1.png' %}" alt="">
                             <!-- footer logo End -->
