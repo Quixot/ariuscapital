@@ -95,7 +95,7 @@ header Start-->
                            aria-haspopup="true" aria-expanded="false"><i class="ti-user me-2"></i>Аккаунт </a>
                         <div class="dropdown-menu mt-2 shadow" aria-labelledby="dropdownAccount">
                             <a class="dropdown-item" href="sign-in.html">Войти</a>
-                            <a class="dropdown-item" href="sign-up.html">Зарегистрироваться</a>
+                            <a class="dropdown-item" href="{% url 'register' %}">Зарегистрироваться</a>
                             <a class="dropdown-item" href="#">Настройки</a>
                         </div>
                     </div>
@@ -295,7 +295,7 @@ footer  -->
 <script src="{% static 'assets/vendor/glightbox/js/glightbox.js' %}"></script>
 <script src="{% static 'assets/vendor/tiny-slider/tiny-slider.js' %}"></script>
 <script src="{% static 'assets/vendor/purecounterjs/dist/purecounter_vanilla.js' %}"></script>
-
+<script src="{% static 'assets/vendor/sticky-js/sticky.min.js' %}"></script>
 
 
 

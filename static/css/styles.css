@@ -66,6 +66,16 @@ section {
 .post-item .post-item-desc {
     padding: 20px 20px 15px 20px;
 }
+
+.card-title-href {
+    color: black;
+}
+
+.progress-item .progress-percent {
+    color: black;
+    top: 5px;
+}
+
 /* PROJECT */
 
 /* Social Icons */

@@ -682,6 +682,8 @@ blog -->
 
 
 
+
+
 </style>
 
 <section class="blog pb-5">
@@ -695,102 +697,82 @@ blog -->
         </div>
         <div class="row">
             <div class="col-md-12">
-                <div class="tiny-slider arrow-dark arrow-hover">
-                    <div class="tiny-slider-inner" data-arrow="true" data-dots="false" data-items-xl="3"
+                <div class="tiny-slider arrow-dark arrow-hover ">
+                    <div class="tiny-slider-inner row row-cols-1 row-cols-md-3" data-arrow="true" data-dots="false"
+                         data-items-xl="3"
                          data-items-lg="3" data-items-md="2" data-items-sm="2" data-items-xs="1" data-autoplay="0"
                          data-pause="false">
 
                         {% for el in projects %}
 
-                        <!-- post -->
-                        <div class="post-item ">
-                            <div class="post-item-wrap">
-                                <div class="post-image">
-                                    <a href="/projects/project/{{ el.id }}"> <img src="{{ el.image_path }}"
-                                                                                  alt="{{ el.title }}"
-                                                                                  style="width: 100%; height: 15vw; object-fit: cover; border-radius: 6px 6px 0 0">
-                                    </a>
-
-                                    <span class="post-meta-category-bottom bg-secondary"><a
-                                            href="#">{{ el.type }}</a></span>
+                        <div class="col mb-4">
+                            <div class="card h-100">
+                                <a href="/projects/project/{{ el.id }}">
+                                    <img src="{{ el.image_path }}" alt="{{ el.title }}" class="card-img-top "
+                                         style="width: 100%; height: 250px; object-fit: cover; border-radius: 6px 6px 0 0;-o-object-fit: cover;
+  object-fit: cover;
+  -o-object-position: center;
+  object-position: center;">
+                                </a>
+                                <div class="card-body">
+                                    <h4 class="card-title"><a class="card-title-href"
+                                                              href="/projects/project/{{ el.id }}">
+                                        {{ el.title }}</a></h4>
+                                    <p class="card-text"><strong>Суть сделки:&nbsp;</strong>{{ el.deal_sence }}</p>
+                                    <p class="lead"><span class="badge bg-secondary">{{ el.type }}</span></p>
                                 </div>
-                                <div class="post-item-desc">
 
-                                    <h4><a href="/projects/project/{{ el.id }}">{{ el.title }}</a></h4>
+                                <div class="card-footer">
 
-
-                                    <!--                                    <div>-->
-                                    <!--                                        <p class="py-3"><strong>Суть сделки:&nbsp;</strong>{{ el.deal_sence }}</p>-->
-                                    <!--                                    </div>-->
-
-                                    <!--                            <p><strong>Почему эта сдела:&nbsp;</strong>{{ el.deal_why }}</p>-->
-
-                                    <!--                            <p><strong>Адрес&nbsp;</strong>{{ el.address }}</p>-->
-
-
-                                    <!-- counter -->
-                                    <section class="py-3">
-                                        <div class="container">
-                                            <div class="row">
-                                                <!-- count item -->
-                                                <div class="col-4">
-                                                    <div class="text-center mb-4 mb-sm-0" tabindex="0" data-bs-toggle="popover"
-                                                         data-bs-trigger="hover focus" data-bs-placement="top"
-                                                         data-bs-content="Сумма инвестиции в проект">
-                                                        <h5 class="">${{ el.price }}</h5>
-
-                                                    </div>
-                                                </div>
-                                                <!-- count item -->
-                                                <div class="col-4">
-                                                    <div class="text-center mb-4 mb-sm-0" tabindex="0" data-bs-toggle="popover"
-                                                         data-bs-trigger="hover focus" data-bs-placement="top"
-                                                         data-bs-content="Срок инвестиции">
-                                                        <h5 class="text-center">{{ el.investment_term }} мес.</h5>
-
-                                                    </div>
-                                                </div>
-                                                <!-- count item -->
-                                                <div class="col-4">
-                                                    <div class="text-center" tabindex="0" data-bs-toggle="popover"
-                                                            data-bs-trigger="hover focus" data-bs-placement="top"
-                                                            data-bs-content="Процент доходности">
-                                                        <h5 class="text-right">{{ el.income }} %</h5>
-
-                                                    </div>
-                                                </div>
-
-                                            </div>
-                                        </div>
-                                    </section>
-                                    <!-- counter -->
+                                    <table width="100%">
+                                        <tr>
+                                            <td>
+                                                <span class="d-inline-block" tabindex="0" data-bs-toggle="popover"
+                                                      data-bs-trigger="hover focus" data-bs-placement="top"
+                                                      data-bs-content="Сумма инвестиции в проект">
+                                                    <p>{{ el.price }} usd.</p>
+                                                </span>
+                                            </td>
+                                            <td>
+                                                <span class="d-inline-block" tabindex="0" data-bs-toggle="popover"
+                                                      data-bs-trigger="hover focus" data-bs-placement="top"
+                                                      data-bs-content="Срок инвестиции">
+                                                    <p>{{ el.investment_term }} мес.</p>
+                                                </span>
+                                            </td>
+                                            <td>
+                                                <span class="d-inline-block" tabindex="0" data-bs-toggle="popover"
+                                                      data-bs-trigger="hover focus" data-bs-placement="top"
+                                                      data-bs-content="Процент доходности">
+                                                    <p>{{ el.income }}%</p>
+                                                </span>
+                                            </td>
+                                        </tr>
+                                    </table>
 
 
-                                    <div class="progress-text-in progress-dark-grad">
+                                    <div class="progress-dark progress-xs">
                                         <!-- progress item -->
-                                        <div class="progress-item">
-
+                                        <div class="progress-item pb-4 pt-4">
                                             <div class="progress">
-                                                <div class="progress-bar aos aos-init" data-aos="slide-right"
+
+                                                <div class="progress-bar aos aos-init aos-animate"
+                                                     data-aos="slide-right"
                                                      data-aos-delay="200" data-aos-duration="1000"
-                                                     data-aos-easing="ease-in-out" role="progressbar"
-                                                     aria-valuenow="{{ el.temp_persend }}"
-                                                     aria-valuemin="0" aria-valuemax="100"
-                                                     style="width:{{ el.temp_persend }}%"><span
-                                                        class="progress-percent">{{ el.temp_persend }}%</span>
+                                                     data-aos-easing="ease-in-out"
+                                                     role="progressbar" aria-valuenow="85" aria-valuemin="0"
+                                                     aria-valuemax="100"
+                                                     style="width:{{el.temp_persend}}%; overflow:visible">
+                                                    <span class="progress-percent">{{el.temp_persend}}%</span>
                                                 </div>
                                             </div>
                                         </div>
-
-
                                     </div>
 
 
                                     <a class="btn btn-grad btn-project-invest "
                                        href="/projects/project/{{ el.id }}"
                                     >Инвестировать</a>
-
-
                                 </div>
                             </div>
                         </div>

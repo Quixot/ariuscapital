@@ -1,0 +1,92 @@
+{% extends 'main/base-min.html' %}
+{% load static %}
+{% block title %}
+Регистрация
+{% endblock %}
+{% block content %}
+<!-- =======================
+    Sign up -->
+<section class="p-0 d-flex align-items-center">
+    <div class="container-fluid">
+        <div class="row">
+            <!-- left -->
+            <div class="col-12 col-md-5 col-lg-4 d-md-flex align-items-center bg-grad vh-sm-100">
+                <div class="w-100 p-3 p-lg-5 all-text-white">
+                    <div class="justify-content-center align-self-center">
+                        <!-- Logo -->
+                        <img class="logo-auth mb-4" src="{% static 'images/logo_arius.svg' %}" alt="Logo">
+                    </div>
+                    <h3 class="fw-light">Зарегистрируйся и получи уникальную возможность для заработка!</h3>
+                    <ul class="list-group list-group-borderless mt-4">
+                        <li class="list-group-item text-white"><i class="fa fa-check"></i>Зарегистрируйся
+                        </li>
+                        <li class="list-group-item text-white"><i class="fa fa-check"></i>Следуй инструкциям
+                        </li>
+                        <li class="list-group-item text-white"><i class="fa fa-check"></i>Стань инвестором и зарабатывай
+                        </li>
+                    </ul>
+                </div>
+            </div>
+            <!-- Right -->
+            <div class="col-12 col-md-7 col-xl-8 mx-auto my-5">
+                <div class="row h-100">
+                    <div class="col-12 col-md-10 col-lg-5 text-start mx-auto d-flex align-items-center">
+                        <div class="w-100">
+                            <h2>Зарегистрируйте свой аккаунт!</h2>
+                            <!--                            <h5 class="fw-light">Join us today! Create your account easy with less information.</h5>-->
+
+
+
+
+
+
+                            <form method="post">{% csrf_token %}
+                                <div class="form mt-4 ">
+                                    <div>
+                                        <p class="text-start mb-2">Email address</p>
+
+                                        <span class="form-group">
+                                            <input type="text" name="username" maxlength="150" autocapitalize="none" autocomplete="username" autofocus="" required="" id="id_username" class="form-control" placeholder="E-mail">
+                                        </span>
+
+                                    </div>
+                                    <div>
+                                        <div class="align-items-center">
+                                            <p class="text-start mb-2">Password</p>
+                                        </div>
+
+                                        <span class="form-group">
+                                            <input type="password" name="password1" autocomplete="new-password" required="" id="id_password1" class="form-control">
+                                        </span>
+                                    </div>
+                                    <div>
+                                        <div class="align-items-center">
+                                            <p class="text-start mb-2">Confirm Password</p>
+                                        </div>
+
+                                        <span class="form-group">
+                                        <input type="password" name="password2" autocomplete="new-password" required="" id="id_password2" class="form-control">
+                                        </span>
+
+                                    </div>
+<!--                                    <div class="custom-control custom-checkbox me-sm-2 mb-4 d-flex">-->
+<!--                                        <input type="checkbox" class="form-check-input mb-0" id="exampleCheck1">-->
+<!--                                        <label class="form-check-label ms-2" for="exampleCheck1">Регистрируясь, вы соглашаетесь с <a href="#">условиями пользования площадкой</a></label>-->
+<!--                                    </div>-->
+                                    <div class="row align-items-center g-0 m-0">
+                                        <div class="col-6"><span class="text-muted">Уже регистрировался? <a
+                                                href="sign-in.html">Войти в аккаунт</a></span></div>
+                                        <div class="col-6 text-end">
+                                            <button type="submit" class="btn btn-dark ">Зарегистрировать!</button>
+                                        </div>
+                                    </div>
+                                </div>
+                            </form>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+</section>
+{% endblock %}
