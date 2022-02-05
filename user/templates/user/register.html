@@ -41,6 +41,7 @@
 
 
                             <form method="post">{% csrf_token %}
+                                {{form.errors}}
                                 <div class="form mt-4 ">
                                     <div>
                                         <p class="text-start mb-2">Email address</p>
