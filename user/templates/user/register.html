@@ -1,8 +1,7 @@
-{% extends 'main/base-min.html' %}
+{% extends 'main/base-min.html'%}
 {% load static %}
-{% block title %}
-Регистрация
-{% endblock %}
+
+
 {% block content %}
 <!-- =======================
     Sign up -->
@@ -14,7 +13,9 @@
                 <div class="w-100 p-3 p-lg-5 all-text-white">
                     <div class="justify-content-center align-self-center">
                         <!-- Logo -->
-                        <img class="logo-auth mb-4" src="{% static 'images/logo_arius.svg' %}" alt="Logo">
+                        <a href="{% url 'home' %}">
+                            <img class="logo-auth mb-4" src="{% static 'images/logo_arius.svg' %}" alt="Logo">
+                        </a>
                     </div>
                     <h3 class="fw-light">Зарегистрируйся и получи уникальную возможность для заработка!</h3>
                     <ul class="list-group list-group-borderless mt-4">
@@ -32,57 +33,120 @@
                 <div class="row h-100">
                     <div class="col-12 col-md-10 col-lg-5 text-start mx-auto d-flex align-items-center">
                         <div class="w-100">
-                            <h2>Зарегистрируйте свой аккаунт!</h2>
-                            <!--                            <h5 class="fw-light">Join us today! Create your account easy with less information.</h5>-->
 
 
+                            <div class="col-md-12">
+
+                                <div class="row">
+
+                                    <div class="col-md-12">
+                                        <div class=" mt-5">
+
+                                            <div class="">
+                                                <h2>Присоединяйтесь к нам!</h2>
+
+                                                <!--                                                <a href="" class="btn btn-sm btn-block btn-primary"><i-->
+                                                <!--                                                        class="fa fa-facebook"></i>Login with Facebook</a>-->
+
+                                                <!--                                                <div class="row">-->
+                                                <!--                                                    <div class="col-md-5">-->
+                                                <!--                                                        <hr>-->
+                                                <!--                                                    </div>-->
+                                                <!--                                                    <div class="col-md-2">-->
+                                                <!--                                                        <p class="text-muted">OR</p>-->
+                                                <!--                                                    </div>-->
+                                                <!--                                                    <div class="col-md-5">-->
+                                                <!--                                                        <hr>-->
+                                                <!--                                                    </div>-->
+                                                <!--                                                </div>-->
+
+                                                {% include 'user/_flash_messages.html' %}
 
 
+                                                <form action="{% url 'register' %}" method="post">
+
+                                                    {% csrf_token %}
+
+                                                    <div class="form-group">
+                                                        <input class="form-control " type="email"
+                                                               name="email" value="{{data.email}}" placeholder="Email">
 
 
-                            <form method="post">{% csrf_token %}
-                                {{form.errors}}
-                                <div class="form mt-4 ">
-                                    <div>
-                                        <p class="text-start mb-2">Email address</p>
+                                                    </div>
 
-                                        <span class="form-group">
-                                            <input type="text" name="username" maxlength="150" autocapitalize="none" autocomplete="username" autofocus="" required="" id="id_username" class="form-control" placeholder="E-mail">
-                                        </span>
+                                                    <div class="form-group">
+                                                        <input class="form-control " type="text"
+                                                               name="name" value="{{data.name}}"
+                                                               placeholder="Имя и Фамилия">
 
-                                    </div>
-                                    <div>
-                                        <div class="align-items-center">
-                                            <p class="text-start mb-2">Password</p>
+
+                                                    </div>
+
+                                                    <div class="form-group">
+                                                        <input class="form-control " type="text"
+                                                               name="username" value="{{data.username}}"
+                                                               placeholder="Имя пользователя">
+
+
+                                                    </div>
+
+                                                    <div class="form-group">
+                                                        <input class="form-control " type="password"
+                                                               name="password" value="" placeholder="Пароль">
+
+
+                                                    </div>
+
+                                                    <div class="form-group">
+                                                        <input class="form-control " type="password"
+                                                               name="password2" value="" placeholder="Повторить пароль">
+
+
+                                                    </div>
+
+
+                                                    <div class="row align-items-center g-0 m-0">
+                                                        <div class="col-6"><span
+                                                                class="text-muted">Уже с нами?<br><a
+                                                                href="{%url 'login'%}">Войдите в аккаунт</a></span>
+                                                        </div>
+                                                        <div class="col-6 text-end">
+
+                                                            <input type="submit" value="Вперед!"
+                                                                   class="btn btn-dark"/>
+                                                        </div>
+                                                    </div>
+
+                                                </form>
+
+
+                                                <small class="py-3">
+                                                    Регистрируясь, вы соглашаетесь с условиями, <a href="#">политикой
+                                                    данных и Cookies
+                                                    Policy</a>.
+                                                </small>
+
+
+                                            </div>
                                         </div>
 
-                                        <span class="form-group">
-                                            <input type="password" name="password1" autocomplete="new-password" required="" id="id_password1" class="form-control">
-                                        </span>
-                                    </div>
-                                    <div>
-                                        <div class="align-items-center">
-                                            <p class="text-start mb-2">Confirm Password</p>
-                                        </div>
 
-                                        <span class="form-group">
-                                        <input type="password" name="password2" autocomplete="new-password" required="" id="id_password2" class="form-control">
-                                        </span>
+                                        <!--                                        <div class="card mt-4">-->
+                                        <!--                                            <div class="card-body">-->
+                                        <!--                                                <p>-->
+                                        <!--                                                    Забыли пароль? <a href="{% url 'request-reset-email' %}">Сбросить и создать новый</a>-->
+                                        <!--                                                </p>-->
+                                        <!--                                            </div>-->
+                                        <!--                                        </div>-->
 
                                     </div>
-<!--                                    <div class="custom-control custom-checkbox me-sm-2 mb-4 d-flex">-->
-<!--                                        <input type="checkbox" class="form-check-input mb-0" id="exampleCheck1">-->
-<!--                                        <label class="form-check-label ms-2" for="exampleCheck1">Регистрируясь, вы соглашаетесь с <a href="#">условиями пользования площадкой</a></label>-->
-<!--                                    </div>-->
-                                    <div class="row align-items-center g-0 m-0">
-                                        <div class="col-6"><span class="text-muted">Уже регистрировался? <a
-                                                href="sign-in.html">Войти в аккаунт</a></span></div>
-                                        <div class="col-6 text-end">
-                                            <button type="submit" class="btn btn-dark ">Зарегистрировать!</button>
-                                        </div>
-                                    </div>
+
                                 </div>
-                            </form>
+
+
+                            </div>
+
+
                         </div>
                     </div>
                 </div>

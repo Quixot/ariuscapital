@@ -1,0 +1,131 @@
+{% extends 'main/base-min.html'%}
+{% load static %}
+
+
+{% block content %}
+<!-- =======================
+    Sign up -->
+<section class="p-0 d-flex align-items-center">
+    <div class="container-fluid">
+        <div class="row">
+            <!-- left -->
+            <div class="col-12 col-md-5 col-lg-4 d-md-flex align-items-center bg-grad vh-sm-100">
+                <div class="w-100 p-3 p-lg-5 all-text-white">
+                    <div class="justify-content-center align-self-center">
+                        <!-- Logo -->
+                        <a href="{% url 'home' %}">
+                            <img class="logo-auth mb-4" src="{% static 'images/logo_arius.svg' %}" alt="Logo">
+                        </a>
+                    </div>
+                    <h3 class="fw-light">Зарегистрируйся и получи уникальную возможность для заработка!</h3>
+                    <ul class="list-group list-group-borderless mt-4">
+                        <li class="list-group-item text-white"><i class="fa fa-check"></i>Зарегистрируйся
+                        </li>
+                        <li class="list-group-item text-white"><i class="fa fa-check"></i>Следуй инструкциям
+                        </li>
+                        <li class="list-group-item text-white"><i class="fa fa-check"></i>Стань инвестором и зарабатывай
+                        </li>
+                    </ul>
+                </div>
+            </div>
+            <!-- Right -->
+            <div class="col-12 col-md-7 col-xl-8 mx-auto my-5">
+                <div class="row h-100">
+                    <div class="col-12 col-md-10 col-lg-5 text-start mx-auto d-flex align-items-center">
+                        <div class="w-100">
+
+
+                            <div class="col-md-12">
+
+                                <div class="row">
+
+                                    <div class="col-md-12">
+
+                                        <div class=" mt-5">
+
+                                            <div class="">
+
+                                                {% include 'user/_flash_messages.html' %}
+                                                <form action="{%url 'login'%}" method="POST">
+                                                    {% csrf_token%}
+
+
+                                                    <div class="form-group">
+                                                        <input class="form-control form-control-sm" type="text"
+                                                               name="username"
+                                                               value="{{data.username}}" placeholder="Username">
+
+
+                                                    </div>
+
+                                                    <div class="form-group">
+                                                        <input class="form-control form-control-sm" type="password"
+                                                               name="password"
+                                                               placeholder="Password">
+
+
+                                                    </div>
+
+
+                                                    <div class="row align-items-center g-0 m-0">
+                                                        <div class="col-6">
+                                                            <span class="text-muted">Ещё не с нами?<br>
+                                                                <a href="{% url 'register' %}">Регистрируйтесь!</a>
+                                                            </span>
+                                                        </div>
+
+                                                        <div class="col-6 text-end">
+
+                                                            <input type="submit" value="Войти"
+                                                                   class="btn btn-dark"/>
+                                                        </div>
+                                                    </div>
+
+
+                                                </form>
+
+
+                                                <!--                                                <div class="row">-->
+                                                <!--                                                    <div class="col-md-5">-->
+                                                <!--                                                        <hr>-->
+                                                <!--                                                    </div>-->
+                                                <!--                                                    <div class="col-md-2">-->
+                                                <!--                                                        <p class="text-muted">OR</p>-->
+                                                <!--                                                    </div>-->
+                                                <!--                                                    <div class="col-md-5">-->
+                                                <!--                                                        <hr>-->
+                                                <!--                                                    </div>-->
+                                                <!--                                                </div>-->
+
+                                                <!--                                                <a href="" class="btn btn-dark"><i-->
+                                                <!--                                                        class="fa fa-facebook"></i> Login-->
+                                                <!--                                                    with-->
+                                                <!--                                                    Facebook</a>-->
+
+
+                                            </div>
+                                        </div>
+
+
+                                        <div class=" mt-4">
+                                            <div class="">
+                                                <p>
+                                                    Забыли пароль? <a href="{% url 'request-reset-email' %}">Сбросить и
+                                                    создать новый</a>
+                                                </p>
+                                                </p>
+                                            </div>
+                                        </div>
+
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+
+                </div>
+            </div>
+        </div>
+    </div>
+</section>
+{% endblock %}

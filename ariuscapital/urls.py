@@ -8,8 +8,10 @@ urlpatterns = [
     path('admin/', admin.site.urls),
     path('', include('main.urls')),
     path('projects/', include('projects.urls')),
-    path('user/', include('django.contrib.auth.urls')),
+    # path('user/', include('django.contrib.auth.urls')),
+    # path('user/', include('user.urls')),
     path('user/', include('user.urls')),
+
 ]
 
 if settings.DEBUG:

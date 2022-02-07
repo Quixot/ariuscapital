@@ -90,15 +90,36 @@ header Start-->
                 <!-- navbar top Right-->
                 <div class="d-flex align-items-center">
                     <!-- Top Account -->
+                    {% if user.is_authenticated %}
                     <div class="dropdown mx-3">
                         <a class="dropdown-toggle" href="#" role="button" id="dropdownAccount" data-bs-toggle="dropdown"
-                           aria-haspopup="true" aria-expanded="false"><i class="ti-user me-2"></i>Аккаунт </a>
+                           aria-haspopup="true" aria-expanded="false">
+                            <i class="ti-user me-2"></i>&nbsp;{{user.username}}
+                        </a>
                         <div class="dropdown-menu mt-2 shadow" aria-labelledby="dropdownAccount">
-                            <a class="dropdown-item" href="sign-in.html">Войти</a>
-                            <a class="dropdown-item" href="{% url 'register' %}">Зарегистрироваться</a>
-                            <a class="dropdown-item" href="#">Настройки</a>
+                            <a class="dropdown-item" href="#">Редактировать профиль</a>
+                            <form action="{% url 'logout'%}" method="POST">{% csrf_token %}
+                                <a href=""><input type="submit" value="Выйти" class="dropdown-item" style="margin-bottom: 0;"></a>
+
+                            </form>
                         </div>
                     </div>
+
+                    {% else %}
+
+                    <div class="dropdown mx-3">
+                        <a class="dropdown-toggle" href="#" role="button" id="dropdownAccount" data-bs-toggle="dropdown"
+                           aria-haspopup="true" aria-expanded="false">
+                            <i class="ti-user me-2"></i>&nbsp;Аккаунт
+                        </a>
+                        <div class="dropdown-menu mt-2 shadow" aria-labelledby="dropdownAccount">
+                            <a class="dropdown-item" href="{% url 'login' %}">Войти</a>
+                            <a class="dropdown-item" href="{% url 'register' %}">Зарегистрироваться</a>
+                        </div>
+                    </div>
+
+                    {% endif %}
+
                     <!-- top link -->
                     <ul class="nav">
                         <!--              <li class="nav-item">-->
@@ -134,11 +155,19 @@ header Start-->
                 <img class="navbar-brand-item" src="{% static 'images/logo_arius.svg' %}" alt="Logo">
             </a>
             <!-- Menu opener button -->
+
+
+            <a class="navbar-toggler ms-8" href="{% url 'login' %}">
+                <span class="ti-user"></span>
+            </a>
+
+
             <button class="navbar-toggler ms-auto" type="button" data-bs-toggle="collapse"
                     data-bs-target="#navbarCollapse" aria-controls="navbarCollapse" aria-expanded="false"
                     aria-label="Toggle navigation">
                 <span class="navbar-toggler-icon"></span>
             </button>
+
             <!-- Main Menu Start -->
             <div class="collapse navbar-collapse" id="navbarCollapse">
                 <ul class="navbar-nav navbar-nav-scroll navbar-nav-scroll ms-auto">
@@ -296,7 +325,6 @@ footer  -->
 <script src="{% static 'assets/vendor/tiny-slider/tiny-slider.js' %}"></script>
 <script src="{% static 'assets/vendor/purecounterjs/dist/purecounter_vanilla.js' %}"></script>
 <script src="{% static 'assets/vendor/sticky-js/sticky.min.js' %}"></script>
-
 
 
 <!--Template Functions-->
