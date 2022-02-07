@@ -7,6 +7,7 @@ class ProjectAdmin(admin.ModelAdmin):
         'id', 'title', 'deal_sence_short', 'deal_why_short', 'image_prev', 'price', 'investment_term', 'income', 'address',
         'access', 'type', 'temp_persend')
     # list_filter = ('status',)
+    list_display_links = ('id', 'title', 'image_prev')
     search_fields = ('title', 'deal_sence', 'deal_why')
     list_editable = ('price', 'income', 'investment_term', 'access', 'type', 'temp_persend')
 
@@ -23,6 +24,8 @@ class ProjectAdmin(admin.ModelAdmin):
 admin.site.register(Project, ProjectAdmin)
 
 admin.site.site_header = "Arius Capital"
+admin.site.site_url = None
+# admin.site.index_template = 'main/base.html'
 
 admin.site.register(Project_type)
 admin.site.register(Project_access)
