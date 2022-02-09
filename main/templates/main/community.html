@@ -4,62 +4,263 @@
 
 {% block content %}
 
-<script src="https://cdn.jsdelivr.net/npm/chart.js"></script>
-
 <div class="container">
     <div class="d-block p-4 p-sm-5 h-bg-gray-round">
         <center>
-            <h1>{{title}}</h1>
+            <h1>Сообщество</h1>
         </center>
     </div>
+</div>
 
 
-    <section class="py-4">
-        <div class="row">
-            <div class="col">
-                <div>
-                    <canvas id="myChart"></canvas>
+<!-- =======================
+	global aim -->
+<section class="p-4 mb-5">
+    <div class="container">
+        <div class="row g-0 p-6 my-round " style="background-color:#c7dd00; position:relative">
+            <!--why us left-->
+            <div class="col-lg-7 d-none d-lg-block">
+                <h1>Глобальная цель компании Arius Capital</h1>
+                <p class="lead text-dark">Объединение единомышленников в одно большое сообщество, основанное на
+                    принципах взаимоуважения, порядочности и честности. Помимо общечеловеческих ценностей, сообщество
+                    объединено идеей приумножения своего личного капитала!</p>
+            </div>
+            <!--why us right-->
+            <div class="col-lg-5 col-md-12  px-5 py-5 p-lg-5e">
+
+                <img src="{% static 'images/globe.png' %}" alt="" style="position:absolute; right:0px; bottom:-40px"
+                     width="500">
+
+
+            </div>
+        </div>
+    </div>
+</section>
+<!-- global aim
+=======================  -->
+
+
+<!-- =======================
+40000 usd  -->
+<section>
+    <div class="container">
+        <div class="row justify-content-between align-items-center">
+            <div class="col-12">
+                <h1>Чтобы стать самостоятельным инвестором на рынке недвижимости необходимо от 40 000 usd</h1>
+            </div>
+            <div class="col-md-6">
+                <p class="lead text-dark">Для того, чтобы стать игроком на рынке недвижимости (купить имущественные
+                    права хотя бы на одну 1-комнатную квартиру на этапе строительства) нужно около 40 000$ (для столицы
+                    это минимум, с которого начинаются достойные объекты).</p>
+            </div>
+            <div class="col-md-6 ">
+                <div class="my-round p-5" style="background-color:#f9ffc7">
+                    <p class="lead text-dark">А для того, чтобы стать серьезным игроком, нужно от 100 000$. Согласитесь,
+                        что
+                        не все на данный момент могут себе это позволить.</p>
                 </div>
             </div>
         </div>
-    </section>
+    </div>
+</section>
+<!-- =======================
+Как это работает  -->
 
 
-</div>
+<!-- =======================
+коллективные инвестиции  -->
+<section>
+    <div class="container">
+        <div class="row justify-content-between align-items-center">
+            <div class="col-6">
+                <h1>Благодаря платформе коллективных инвестиций, мы сможем объединить наши финансовые возможности!</h1>
+                <p class="lead text-dark">И используя компетенции и опыт компании Arius Capital достичь серьезных
+                    финансовых результатов!</p>
+                <p class="lead text-dark">Когда на платформе будут сотни и тысячи инвесторов, мы сможем самостоятельно
+                    выкупать целые объекты на супер привлекательных условиях и гарантировать инвесторам высокую
+                    доходность от их инвестиций!</p>
+            </div>
+            <div class="col-md-6">
+                <img src="{% static 'images/group-of-young-peopl.jpg' %}" alt="" class="img-fluid my-round">
+            </div>
+        </div>
+    </div>
+</section>
+<!-- =======================
+коллективные инвестиции  -->
 
-<script>
-  const labels = [
-    'January',
-    'February',
-    'March',
-    'April',
-    'May',
-    'June',
-  ];
 
-  const data = {
-    labels: labels,
-    datasets: [{
-      label: 'My First dataset',
-      backgroundColor: 'rgb(255, 99, 132)',
-      borderColor: 'rgb(255, 99, 132)',
-      data: [0, 10, 5, 2, 20, 30, 45],
-    }]
-  };
+<!-- =======================
+Правила сообщества  -->
+<section class="bg-dark">
+    <div class="container ">
+        <div class="row">
+            <div class="col-md-12 mx-auto">
+                <h2 class="h1 text-white">Правила сообщества</h2>
+                <p class="lead text-white">Любой человек, совершивший инвестицию в недвижимость, с помощью он-лайн
+                    платформы, автоматически становится участником сообщества Arius Capital.</p>
+            </div>
+        </div>
+        <div class="row">
+            <div class="col-md-3">
+                <div class="feature-box h-100 px-4 py-5">
+<!--                    <div class="feature-box-icon"><img class="w-25"-->
+<!--                                                       src="{% static 'assets/images/icons/focus.svg' %}" alt="">-->
+<!--                    </div>-->
+                    <h3 class="feature-box-title text-green">Начинающий<br>инвестор</h3>
+                    <ul class="list-group list-group-borderless text">
+                        <li class="list-group-item text-white d-flex"><i class="fa fa-check mt-1 text-green"></i>Размер инвестиций<br>100 - 5 000$
+                        </li>
+                        <li class="list-group-item text-white d-flex"><i class="fa fa-check mt-1 text-green"></i>Новостная рассылка компании
+                        </li>
+                        <li class="list-group-item text-white d-flex"><i class="fa fa-check mt-1 text-green"></i>Участие в мероприятиях сообщества
+                        </li>
+                    </ul>
+                </div>
+            </div>
+            <div class="col-md-3">
+                <div class="feature-box h-100 px-4 py-5">
+<!--                    <div class="feature-box-icon"><img class="w-25" src="{% static 'assets/images/icons/idea-1.svg' %}"-->
+<!--                                                       alt=""></div>-->
+                    <h3 class="feature-box-title text-green">Уверенный<br>инвестор</h3>
+                    <ul class="list-group list-group-borderless text">
+                        <li class="list-group-item text-white d-flex"><i class="fa fa-check mt-1 text-green"></i>Размер инвестиций<br>5 000 - 10 000$
+                        </li>
+                        <li class="list-group-item text-white d-flex"><i class="fa fa-check mt-1 text-green"></i>Новостная рассылка компании
+                        </li>
+                        <li class="list-group-item text-white d-flex"><i class="fa fa-check mt-1 text-green"></i>Участие в мероприятиях сообщества
+                        </li>
+                        <li class="list-group-item text-white d-flex"><i class="fa fa-check mt-1 text-green"></i>Участие в закрытом клубе инвесторов
+                        </li>
+                    </ul>
+                </div>
+            </div>
+            <div class="col-md-3">
+                <div class="feature-box h-100 px-4 py-5">
+<!--                    <div class="feature-box-icon"><img class="w-25"-->
+<!--                                                       src="{% static 'assets/images/icons/editor.svg' %}" alt="">-->
+<!--                    </div>-->
+                    <h3 class="feature-box-title text-green">Серьезный<br>инвестор</h3>
+                    <ul class="list-group list-group-borderless text">
+                        <li class="list-group-item text-white d-flex"><i class="fa fa-check mt-1 text-green"></i>Размер инвестиций<br>5 000 - 10 000$
+                        </li>
+                        <li class="list-group-item text-white d-flex"><i class="fa fa-check mt-1 text-green"></i>Новостная рассылка компании
+                        </li>
+                        <li class="list-group-item text-white d-flex"><i class="fa fa-check mt-1 text-green"></i>Участие в мероприятиях сообщества
+                        </li>
+                        <li class="list-group-item text-white d-flex"><i class="fa fa-check mt-1 text-green"></i>Участие в закрытом клубе инвесторов
+                        </li>
+                        <li class="list-group-item text-white d-flex"><i class="fa fa-check mt-1 text-green"></i>Приоритетный доступ к уникальным сделкам
+                        </li>
+                    </ul>
+                </div>
+            </div>
+            <div class="col-md-3">
+                <div class="feature-box h-100 px-4 py-5">
+<!--                    <div class="feature-box-icon"><img class="w-25"-->
+<!--                                                       src="{% static 'assets/images/icons/envelope.svg' %}" alt="">-->
+<!--                    </div>-->
+                    <h3 class="feature-box-title text-green">Premium<br>инвестор</h3>
+                    <ul class="list-group list-group-borderless text">
+                        <li class="list-group-item text-white d-flex"><i class="fa fa-check mt-1 text-green"></i>Размер инвестиций<br>более 100 000$
+                        </li>
+                        <li class="list-group-item text-white d-flex"><i class="fa fa-check mt-1 text-green"></i>Информация доступна только для individual инветсоров
+                        </li>
+                        <li class="list-group-item text-white d-flex"><img src="{% static 'images/Gold_Coin_DollarH032.png' %}" alt="" width="200">
+                        </li>
+                    </ul>
+                </div>
+            </div>
+        </div>
+    </div>
+</section>
+<!-- =======================
+Правила сообщества  -->
 
-  const config = {
-    type: 'line',
-    data: data,
-    options: {}
-  };
-</script>
 
-<script>
-  const myChart = new Chart(
-    document.getElementById('myChart'),
-    config
-  );
-</script>
+
+<!-- =======================
+	Сейчас в сообществе -->
+<section class="p-5 mb-5">
+    <div class="container">
+        <div class="row g-0 p-6 my-round " style="background-color:#c7dd00; position:relative">
+
+            <div class="col-lg-12 d-none d-lg-block">
+                <h1 class="text-center">Сейчас в сообществе  <span class="badge bg-dark">124</span>  участника (ов)</h1>
+
+            </div>
+
+        </div>
+    </div>
+</section>
+<!-- Сейчас в сообществе
+=======================  -->
+
+
+
+<!-- =======================
+айди своих единомышленников  -->
+<section>
+    <div class="container">
+        <div class="row justify-content-between align-items-center">
+            <div class="col-6">
+                <h1>Найди своих единомышленников в сообществе и начни зарабатывать свой капитал с нами!</h1>
+                <button class="btn btn-lg btn-grad">Присоединяйся к сообществу</button>
+            </div>
+            <div class="col-md-6">
+                <img src="{% static 'images/money.png' %}" alt="" class="img-fluid my-round">
+            </div>
+        </div>
+    </div>
+</section>
+<!-- =======================
+айди своих единомышленников  -->
+
+
+
+
+<!-- =======================
+	contact us -->
+<section class="p-4 mb-5">
+    <div class="container">
+        <div class="row g-0 my-round overflow-hidden ">
+            <!--why us left-->
+            <div class="col-lg-5 d-none d-lg-block">
+                <h1 class="display-4">Связаться с нами</h1>
+            </div>
+            <!--why us right-->
+            <div class="col-lg-7 col-md-12  px-5 py-5 p-lg-5e h-bg-gray-round">
+
+                <div class="row">
+                    <div class="col">
+                        <h2><a class="text-dark" href="mailto:info@ariuscapital.co">info@ariuscapital.co</a></h2>
+                    </div>
+                    <div class="col">
+                        <ul class="social-icons  ">
+                            <li class="social-icons-item  mb-0"><a class="social-icons-link" href="#"><img
+                                    src="{% static 'images/WHATSAPP_2.svg' %}" alt=""></a></li>
+                            <li class="social-icons-item  mb-0"><a class="social-icons-link" href="#"><img
+                                    src="{% static 'images/96c7aa675366e035c9bf.svg' %}" alt=""></a></li>
+                            <li class="social-icons-item  mb-0"><a class="social-icons-link" href="#"><img
+                                    src="{% static 'images/8b1d7fc0db2024468741.svg' %}" alt=""></a></li>
+                        </ul>
+                    </div>
+                </div>
+
+                <div class="row">
+                    <div class="col mt-6">
+                        <p class="lead">г.Киев, ул.Борисоглебская 15 б</p>
+                        <p class="lead">Работаем с инвесторами со всей Украины</p>
+                    </div>
+                </div>
+
+
+            </div>
+        </div>
+    </div>
+</section>
+<!-- contact us
+=======================  -->
 
 
 {% endblock content %}

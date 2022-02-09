@@ -1,0 +1,83 @@
+{% extends 'main/base.html' %}
+{% load static %}
+
+
+{% block content %}
+
+<script src="https://cdn.jsdelivr.net/npm/chart.js"></script>
+
+<div class="container">
+    <div class="d-block p-4 p-sm-5 h-bg-gray-round">
+        <center>
+            <h1>{{title}}</h1>
+        </center>
+    </div>
+
+
+    <section class="py-4">
+        <div class="row">
+            <div class="col">
+                <p><strong>Договор публичной оферты</strong></p>
+
+            </div>
+        </div>
+    </section>
+
+
+    <section class="py-4">
+        <div class="row">
+            <div class="col">
+                <div>
+                    <canvas id="myChart"></canvas>
+                </div>
+            </div>
+        </div>
+    </section>
+
+</div>
+
+<script>
+const DATA_COUNT = 5;
+const NUMBER_CFG = {count: DATA_COUNT, min: 0, max: 16};
+
+  const labels = [
+    'Банковский депозит',
+    'Банковские металлы',
+    'Фондовый рынок',
+    'Криптовалюта',
+    'Недвижимость',
+  ];
+
+  const data = {
+    labels: labels,
+    datasets: [{
+      label: 'Тестовая диаграмма, возможно пригодится в кабинете пользователя',
+      backgroundColor: [
+        'rgb(245, 255, 204)',
+        'rgb(245, 255, 204)',
+        'rgb(245, 255, 204)',
+        'rgb(245, 255, 204)',
+        'rgb(187, 231, 67)'
+      ],
+      borderColor: 'rgb(255, 255, 255)',
+      data: [3, 3, 9, 11, 15],
+    }]
+  };
+
+  const config = {
+    type: 'bar',
+    data: data,
+    options: {}
+  };
+</script>
+
+<script>
+  const myChart = new Chart(
+    document.getElementById('myChart'),
+    config
+  );
+</script>
+
+
+
+{% endblock content %}

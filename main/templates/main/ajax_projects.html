@@ -1,0 +1,5 @@
+<select class="form-select">
+    {% for el in data %}
+    <option value="{{ el.id }}">{{ el.title }}</option>
+    {% endfor %}
+</select>

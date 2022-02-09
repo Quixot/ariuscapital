@@ -1,61 +1,78 @@
-{% extends 'base.html'%}
+{% extends 'main/base-min.html'%}
 {% load static %}
-
 
 
 {% block content%}
 
-<div class="row">
-    <div class="col-md-3"></div>
-    <div class="col-md-6">
-
+<section class="p-0 d-flex align-items-center">
+    <div class="container-fluid">
         <div class="row">
-            <div class="col-md-2">
-
-
+            <!-- left -->
+            <div class="col-12 col-md-5 col-lg-4 d-md-flex align-items-center bg-grad vh-sm-100">
+                <div class="w-100 p-3 p-lg-5 all-text-white">
+                    <div class="justify-content-center align-self-center">
+                        <!-- Logo -->
+                        <a href="{% url 'home' %}">
+                            <img class="logo-auth mb-4" src="{% static 'images/logo_arius.svg' %}" alt="Logo">
+                        </a>
+                    </div>
+                    <h3 class="fw-light">Восстановление пароля</h3>
+<!--                    <ul class="list-group list-group-borderless mt-4">-->
+<!--                        <li class="list-group-item text-white"><i class="fa fa-check"></i>Зарегистрируйся-->
+<!--                        </li>-->
+<!--                        <li class="list-group-item text-white"><i class="fa fa-check"></i>Следуй инструкциям-->
+<!--                        </li>-->
+<!--                        <li class="list-group-item text-white"><i class="fa fa-check"></i>Стань инвестором и зарабатывай-->
+<!--                        </li>-->
+<!--                    </ul>-->
+                </div>
             </div>
-            <div class="col-md-8">
-                    <div class="card mt-5">
-                            <img src="https://mta-instagram-clone.herokuapp.com/static/img/instagram-wordmark.svg" class="card-img-top" alt="...">
-                            <div class="card-body">
-                              <h5 class="card-title text-muted">Provide your email to recieve reset instructions</h5>
+            <!-- Right -->
+            <div class="col-12 col-md-7 col-xl-8 mx-auto my-5">
+                <div class="row h-100">
+                    <div class="col-12 col-md-10 col-lg-5 text-start mx-auto d-flex align-items-center">
+                        <div class="w-100">
 
-                            {% include 'partials/_flash_messages.html'%}
 
-                            <form action="{% url 'request-reset-email' %}" method="post">
+                            <div class="col-md-12">
 
-                                {% csrf_token %}
+                                <div class="row">
 
-                        <div class="form-group">
-                            <input class="form-control form-control-sm" type="email" name="email" value="{{data.email}}" placeholder="Email">
-                        </div>
-                        <input type="submit" value="Submit" class="btn btn-sm btn-block btn-primary"/>
-                                    </form>
+                                    <div class="col-md-12">
+                                        <div class=" mt-5">
+
+                                            <div class="">
+                                                <h5 class="card-title text-muted">Введите свой email, чтобы получить инструкции по смене пароля</h5>
+
+                                                {% include 'user/_flash_messages.html' %}
+
+                                                <form action="{% url 'request-reset-email' %}" method="post">
+
+                                                    {% csrf_token %}
+
+                                                    <div class="form-group">
+                                                        <input class="form-control" type="email"
+                                                               name="email" value="{{data.email}}" placeholder="Email">
+                                                    </div>
+                                                    <input type="submit" value="Submit"
+                                                           class="btn btn-dark"/>
+                                                </form>
+
+                                            </div>
+                                        </div>
+
+
 
                                     </div>
                                 </div>
-
-
-<div class="card mt-4">
-    <div class="card-body">
-        <p>
-            Already have an account?<a href="{%url 'login'%}">Login</a>
-             Dont have an account?<a href="{%url 'register'%}">Login</a>
-        </p>
-    </div>
-</div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
             </div>
-            <div class="col-md-2"></div>
         </div>
-
-
-
-
-
-
     </div>
-    <div class="col-md-3"></div>
-</div>
+</section>
 
 
 {% endblock %}

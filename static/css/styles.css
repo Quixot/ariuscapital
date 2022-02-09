@@ -20,6 +20,24 @@
 .my-round {
     border-radius: 6px;
 }
+.no-border {
+    border: none;
+}
+.green-block {
+    background-color: #c7dd00;
+    padding: 30px;
+}
+.how-it-works {
+    display: flex;
+    align-items: center;
+}
+.bg-index-block-capital {
+    background:url(/static/images/aerial-panoramic-vie.jpg) no-repeat; background-size:cover;
+}
+
+.text-green {
+    color: #c7dd00;
+}
 
 /* BUTTONS */
 .btn-grad {

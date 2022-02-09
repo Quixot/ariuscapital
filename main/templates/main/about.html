@@ -4,69 +4,111 @@
 
 {% block content %}
 
-<script src="https://cdn.jsdelivr.net/npm/chart.js"></script>
-
 <div class="container">
     <div class="d-block p-4 p-sm-5 h-bg-gray-round">
         <center>
             <h1>{{title}}</h1>
         </center>
     </div>
+</div>
 
+<!-- =======================
+	about -->
+<section class="p-4 mb-2">
+    <div class="container">
+        <div class="row g-0 my-round overflow-hidden">
+            <!--why us left-->
+            <div class="col-lg-6 d-none d-lg-block">
+                <h2>Компания Arius Capital основана профессиональными участниками рынка недвижимости, обладающих
+                    уникальным, богатым опытом.</h2>
+                <p class="lead">За последние 10 лет работы в этой сфере, мы участвовали в большом количестве сделок и
+                    имеем хорошее понимание рынка, его тенденций и возможностей.</p>
+                <p class="lead">Также обладаем налаженными деловыми связями. Лично знаем многих владельцев и
+                    руководителей строительных, девелоперских компаний, компаний по управлению активами.</p>
+            </div>
+            <!--why us right-->
+            <div class="col-lg-6 col-md-12  px-4 py-5 p-lg-5e " style="background-color:#c7dd00">
+                <div class="my-auto">
+                    <div class="title text-center">
 
-    <section class="py-4">
-        <div class="row">
-            <div class="col">
-                <div>
-                    <canvas id="myChart"></canvas>
+                        <img src="{% static 'images/logo_arius_top.svg' %}" alt="Arius Capital" class="img-fluid"
+                             width="300">
+
+                    </div>
                 </div>
             </div>
         </div>
-    </section>
+    </div>
+</section>
+<!-- about
+=======================  -->
 
 
-</div>
+<!-- =======================
+	invest! -->
+<section class="p-4 mb-2">
+    <div class="container">
+        <div class="row g-0 my-round overflow-hidden h-bg-gray-round">
+            <!--why us left-->
+            <div class="col-lg-6 col-md-12  px-4 py-5 p-lg-5e">
+                <h2>Инвестируя свои средства с помощью нашей он-лайн платформы, вы сможете гарантированно их
+                    приумножить!</h2>
+            </div>
+            <!--why us right-->
+            <div class="col-lg-6 col-md-12  px-4 py-5 p-lg-5e ">
+                <p class="lead">Работая с инвестициями, мы прекрасно понимаем, что вы доверяете нам свои средства и мы
+                    готовы отвечать за результат. Поэтому мы работаем только с проверенными партнерами, обладающими
+                    положительной деловой репутацией и только в тех проектах, где видим хорошую прибыль.</p>
+            </div>
+        </div>
+    </div>
+</section>
+<!-- invest!
+=======================  -->
 
-<script>
-const DATA_COUNT = 5;
-const NUMBER_CFG = {count: DATA_COUNT, min: 0, max: 16};
 
-  const labels = [
-    'Банковский депозит',
-    'Банковские металлы',
-    'Фондовый рынок',
-    'Криптовалюта',
-    'Недвижимость',
-  ];
+<!-- =======================
+	contact us -->
+<section class="p-4 mb-5">
+    <div class="container">
+        <div class="row g-0 my-round overflow-hidden ">
+            <!--why us left-->
+            <div class="col-lg-5 d-none d-lg-block">
+                <h1 class="display-4">Связаться с нами</h1>
+            </div>
+            <!--why us right-->
+            <div class="col-lg-7 col-md-12  px-5 py-5 p-lg-5e h-bg-gray-round">
 
-  const data = {
-    labels: labels,
-    datasets: [{
-      label: 'My First dataset',
-      backgroundColor: [
-        'rgb(245, 255, 204)',
-        'rgb(245, 255, 204)',
-        'rgb(245, 255, 204)',
-        'rgb(245, 255, 204)',
-        'rgb(187, 231, 67)'
-      ],
-      borderColor: 'rgb(255, 255, 255)',
-      data: [3, 3, 9, 11, 15],
-    }]
-  };
+                <div class="row">
+                    <div class="col">
+                        <h2><a class="text-dark" href="mailto:info@ariuscapital.co">info@ariuscapital.co</a></h2>
+                    </div>
+                    <div class="col">
+                        <ul class="social-icons  ">
+                            <li class="social-icons-item  mb-0"><a class="social-icons-link" href="#"><img
+                                    src="{% static 'images/WHATSAPP_2.svg' %}" alt=""></a></li>
+                            <li class="social-icons-item  mb-0"><a class="social-icons-link" href="#"><img
+                                    src="{% static 'images/96c7aa675366e035c9bf.svg' %}" alt=""></a></li>
+                            <li class="social-icons-item  mb-0"><a class="social-icons-link" href="#"><img
+                                    src="{% static 'images/8b1d7fc0db2024468741.svg' %}" alt=""></a></li>
+                        </ul>
+                    </div>
+                </div>
 
-  const config = {
-    type: 'bar',
-    data: data,
-    options: {}
-  };
-</script>
+                <div class="row">
+                    <div class="col mt-6">
+                        <p class="lead">г.Киев, ул.Борисоглебская 15 б</p>
+                        <p class="lead">Работаем с инвесторами со всей Украины</p>
+                    </div>
+                </div>
 
-<script>
-  const myChart = new Chart(
-    document.getElementById('myChart'),
-    config
-  );
-</script>
+
+            </div>
+        </div>
+    </div>
+</section>
+<!-- contact us
+=======================  -->
+
 
 {% endblock content %}

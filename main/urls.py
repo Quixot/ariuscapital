@@ -8,4 +8,7 @@ urlpatterns = [
     path('community', views.community, name='community'),
     path('contacts', views.contacts, name='contacts'),
     path('search/', views.search, name='search'),
+    path('privacy-policy/', views.privacy_policy, name='privacy-policy'),
+    path('agreement', views.agreement, name='agreement'),
+    path('ajax_projects', views.ajax_projects, name='ajax_projects'),
 ]

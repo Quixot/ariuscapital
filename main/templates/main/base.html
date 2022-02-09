@@ -1,4 +1,5 @@
 {% load static %}
+
 <!doctype html>
 <html lang="en">
 <head>
@@ -27,6 +28,7 @@
     <!-- Theme CSS -->
     <link rel="stylesheet" type="text/css" href="{% static 'assets/css/style.css' %}"/>
     <link rel="stylesheet" type="text/css" href="{% static 'css/styles.css' %}">
+
 
 </head>
 
@@ -99,7 +101,8 @@ header Start-->
                         <div class="dropdown-menu mt-2 shadow" aria-labelledby="dropdownAccount">
                             <a class="dropdown-item" href="#">Редактировать профиль</a>
                             <form action="{% url 'logout'%}" method="POST">{% csrf_token %}
-                                <a href=""><input type="submit" value="Выйти" class="dropdown-item" style="margin-bottom: 0;"></a>
+                                <a href=""><input type="submit" value="Выйти" class="dropdown-item"
+                                                  style="margin-bottom: 0;"></a>
 
                             </form>
                         </div>
@@ -147,7 +150,7 @@ header Start-->
     <!-- Navbar top End-->
 
     <!-- Logo Nav Start -->
-    <nav class="navbar navbar-expand-lg">
+    <nav class="navbar navbar-expand-xl">
         <div class="container">
             <!-- Logo -->
             <a class="navbar-brand" href="{% url 'home' %}">
@@ -157,7 +160,7 @@ header Start-->
             <!-- Menu opener button -->
 
 
-            <a class="navbar-toggler ms-8" href="{% url 'login' %}">
+            <a class="navbar-toggler ms-auto" href="{% url 'login' %}">
                 <span class="ti-user"></span>
             </a>
 
@@ -206,14 +209,17 @@ header Start-->
             </div>
             <!-- Main Menu End -->
             <!-- Header Extras Start-->
-            <div class="navbar-nav">
+            <div class="navbar-nav ">
                 <!-- extra item Search-->
                 <div class="nav-item search border-0 ps-3 pe-0 px-lg-2" id="search">
                     <a class="nav-link" data-bs-toggle="collapse" href="#search-open"><i class="ti-search"> </i></a>
                 </div>
                 <!-- extra item Btn-->
-                <div class="nav-item border-0 d-none d-lg-inline-block align-self-center">
-                    <a href="#" class=" btn btn-sm btn-grad mb-0">Стань инвестором!</a>
+                <div class="nav-item border-0 d-none d-xl-inline-block d-xxl-inline-block align-self-center">
+
+                    <a href="#" class=" btn btn-sm btn-grad mb-0" data-bs-toggle="modal" data-bs-target="#exampleModal">Стань
+                        инвестором!</a>
+
                 </div>
             </div>
             <!-- Header Extras End-->
@@ -264,6 +270,11 @@ footer  -->
                             <li class="d-flex mb-3"><i class="me-3 display-8 ti-time"></i>
                                 <p>Пон - Пт: <strong>09:00 - 18:00</strong> <br>Суб, Воск: <strong>Закрыто</strong></p>
                             </li>
+
+                            <li class="d-flex mb-3"><a href="{% url 'privacy-policy' %}">Политика конфиденциальности</a>
+                            </li>
+                            <li class="d-flex mb-3"><a href="{% url 'agreement' %}">Договор публичной оферты</a></li>
+
                         </ul>
                     </div>
                 </div>
@@ -317,6 +328,10 @@ footer  -->
 <div><a href="#" class="back-top btn btn-grad"><i class="ti-angle-up"></i></a></div>
 
 <!-- Bootstrap JS -->
+<!--<script src="https://code.jquery.com/jquery-3.4.1.slim.min.js"-->
+<!--        integrity="sha384-J6qa4849blE2+poT4WnyKhv5vZF5SrPo0iEjwBvKU7imGFAV0wwj1yYfoRSJoZ+n"-->
+<!--        crossorigin="anonymous"></script>-->
+<script type="text/javascript" src="{% static 'js/jquery.min.js' %}"></script>
 <script src="{% static 'assets/vendor/bootstrap/dist/js/bootstrap.bundle.min.js' %}"></script>
 
 <!--Vendors-->
@@ -329,6 +344,129 @@ footer  -->
 
 <!--Template Functions-->
 <script src="{% static 'assets/js/functions.js' %}"></script>
+
+<script type="text/javascript">
+    $(document).ready(function() {
+        //УКАЖИТЕ ГОДОВОЙ %
+        var years = 15;
+
+
+        $(document).on('change input','[name="summInvest"],[name="month"]',function() {
+
+            var invest = parseInt($('[name="summInvest"]').val());
+            var month = parseInt($('[name="month"]:checked').val());
+            $('.t-range__value-txt').text(invest.toLocaleString())
+            var res = invest*years*month/1200;
+            var dohod = res+invest;
+            $('.res').text('+'+res.toLocaleString());
+            $('.dohod').text(dohod.toLocaleString()+' usd');
+            $('.percent').text('+'+(years*month/12)+'%');
+            console.log(res);
+            console.log(dohod);
+        })
+        setTimeout(function() {$('[name="summInvest"]').trigger('change') },1500);
+    })
+
+
+
+$(document).ready(function(){
+    $(".ajax_loader").hide();
+    $.ajax({
+       url:'/ajax_projects',
+       dataType:'json',
+       beforeSend:function(){
+            $(".ajax_loader").show();
+       },
+       success:function(res) {
+            console.log(res)
+            $("#projectlist").html(res.data)
+            $(".ajax_loader").hide();
+       }
+    });
+});
+
+
+</script>
+
+
+<!-- Modal -->
+<div class="modal fade" id="exampleModal" tabindex="-1" aria-labelledby="exampleModalLabel" aria-hidden="true">
+    <div class="modal-dialog modal-dialog-centered">
+        <div class="modal-content">
+            <div class="modal-header" style="background-color:#c7dd00;padding: 0rem 2.5rem">
+
+                <img src="{% static 'images/poplogo.svg' %}" alt="Arius Capital">
+
+                <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
+            </div>
+            <div class="modal-body">
+                <h2 class="h2">Подать заявку</h2>
+                <p class="text-dark">Заполни анкету инвестора и наш менеджер свяжется с тобой</p>
+
+                <div class="form mt-4">
+                    <div>
+                        <!-- имя -->
+                        {% if user.is_authenticated %}
+                        <span class="form-group">
+                            <input type="text" class="form-control" value="{{ user.username }}">
+                        </span>
+                        {% else %}
+                        <span class="form-group">
+                            <input type="text" class="form-control" placeholder="Имя">
+                        </span>
+                        {% endif %}
+                    </div>
+                    <div>
+                        <!-- email -->
+                        {% if user.is_authenticated %}
+                        <span class="form-group">
+                            <input type="text" class="form-control" value="{{ user.email }}">
+                        </span>
+                        {% else %}
+                        <span class="form-group">
+                            <input type="text" class="form-control" placeholder="Email">
+                        </span>
+                        {% endif %}
+                    </div>
+
+                    <div>
+                        {% if user.is_authenticated %}
+                        <span class="form-group">
+                            <input type="number" required class="form-control" value="{{ user.phone }}"
+                                   placeholder="Телефон">
+                        </span>
+                        {% else %}
+                        <span class="form-group">
+                            <input type="number" required class="form-control" placeholder="Телефон">
+                        </span>
+                        {% endif %}
+                    </div>
+
+                    <div class="form-group">
+                        <h3>Выбор проекта для инвестирования</h3>
+
+                        <div class="ajax_loader">loaing...</div>
+                        <div id="projectlist"></div>
+<!--                        ajax here-->
+
+                    </div>
+
+                    <div class="custom-control custom-checkbox me-sm-2 mb-4 d-flex">
+                        <input type="checkbox" class="form-check-input mb-0" id="exampleCheck1">
+                        <label class="form-check-label ms-2 text-dark" for="exampleCheck1">Я согласен с <a
+                                href="{% url 'privacy-policy' %}">политикой конфиденциальности</a></label>
+                    </div>
+
+                </div>
+
+            </div>
+            <div class="modal-footer">
+                <button type="button" class="btn btn-grad text-center" style="width: 100%;">Отправить заявку</button>
+            </div>
+        </div>
+    </div>
+</div>
+
 
 </body>
 </html>
