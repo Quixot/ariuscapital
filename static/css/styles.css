@@ -114,3 +114,9 @@ section {
 }
 /* Accordion */
 
+
+.fade {
+    opacity: 1
+    -webkit-transition: opacity 0.11s ease-out;
+    transition: opacity 0.11s ease-out;
+}

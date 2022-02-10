@@ -1,5 +1,6 @@
 import os
 from pathlib import Path
+from django.contrib import messages
 
 # Build paths inside the project like this: BASE_DIR / 'subdir'.
 BASE_DIR = Path(__file__).resolve().parent.parent
@@ -118,8 +119,9 @@ STATICFILES_DIRS = (
 MEDIA_ROOT = os.path.join(BASE_DIR, 'media')
 
 
-
+LOGIN_URL='login'
 LOGIN_REDIRECT_URL = 'home'
+LOGOUT_URL='logout'
 LOGOUT_REDIRECT_URL = 'home'
 
 # Default primary key field type
@@ -128,3 +130,12 @@ LOGOUT_REDIRECT_URL = 'home'
 DEFAULT_AUTO_FIELD = 'django.db.models.BigAutoField'
 
 
+EMAIL_HOST='smtp.gmail.com'
+EMAIL_HOST_USER='alexandr.volkoff@gmail.com'
+EMAIL_HOST_PASSWORD='wbmstfqplqiukiie'
+EMAIL_USE_TLS=True
+EMAIL_PORT=587
+
+MESSAGE_TAGS={
+    messages.ERROR:'danger'
+}

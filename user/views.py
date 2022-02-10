@@ -104,7 +104,7 @@ class RegistrationView(View):
 
         EmailThread(email_message).start()
         messages.add_message(request, messages.SUCCESS,
-                             'account created succesfully')
+                             'Ваш аккаунт создан успешно! Пожалуйста, проверьте свой email, чтобы активировать его')
 
         return redirect('login')
 
@@ -122,16 +122,16 @@ class LoginView(View):
         password = request.POST.get('password')
         if username == '':
             messages.add_message(request, messages.ERROR,
-                                 'Username is required')
+                                 'Введите имя!')
             context['has_error'] = True
         if password == '':
             messages.add_message(request, messages.ERROR,
-                                 'Password is required')
+                                 'Введите пароль!')
             context['has_error'] = True
         user = authenticate(request, username=username, password=password)
 
         if not user and not context['has_error']:
-            messages.add_message(request, messages.ERROR, 'Invalid login')
+            messages.add_message(request, messages.ERROR, 'Неправильное имя или пароль')
             context['has_error'] = True
 
         if context['has_error']:
@@ -151,7 +151,7 @@ class ActivateAccountView(View):
             user.is_active = True
             user.save()
             messages.add_message(request, messages.SUCCESS,
-                                 'account activated successfully')
+                                 'Аккаунт успешно активирован! Вы можете зайти в свой профиль')
             return redirect('login')
         return render(request, 'user/activate_failed.html', status=401)
 
@@ -176,14 +176,14 @@ class RequestResetEmailView(View):
         email = request.POST['email']
 
         if not validate_email(email):
-            messages.error(request, 'Please enter a valid email')
+            messages.error(request, 'Пожалуйста, введите адрес email')
             return render(request, 'user/request-reset-email.html')
 
         user = User.objects.filter(email=email)
 
         if user.exists():
             current_site = get_current_site(request)
-            email_subject = '[Reset your Password]'
+            email_subject = '[Сброс пароля]'
             message = render_to_string('user/reset-user-password.html',
                                        {
                                            'domain': current_site.domain,
@@ -202,7 +202,7 @@ class RequestResetEmailView(View):
             EmailThread(email_message).start()
 
         messages.success(
-            request, 'We have sent you an email with instructions on how to reset your password')
+            request, 'Мы выслали на Ваш email инструкции, как сбросить пароль')
         return render(request, 'user/request-reset-email.html')
 
 
@@ -220,12 +220,12 @@ class SetNewPasswordView(View):
 
             if not PasswordResetTokenGenerator().check_token(user, token):
                 messages.info(
-                    request, 'Password reset link, is invalid, please request a new one')
+                    request, 'Ссылка с запросом на сброс пароля не работает, пожалуйста, пройдите процедуру заново')
                 return render(request, 'user/request-reset-email.html')
 
         except DjangoUnicodeDecodeError as identifier:
             messages.success(
-                request, 'Invalid link')
+                request, 'Неверная ссылка')
             return render(request, 'user/request-reset-email.html')
 
         return render(request, 'user/set-new-password.html', context)
@@ -241,11 +241,11 @@ class SetNewPasswordView(View):
         password2 = request.POST.get('password2')
         if len(password) < 6:
             messages.add_message(request, messages.ERROR,
-                                 'passwords should be at least 6 characters long')
+                                 'Пароль должен быть не короче 6 символов!')
             context['has_error'] = True
         if password != password2:
             messages.add_message(request, messages.ERROR,
-                                 'passwords don`t match')
+                                 'пароль не совпадает')
             context['has_error'] = True
 
         if context['has_error'] == True:
@@ -259,12 +259,12 @@ class SetNewPasswordView(View):
             user.save()
 
             messages.success(
-                request, 'Password reset success, you can login with new password')
+                request, 'Новый пароль успешно установлен, зайдите в систему используя новый пароль')
 
             return redirect('login')
 
         except DjangoUnicodeDecodeError as identifier:
-            messages.error(request, 'Something went wrong')
+            messages.error(request, 'Что-то пошло не так')
             return render(request, 'user/set-new-password.html', context)
 
         return render(request, 'user/set-new-password.html', context)
