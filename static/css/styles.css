@@ -120,3 +120,18 @@ section {
     -webkit-transition: opacity 0.11s ease-out;
     transition: opacity 0.11s ease-out;
 }
+
+#calc .form-check-input {
+    margin-top: 0.3em;
+}
+#calc .form-check-input:checked {
+    background-color: #c7dd00;
+    border-color: #c7dd00;
+}
+#calc .form-check-input {
+    width: 1.5em;
+    height: 1.5em;
+}
+#calc .form-check-label {
+    padding-left:10px
+}

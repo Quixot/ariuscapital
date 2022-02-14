@@ -76,7 +76,7 @@ Main banner -->
                 <p class="lead">Arius Capital открывает уникальную возможность для заработка</p>
 
                 <div>
-                    <a class="btn btn-grad" href="#!">Рассчитать доход</a>
+                    <a class="btn btn-grad" href="#calc">Рассчитать доход</a>
 
                 </div>
             </div>
@@ -191,7 +191,7 @@ Main banner -->
             </div>
             <div style="col-12"><br>
                 <center>
-                    <button class="btn btn-lg btn-grad">СТАНЬ ИНВЕСТОРОМ</button>
+                    <a href="{% url 'register' %}" class="btn btn-lg btn-grad">СТАНЬ ИНВЕСТОРОМ</a>
                 </center>
             </div>
 
@@ -206,6 +206,10 @@ Main banner -->
     #tns1-iw {
     margin: 1px -30px 7px 1px;
 }
+
+
+
+
 
 
 
@@ -238,246 +242,181 @@ Main banner -->
                         {% for el in projects %}
 
                         <div class="col mb-4">
-                            <div class="card h-100">
-                                <a href="/projects/project/{{ el.id }}">
-                                    <img src="{{ el.image_path }}" alt="{{ el.title }}" class="card-img-top "
-                                         style="width: 100%; height: 250px; object-fit: cover; border-radius: 6px 6px 0 0;-o-object-fit: cover;
+                            <div class="card h-100 class="
+                            ">
+                            <a href="/projects/project/{{ el.id }}">
+                                <img src="{{ el.image_path }}" alt="{{ el.title }}" class="card-img-top"
+                                     style="width: 100%; height: 250px; object-fit: cover; border-radius: 6px 6px 0 0;-o-object-fit: cover;
   object-fit: cover;
   -o-object-position: center;
   object-position: center;">
-                                </a>
-                                <div class="card-body">
-                                    <h4 class="card-title"><a class="card-title-href"
-                                                              href="/projects/project/{{ el.id }}">
-                                        {{ el.title }}</a></h4>
-                                    <p class="card-text"><strong>Суть сделки:&nbsp;</strong>{{ el.deal_sence }}</p>
-                                    <p class="lead"><span class="badge bg-secondary">{{ el.type }}</span></p>
-                                </div>
+                            </a>
+                            <div class="card-body">
+                                <h4 class="card-title"><a class="card-title-href" href="/projects/project/{{ el.id }}">
+                                    {{ el.title }}</a></h4>
+                                <p class="lead"><span class="badge bg-secondary">{{ el.type }}</span></p>
+                                <p class="card-text"><strong>Суть сделки:&nbsp;</strong>{{ el.deal_sence }}</p>
+                            </div>
+                            <div class="card-footer">
+                                <table width="100%">
+                                    <tr>
+                                        <td class="text-start">
+                                        <span class="d-inline-block" tabindex="0" data-bs-toggle="popover"
+                                              data-bs-trigger="hover focus" data-bs-placement="top"
+                                              data-bs-content="Сумма инвестиции в проект">
+                                            <p>{{ el.price }} usd.</p>
+                                        </span>
+                                        </td>
+                                        <td class="text-start">
+                                        <span class="d-inline-block" tabindex="0" data-bs-toggle="popover"
+                                              data-bs-trigger="hover focus" data-bs-placement="top"
+                                              data-bs-content="Срок инвестиции">
+                                            <p>{{ el.investment_term }} мес.</p>
+                                        </span>
+                                        </td>
+                                        <td class="text-end">
+                                        <span class="d-inline-block" tabindex="0" data-bs-toggle="popover"
+                                              data-bs-trigger="hover focus" data-bs-placement="top"
+                                              data-bs-content="Процент доходности">
+                                            <p>{{ el.income }}%</p>
+                                        </span>
+                                        </td>
+                                    </tr>
+                                </table>
 
-                                <div class="card-footer">
+                                <div class="progress-dark progress-xs">
+                                    <!-- progress item -->
+                                    <div class="progress-item pb-4 pt-2">
+                                        <div class="progress">
 
-                                    <table width="100%">
-                                        <tr>
-                                            <td>
-                                                <span class="d-inline-block" tabindex="0" data-bs-toggle="popover"
-                                                      data-bs-trigger="hover focus" data-bs-placement="top"
-                                                      data-bs-content="Сумма инвестиции в проект">
-                                                    <p>{{ el.price }} usd.</p>
-                                                </span>
-                                            </td>
-                                            <td>
-                                                <span class="d-inline-block" tabindex="0" data-bs-toggle="popover"
-                                                      data-bs-trigger="hover focus" data-bs-placement="top"
-                                                      data-bs-content="Срок инвестиции">
-                                                    <p>{{ el.investment_term }} мес.</p>
-                                                </span>
-                                            </td>
-                                            <td>
-                                                <span class="d-inline-block" tabindex="0" data-bs-toggle="popover"
-                                                      data-bs-trigger="hover focus" data-bs-placement="top"
-                                                      data-bs-content="Процент доходности">
-                                                    <p>{{ el.income }}%</p>
-                                                </span>
-                                            </td>
-                                        </tr>
-                                    </table>
-
-
-                                    <div class="progress-dark progress-xs">
-                                        <!-- progress item -->
-                                        <div class="progress-item pb-4 pt-4">
-                                            <div class="progress">
-
-                                                <div class="progress-bar aos aos-init aos-animate"
-                                                     data-aos="slide-right"
-                                                     data-aos-delay="200" data-aos-duration="1000"
-                                                     data-aos-easing="ease-in-out"
-                                                     role="progressbar" aria-valuenow="85" aria-valuemin="0"
-                                                     aria-valuemax="100"
-                                                     style="width:{{el.temp_persend}}%; overflow:visible">
-                                                    <span class="progress-percent">{{el.temp_persend}}%</span>
-                                                </div>
+                                            <div class="progress-bar aos aos-init aos-animate" data-aos="slide-right"
+                                                 data-aos-delay="200" data-aos-duration="1000"
+                                                 data-aos-easing="ease-in-out"
+                                                 role="progressbar" aria-valuenow="85" aria-valuemin="0"
+                                                 aria-valuemax="100"
+                                                 style="width:{{el.temp_persend}}%; overflow:visible">
+                                                <span class="progress-percent">{{el.temp_persend}}%</span>
                                             </div>
                                         </div>
                                     </div>
-
-
-                                    <a class="btn btn-grad btn-project-invest "
-                                       href="/projects/project/{{ el.id }}"
-                                    >Инвестировать</a>
                                 </div>
+
+
+                                <a class="btn btn-grad btn-project-invest "
+                                   href="/projects/project/{{ el.id }}"
+                                >Инвестировать</a>
                             </div>
                         </div>
-
-                        {% endfor %}
-
-
                     </div>
+
+                    {% endfor %}
+
+
                 </div>
             </div>
-            <div class="col pt-5">
-                <center><a href="{% url 'projects' %}" class=" btn btn-sm btn-grad mb-0"><h3>Посмотреть все проекты</h3>
-                </a></center>
-            </div>
+        </div>
+        <div class="col pt-5">
+            <center><a href="{% url 'projects' %}" class=" btn btn-sm btn-grad mb-0"><h3>Посмотреть все проекты</h3>
+            </a></center>
         </div>
     </div>
+    </div>
+    <a name="calc"></a>
 </section>
 <!-- =======================
 blog -->
 
 
-<!-- =======================
-Калькулятор проекта -->
-<section class="py-4">
-    <div class="container">
-        <div class="row g-0 my-round" style="background-color:#f2f2f2; position:relative">
-            <div class="col-md-6 vh-md-50">
-
+<section id="calc">
+    <div class="container my-round" style="background-color:#f2f2f2; padding:50px; position:relative">
+        <div class="row">
+            <div class="col-6">
+                <div class="row pb-4">
+                    <div class="col-12">
+                        <div class="my-round" style="padding:30px;background-color:white">
+                            <h2 class="h1">Сумма вклада $<span class="sumlable">20000</span></h2>
+                            <input name="summInvest" type="range" min="100" max="100000" step="100" value="20000"
+                                   id="summInvest"
+                                   oninput="maxPrice.value=this.value" style="width:100%"/>
+                            <p class="h4">
+                                <span>$100</span>
+                                <span class="float-end">$100.000</span>
+                            </p>
+                        </div>
+                    </div>
+                </div>
                 <div class="row">
+                    <div class="col-6">
+                        <div class="my-round" style="background-color:white;padding:30px">
+                            <h3 class="h2">Срок вклада</h3>
 
-                <div class="card col-12 m-4 p-4 no-border my-round">
-                    <h2 class="h1">Сумма вклада</h2>
-                    <div class="range-slider" style='--min:0; --max:100; --value:0; --text-value:"75";'>
 
-                        <input name="summInvest" type="range" min="100" max="100000" step="100" value="20000"
-                               id="summInvest"
-                               oninput="maxPrice.value=this.value" style="width:100%"/>
-
-                        <p class="h4">
-                            <span>$100</span>
-                            <span class="float-end">$100.000</span>
-                        </p>
-                        <output></output>
+                            <div class="form-check">
+                                <input value="3 месяца" class="form-check-input" type="radio" name="month"
+                                       id="flexRadioDefault1" checked="checked">
+                                <label class="form-check-label lead text-dark" for="flexRadioDefault1">
+                                    3 месяца
+                                </label>
+                            </div>
+                            <div class="form-check">
+                                <input value="6 месяцев" class="form-check-input" type="radio" name="month"
+                                       id="flexRadioDefault2">
+                                <label class="form-check-label lead text-dark" for="flexRadioDefault2">
+                                    6 месяцев
+                                </label>
+                            </div>
+                            <div class="form-check pb-3">
+                                <input value="12 месяцев" class="form-check-input" type="radio" name="month"
+                                       id="flexRadioDefault3">
+                                <label class="form-check-label lead text-dark" for="flexRadioDefault3">
+                                    12 месяцев
+                                </label>
+                            </div>
+                        </div>
                     </div>
-                    <div>
-                        <input type="number" value="20000" min="100" max="100000" id="maxPrice"
-                               class="form-control" onkeyup="rangeInput.value=this.value"/>
+                    <div class="col-6">
+                        <div class="my-round green-block" style="padding:30px 10px ">
+                            <h3 class="h2 text-center">Доход</h3>
+                            <table cellpadding="3" width="100%">
+                                <tr>
+                                    <td width="40%">
+                                        <h4 class="text-center"
+                                            style="padding:7px;background-color:white;border-radius:10px">
+                                            <div class="percent" data-elem-type='text'>+3.75%</div>
+                                        </h4>
+                                    </td>
+                                    <td width="60%">
+                                        <h4 class="text-center"
+                                            style="padding:7px;background-color:white;border-radius:10px; width:100%">
+                                            <div class="res" data-elem-type='text'>+750</div>
+                                        </h4>
+                                    </td>
+                                </tr>
+                            </table>
+
+
+                            <h2 class="text-center pt-3">
+                                <div class="dohod" data-elem-type='text'>20,750usd</div>
+                            </h2>
+                        </div>
                     </div>
                 </div>
-                </div>
-<div class="row">
-                <div class="card col m-4 p-4 no-border my-round">
-                    <h2 class="h1">Срок вклада</h2>
-
-
-                    <div class="form-check">
-                        <input value="3 месяца" class="form-check-input" type="radio" name="month"
-                               id="flexRadioDefault1" checked="checked">
-                        <label class="form-check-label" for="flexRadioDefault1">
-                            3 месяца
-                        </label>
-                    </div>
-                    <div class="form-check">
-                        <input value="6 месяцев" class="form-check-input" type="radio" name="month"
-                               id="flexRadioDefault2">
-                        <label class="form-check-label" for="flexRadioDefault2">
-                            6 месяцев
-                        </label>
-                    </div>
-                    <div class="form-check">
-                        <input value="12 месяцев" class="form-check-input" type="radio" name="month"
-                               id="flexRadioDefault3">
-                        <label class="form-check-label" for="flexRadioDefault3">
-                            12 месяцев
-                        </label>
-                    </div>
-
-                </div>
-
-
-                <div class="card col m-4 p-4 no-border my-round">
-                    <h2 class="h1">Доход</h2>
-                    <div class="percent" data-elem-type='text'>+3.75%</div>
-                    <div class="res" data-elem-type='text'>+750</div>
-                    <div class="dohod" data-elem-type='text'>20,750usd</div>
-                </div>
-
-
-                    </div>
-
             </div>
-
-            <div class="col-md-4 p-md-5 p-4">
+            <div class="col-4">
                 <h1>Калькулятор инвестиций</h1>
-                <p class="lead">Здесь ты можешь рассчитать свой будущий доход или просто посмотреть, как может расти
-                    твой капитал. Обрати внимание, что каждый проект имеет свою доходность</p>
-
-                <div class="display-7 mt-4">
-                    <button class="btn btn-lg btn-grad">Стань инвестором</button>
-                </div>
+                <p class="lead text-dark">Здесь ты можешь рассчитать свой будущий доход или просто посмотреть, как может
+                    расти твой капитал. Обрати внимание, что каждый проект имеет свою доходность</p>
             </div>
+            <!--            <div class="col-2" style="background:url(/static/images/6901.png) no-repeat; background-size:cover;">-->
 
-            <div class="col-md-2 ">
-                <img src="{% static 'images/6901.png' %}" alt="" class="d-none d-xl-block d-lg-block"
-                 style="position:absolute; bottom:0px; right:-250px; width:570px; height:705px"/>
+            <!--            </div>-->
+            <div class="col-2">
+                <img src="{% static 'images/6901.png' %}"
+                     style="position:absolute; bottom:0px; right:-50px; width:350px">
             </div>
-
-
-
         </div>
     </div>
 </section>
-
-
-<!-- =======================
-Калькулятор проекта -->
-
-
-<!-- =======================
-Как это работает  -->
-<!--<section class="bg-dark">-->
-<!--    <div class="container ">-->
-<!--        <div class="row">-->
-<!--            <div class="col-md-8 mx-auto text-center ">-->
-<!--                <h2 class="h1 text-white">Как это работает</h2>-->
-<!--                <p class="lead">На сайте Arius Capital ты заполняешь анкету инвестора. Далее наш менеджер связывается с-->
-<!--                    тобой и, учитывая сроки проекта и доходность, помогает подобрать максимально выгодный для тебя-->
-<!--                    вариант инвестиций</p>-->
-<!--            </div>-->
-<!--        </div>-->
-<!--        <div class="row">-->
-<!--            <div class="col-md-3">-->
-<!--                <div class="feature-box h-100 text-center px-4 py-5">-->
-<!--                    <div class="feature-box-icon"><img class="w-25"-->
-<!--                                                       src="{% static 'assets/images/icons/focus.svg' %}" alt="">-->
-<!--                    </div>-->
-<!--                    <h3 class="feature-box-title text-white">01</h3>-->
-<!--                    <p class="lead">Кликни на кнопку «Стань инвестором» и заполни анкету инвестора</p>-->
-<!--                </div>-->
-<!--            </div>-->
-<!--            <div class="col-md-3">-->
-<!--                <div class="feature-box h-100 text-center px-4 py-5">-->
-<!--                    <div class="feature-box-icon"><img class="w-25" src="{% static 'assets/images/icons/idea-1.svg' %}"-->
-<!--                                                       alt=""></div>-->
-<!--                    <h3 class="feature-box-title text-white">02</h3>-->
-<!--                    <p class="lead">Наш менеджер свяжется с тобой-->
-<!--                        и поможет подобрать подходящий объект для инвестирования</p>-->
-<!--                </div>-->
-<!--            </div>-->
-<!--            <div class="col-md-3">-->
-<!--                <div class="feature-box h-100 text-center px-4 py-5">-->
-<!--                    <div class="feature-box-icon"><img class="w-25"-->
-<!--                                                       src="{% static 'assets/images/icons/editor.svg' %}" alt="">-->
-<!--                    </div>-->
-<!--                    <h3 class="feature-box-title text-white">03</h3>-->
-<!--                    <p class="lead">Внеси инвестиции через кассу банка или посредством интернет-банкинга (Приват24,-->
-<!--                        Монобанк и т.д.)</p>-->
-<!--                </div>-->
-<!--            </div>-->
-<!--            <div class="col-md-3">-->
-<!--                <div class="feature-box h-100 text-center px-4 py-5">-->
-<!--                    <div class="feature-box-icon"><img class="w-25"-->
-<!--                                                       src="{% static 'assets/images/icons/envelope.svg' %}" alt="">-->
-<!--                    </div>-->
-<!--                    <h3 class="feature-box-title text-white">04</h3>-->
-<!--                    <p class="lead">Получи на электронную почту письмо-подтверждение, что ты стал инвестором!</p>-->
-<!--                </div>-->
-<!--            </div>-->
-<!--        </div>-->
-<!--    </div>-->
-<!--</section>-->
-<!-- =======================
-Как это работает  -->
 
 
 <!-- =======================
@@ -503,7 +442,7 @@ blog -->
                             <text x="45%" y="50%" fill="#000000" dy=".3em" class="h1">1</text>
                         </svg>
                     </dt>
-                        <dd class="col-sm-9 how-it-works lead"><span class="align-middle">Кликни на кнопку «Стань инвестором» и заполни анкету инвестора</span>
+                    <dd class="col-sm-9 how-it-works lead"><span class="align-middle">Кликни на кнопку «Стань инвестором» и заполни анкету инвестора</span>
                     </dd>
                     <dt class="col-sm-3 how-it-works">
                         <svg class=" my-round float-start" width="100" height="100"
@@ -659,7 +598,6 @@ blog -->
 </section>
 
 
-
 <section class="py-2 mb-5">
     <div class="container">
         <div class="row d-block d-md-flex bg-index-block-capital p-6 p-sm-6 all-text-white my-round pattern-overlay-3">
@@ -668,7 +606,7 @@ blog -->
             </div>
             <div style="col-12"><br>
                 <center>
-                    <button class="btn btn-lg btn-grad">СТАНЬ ИНВЕСТОРОМ</button>
+                    <a href="{% url 'register' %}" class="btn btn-lg btn-grad">СТАНЬ ИНВЕСТОРОМ</a>
                 </center>
             </div>
 
@@ -677,26 +615,24 @@ blog -->
 </section>
 
 
-
-
 <!-- =======================
 	contact us -->
 <section class="p-4 mb-5">
     <div class="container">
         <div class="row g-0 my-round overflow-hidden ">
             <!--why us left-->
-            <div class="col-lg-5 d-none d-lg-block">
+            <div class="col-12 d-none d-lg-block">
                 <h1 class="display-4">Связаться с нами</h1>
             </div>
             <!--why us right-->
-            <div class="col-lg-7 col-md-12  px-5 py-5 p-lg-5e h-bg-gray-round">
+            <div class="col-lg-12  px-5 py-5 p-lg-5e h-bg-gray-round">
 
                 <div class="row">
                     <div class="col">
                         <h2><a class="text-dark" href="mailto:info@ariuscapital.co">info@ariuscapital.co</a></h2>
                     </div>
                     <div class="col">
-                        <ul class="social-icons  ">
+                        <ul class="social-icons  text-end">
                             <li class="social-icons-item  mb-0"><a class="social-icons-link" href="#"><img
                                     src="{% static 'images/WHATSAPP_2.svg' %}" alt=""></a></li>
                             <li class="social-icons-item  mb-0"><a class="social-icons-link" href="#"><img
@@ -721,10 +657,6 @@ blog -->
 </section>
 <!-- contact us
 =======================  -->
-
-
-
-
 
 
 {% endblock content %}

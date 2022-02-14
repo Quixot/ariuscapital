@@ -1,5 +1,5 @@
 from django.contrib import admin
-from .models import Project, Project_type, Project_access
+from .models import Project, Project_type, Project_access, Order
 
 
 class ProjectAdmin(admin.ModelAdmin):
@@ -29,3 +29,4 @@ admin.site.site_url = None
 
 admin.site.register(Project_type)
 admin.site.register(Project_access)
+admin.site.register(Order)

@@ -25,38 +25,27 @@
                         <div class="card-body">
                             <h4 class="card-title"><a class="card-title-href" href="/projects/project/{{ el.id }}">
                                 {{ el.title }}</a></h4>
-                            <p class="lead"><span class="badge bg-secondary">{{ el.type }}</span></p>
+                            <h5><span class="badge bg-dark fw-normal">{{ el.type }}</span></h5>
                             <p class="card-text"><strong>Суть сделки:&nbsp;</strong>{{ el.deal_sence }}</p>
                         </div>
                         <div class="card-footer">
-                            <table width="100%" style="text-align: center">
-<!--                                <tr>-->
-<!--                                    <td>-->
-<!--                                        <p>Сумма инвестиции</p>-->
-<!--                                    </td>-->
-<!--                                    <td>-->
-<!--                                        <p>Срок инвестиции</p>-->
-<!--                                    </td>-->
-<!--                                    <td>-->
-<!--                                        <p>Процент доходности</p>-->
-<!--                                    </td>-->
-<!--                                </tr>-->
+                            <table width="100%">
                                 <tr>
-                                    <td>
+                                    <td class="text-start">
                                         <span class="d-inline-block" tabindex="0" data-bs-toggle="popover"
                                               data-bs-trigger="hover focus" data-bs-placement="top"
                                               data-bs-content="Сумма инвестиции в проект">
                                             <p>{{ el.price }} usd.</p>
                                         </span>
                                     </td>
-                                    <td>
+                                    <td class="text-start">
                                         <span class="d-inline-block" tabindex="0" data-bs-toggle="popover"
                                               data-bs-trigger="hover focus" data-bs-placement="top"
                                               data-bs-content="Срок инвестиции">
                                             <p>{{ el.investment_term }} мес.</p>
                                         </span>
                                     </td>
-                                    <td>
+                                    <td class="text-end">
                                         <span class="d-inline-block" tabindex="0" data-bs-toggle="popover"
                                               data-bs-trigger="hover focus" data-bs-placement="top"
                                               data-bs-content="Процент доходности">

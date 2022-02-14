@@ -31,6 +31,7 @@ INSTALLED_APPS = [
     'main',
     'user',
     'projects',
+    'dashboard',
 ]
 
 MIDDLEWARE = [
@@ -118,9 +119,10 @@ STATICFILES_DIRS = (
 )
 MEDIA_ROOT = os.path.join(BASE_DIR, 'media')
 
+AUTH_USER_MODEL = 'user.User'
 
 LOGIN_URL='login'
-LOGIN_REDIRECT_URL = 'home'
+LOGIN_REDIRECT_URL = 'dashboard'
 LOGOUT_URL='logout'
 LOGOUT_REDIRECT_URL = 'home'
 

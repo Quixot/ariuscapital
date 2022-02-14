@@ -1,5 +1,6 @@
 from django.db import models
 from django.utils.safestring import mark_safe
+from user.models import User
 
 
 class Project_access(models.Model):
@@ -53,3 +54,13 @@ class Project(models.Model):
     class Meta:
         verbose_name = 'проекты'
         verbose_name_plural = 'проекты'
+
+
+class Order(models.Model):
+    project = models.ForeignKey(Project, on_delete=models.PROTECT)
+    user = models.ForeignKey(User, on_delete=models.PROTECT)
+    investment = models.IntegerField(verbose_name='Размер инвестиции')
+    created = models.DateTimeField(auto_now_add=True, auto_now=False)
+
+    def __str__(self):
+        return ('%s - %s' % self.user.username, self.project.title)

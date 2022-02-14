@@ -2,7 +2,7 @@ from django.shortcuts import render, redirect
 from django.views.generic import View
 from django.contrib import messages
 from validate_email import validate_email
-from django.contrib.auth.models import User
+#from django.contrib.auth.models import User
 from django.utils.http import urlsafe_base64_encode, urlsafe_base64_decode
 from django.contrib.sites.shortcuts import get_current_site
 from django.template.loader import render_to_string
@@ -15,6 +15,9 @@ from django.contrib.auth import authenticate, login, logout
 from django.contrib.auth.tokens import PasswordResetTokenGenerator
 
 import threading
+
+from django.contrib.auth import get_user_model
+User = get_user_model()
 
 
 class EmailThread(threading.Thread):
@@ -39,7 +42,7 @@ class RegistrationView(View):
         }
 
         email = request.POST.get('email')
-        username = request.POST.get('username')
+        username = request.POST.get('email')
         full_name = request.POST.get('name')
         password = request.POST.get('password')
         password2 = request.POST.get('password2')
@@ -77,7 +80,7 @@ class RegistrationView(View):
         if context['has_error']:
             return render(request, 'user/register.html', context, status=400)
 
-        user = User.objects.create_user(username=username, email=email)
+        user = User.objects.create_user(username=email, email=email)
         user.set_password(password)
         user.first_name = full_name
         user.last_name = full_name
@@ -137,7 +140,7 @@ class LoginView(View):
         if context['has_error']:
             return render(request, 'user/login.html', status=401, context=context)
         login(request, user)
-        return redirect('home')
+        return redirect('dashboard')
 
 
 class ActivateAccountView(View):
