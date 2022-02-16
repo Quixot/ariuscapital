@@ -63,4 +63,8 @@ class Order(models.Model):
     created = models.DateTimeField(auto_now_add=True, auto_now=False)
 
     def __str__(self):
-        return ('%s - %s' % self.user.username, self.project.title)
+        return ('%s - %s' % (self.user.email, self.project.title))
+
+    class Meta:
+        verbose_name = 'инвестиции'
+        verbose_name_plural = 'инвестиции'

@@ -88,6 +88,9 @@ section {
 .card-title-href {
     color: black;
 }
+.card {
+    border-radius: 6px
+}
 
 .progress-item .progress-percent {
     color: black;

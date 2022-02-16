@@ -43,7 +43,7 @@ Main banner -->
 
 <!-- =======================
 Платформа коллективных инвестиций  -->
-<section>
+<section class="pb-0 mb-0">
     <div class="container">
         <div class="row justify-content-between align-items-center">
             <!-- left -->
@@ -54,7 +54,7 @@ Main banner -->
                              data-aos-easing="ease-in-out" src="{% static 'images/__5.jpg' %}" alt="">
                     </div>
                     <div class="col-6 px-2 mb-3">
-                        <img class="rounded aos" data-aos="fade-right" data-aos-delay="200" data-aos-duration="1000"
+                        <img class="rounded aos" data-aos="fade-right" data-aos-delay="250" data-aos-duration="1000"
                              src="{% static 'images/handsome-programmer-.jpg' %}" alt="">
                     </div>
                     <div class="col-7 px-2 mb-3">
@@ -65,7 +65,7 @@ Main banner -->
                         </div>
                     </div>
                     <div class="col-5 align-self-start ps-2 mb-3">
-                        <img class="rounded aos" data-aos="fade-down" data-aos-delay="300" data-aos-duration="1500"
+                        <img class="rounded aos" data-aos="fade-down" data-aos-delay="350" data-aos-duration="1500"
                              src="{% static 'images/serious-pretty-woman.webp' %}" alt="">
                     </div>
                 </div>
@@ -89,74 +89,155 @@ Main banner -->
 
 <!-- =======================
 Преимущества инвестирования в недвижимость  -->
-<section>
+<section class="d-none d-md-block d-lg-block d-xl-block d-xxl-block">
     <div class="container">
         <div class="row justify-content-between align-items-center">
-            <!-- left -->
-            <div class="col-md-12 ">
-                <h2 class="h1">Преимущества инвестирования в недвижимость</h2>
-                <!--                <p class="lead">Arius Capital открывает уникальную возможность для заработка</p>-->
-            </div>
-            <!-- right -->
             <div class="col-md-12">
+                <h2 class="h1">Преимущества инвестирования в недвижимость</h2>
+            </div>
+        </div>
 
-                <img src="{% static 'images/graph_1.png' %}" alt="">
+        <div class="row d-flex align-items-end">
+            <div class="col position-relative">
+                <div style="background-color:#f9ffc7; height:40px" data-aos="zoom-in-up" data-aos-delay="100" class="my-round">
+                    <div class="position-absolute start-50 translate-middle" style="top:-70px"><h1>2%</h1></div>
 
+                </div>
+                <div class="position-absolute start-50 translate-middle" style="bottom:-90px"><p class="text-dark fw-bold" style="font-size:1.1rem;">Банковский&nbsp;депозит</p></div>
+            </div>
+
+            <div class="col position-relative mt-2">
+                <div style="background-color:#f9ffc7; height:60px" data-aos="zoom-in-up" data-aos-delay="200" class="my-round">
+                    <div class="position-absolute start-50 translate-middle" style="top:-50px"><h1>3%</h1></div>
+
+                </div>
+                <div class="position-absolute start-50 translate-middle" style="bottom:-90px"><p class="text-dark fw-bold" style="font-size:1.1rem;">Банковские&nbsp;металлы</p></div>
+            </div>
+            <div class="col position-relative mt-2">
+                <div style="background-color:#f9ffc7; height:160px" data-aos="zoom-in-up" data-aos-delay="300" class="my-round d-flex justify-content-center align-items-center">
+                    <h5 class="text-center text-dark">Высокие риски,<br>нужно иметь<br>специальные знания</h5>
+
+                </div>
+                <div class="position-absolute start-50 translate-middle" style="bottom:-90px"><p class="text-dark fw-bold" style="font-size:1.1rem;">Фондовый&nbsp;рынок</p></div>
+            </div>
+            <div class="col position-relative mt-2">
+                <div style="background-color:#f9ffc7; height:180px" data-aos="zoom-in-up" data-aos-delay="500" class="my-round d-flex justify-content-center align-items-center">
+                    <h5 class="text-center text-dark">Очень высокие риски</h5>
+
+                </div>
+                <div class="position-absolute start-50 translate-middle" style="bottom:-90px"><p class="text-dark fw-bold" style="font-size:1.1rem;">Криптовалюта</p></div>
+            </div>
+            <div class="col position-relative mt-2">
+                <div style="background-color:#c7dd00; height:280px" data-aos="zoom-in-up" data-aos-delay="1000" class="my-round d-flex justify-content-center align-items-center">
+                    <h1>10-15%</h1>
+
+                </div>
+                <div class="position-absolute start-50 translate-middle" style="bottom:-90px"><p class="text-dark fw-bold" style="font-size:1.1rem;">Недвижимость</p></div>
             </div>
         </div>
     </div>
 </section>
+
+
+<!--  Блок виден на смартфоне  -->
+<section class="d-md-none d-lg-none d-xl-none d-xxl-none">
+    <div class="container">
+
+        <div class="row justify-content-between align-items-center">
+            <div class="col-md-12">
+                <h2 class="h1">Преимущества инвестирования в недвижимость</h2>
+            </div>
+        </div>
+
+        <div class="row d-flex align-items-start">
+            <div class="col-sm-12 col-12 position-relative">
+                <div style="background-color:#f9ffc7; width:35%; height:100px" data-aos="fade-right" data-aos-delay="100" class="my-round d-flex justify-content-center align-items-center">
+                    <div class="text-center text-dark"><h1>2%</h1></div>
+
+                </div>
+                <div><p class="text-dark fw-bold" style="font-size:1.1rem;">Банковский&nbsp;депозит</p></div>
+            </div>
+            <div class="col-sm-12 col-12 position-relative">
+                <div style="background-color:#f9ffc7; width:40%; height:100px;" data-aos="fade-right" data-aos-delay="200" class="my-round d-flex justify-content-center align-items-center">
+                    <div class="text-center text-dark"><h1>3%</h1></div>
+                </div>
+                <div><p class="text-dark fw-bold" style="font-size:1.1rem;">Банковские&nbsp;металлы</p></div>
+            </div>
+            <div class="col-sm-12 col-12 position-relative">
+                <div style="background-color:#f9ffc7; width:60%; height:100px;" data-aos="fade-right" data-aos-delay="300" class="my-round d-flex justify-content-center align-items-center">
+                    <h5 class="text-center text-dark">Высокие риски,<br>нужно иметь<br>специальные знания</h5>
+                </div>
+                <div><p class="text-dark fw-bold" style="font-size:1.1rem;">Фондовый&nbsp;рынок</p></div>
+            </div>
+            <div class="col-sm-12 col-12 position-relative">
+                <div style="background-color:#f9ffc7; width:80%; height:100px;" data-aos="fade-right" data-aos-delay="500" class="my-round d-flex justify-content-center align-items-center">
+                    <h5 class="text-center text-dark">Очень высокие риски</h5>
+                </div>
+                <div><p class="text-dark fw-bold" style="font-size:1.1rem;">Криптовалюта</p></div>
+            </div>
+            <div class="col-sm-12 col-12 position-relative">
+                <div style="background-color:#c7dd00; width:100%; height:100px;" data-aos="fade-right" data-aos-delay="1000" class="my-round d-flex justify-content-center align-items-center">
+                    <h1>10-15%</h1>
+                </div>
+                <div><p class="text-dark fw-bold" style="font-size:1.1rem;">Недвижимость</p></div>
+            </div>
+        </div>
+    </div>
+</section>
+<!--  Блок виден на смартфоне  -->
+
+
 <!-- =======================
 Преимущества инвестирования в недвижимость  -->
 
 
 <!-- =======================
 За последние 2 года  -->
-<section>
+<section class="pb-1 mt-3">
     <div class="container">
-        <div class="row justify-content-between align-items-center">
 
+        <div class="row align-items-center">
             <div class="col-md-12 ">
                 <h2 class="h1">За последние 2 года мы заработали для наших инвесторов более $3.000.000 прибыли</h2>
             </div>
         </div>
 
-        <div class="row justify-content-between align-items-center">
-            <div class="col-sm-12 col-md-4">
-                <div class="card my-round no-border" style="margin-bottom: 1.5rem; background-color:#f2f2f2">
+        <div class="row">
+            <div class="col-12 col-sm-6 col-md-6 col-lg-6 col-xl-4 col-xxl-4 pt-3">
+                <div class="card my-round no-border" data-aos="flip-down" style="margin-bottom: 1.5rem; background-color:#f2f2f2">
                     <div class="card-body">
                         <h2 class="card-title">Надежность</h2>
                         <p class="lead">Мы более 10 лет на рынке недвижимости и дорожим своей репутацией</p>
                     </div>
                 </div>
-                <div class="card my-round no-border" style="margin-bottom: 1.5rem; background-color:#f2f2f2">
+                <div class="card my-round no-border" data-aos="flip-down" style="margin-bottom: 1.5rem; background-color:#f2f2f2">
                     <div class="card-body">
                         <h2 class="card-title">Прибыльность</h2>
                         <p class="lead">Ты получаешь 10-15% годовых в $</p>
                     </div>
                 </div>
-                <div class="card my-round no-border" style="margin-bottom: 1.5rem; background-color:#f2f2f2">
+                <div class="card my-round no-border" data-aos="flip-down" style="margin-bottom: 1.5rem; background-color:#f2f2f2">
                     <div class="card-body">
                         <h2 class="card-title">Доступность</h2>
                         <p class="lead">Ты можешь выбрать подходящий проект для инвестирования</p>
                     </div>
                 </div>
-                <div class="card my-round no-border" style="margin-bottom: 1.5rem; background-color:#f2f2f2">
+                <div class="card my-round no-border" data-aos="flip-down" style="margin-bottom: 1.5rem; background-color:#f2f2f2">
                     <div class="card-body">
                         <h2 class="card-title">Гарантия</h2>
                         <p class="lead">Гарантируем инвестору фиксированный процент дохода</p>
                     </div>
                 </div>
             </div>
-            <div class="col-sm-12 col-md-4">
-                <div class="card my-round no-border" style="margin-bottom: 1.5rem; background-color:#f2f2f2">
+            <div class="col-12 col-sm-12 col-md-6 col-lg-6 col-xl-4 col-xxl-4 pt-3">
+                <div class="card my-round no-border" data-aos="flip-down" style="margin-bottom: 1.5rem; background-color:#f2f2f2">
                     <div class="card-body">
                         <h2 class="card-title">Компетентность</h2>
                         <p class="lead">За последние 10 лет мы успешно реализовали десятки сделок на общую сумму более
                             100 млн.$</p>
                     </div>
                 </div>
-                <div class="card my-round no-border" style="margin-bottom: 1.5rem; background-color:#f2f2f2">
+                <div class="card my-round no-border" data-aos="flip-down" style="margin-bottom: 1.5rem; background-color:#f2f2f2">
                     <div class="card-body">
                         <h2 class="card-title">Низкие риски</h2>
                         <p class="lead">Инвестируя через платформу Arius Capital ты рискуешь меньше, чем часные
@@ -164,20 +245,20 @@ Main banner -->
                             специалистами</p>
                     </div>
                 </div>
-                <div class="card my-round no-border" style="margin-bottom: 1.5rem; background-color:#f2f2f2">
+                <div class="card my-round no-border" data-aos="flip-down" style="margin-bottom: 1.5rem; background-color:#f2f2f2">
                     <div class="card-body">
                         <h2 class="card-title">Ликвидность</h2>
                         <p class="lead">В любой момент ты можешь продать свою инвестицию другому инвестору или нам</p>
                     </div>
                 </div>
             </div>
-            <div class="col-md-4 d-none d-md-block d-lg-block d-xl-block d-xxl-block">
+            <div class="col-lg-4 col-xl-4 col-xxl-4 d-none d-lg-block d-xl-block d-xxl-block">
                 <img src="{% static 'images/money-coins-and-tree.webp' %}" alt="" style="max-height:750px"
-                     class="float-end">
+                     class="float-end"  data-aos="zoom-in-up">
             </div>
         </div>
     </div>
-    </div>
+
 </section>
 <!-- =======================
 За последние 2 года  -->
@@ -185,14 +266,17 @@ Main banner -->
 
 <section class="py-2">
     <div class="container">
-        <div class="row d-block d-md-flex bg-index-block-capital p-6 p-sm-6 all-text-white my-round pattern-overlay-3">
-            <div style="col-12">
-                <center><h1>Приумножай свой капитал</h1></center>
+        <div class="row bg-index-block-capital d-md-flex p-6 p-sm-6 all-text-white my-round pattern-overlay-3"
+             style="margin:0" data-aos="fade-zoom-in"
+             data-aos-easing="ease-in-back"
+             data-aos-delay="300"
+             data-aos-offset="0">
+            <div class="col-12">
+                <h1 class="text-center">Приумножай свой капитал</h1>
+
             </div>
-            <div style="col-12"><br>
-                <center>
-                    <a href="{% url 'register' %}" class="btn btn-lg btn-grad">СТАНЬ ИНВЕСТОРОМ</a>
-                </center>
+            <div class="col-12 text-center pt-3">
+                <a href="{% url 'register' %}" class="btn btn-lg btn-grad">СТАНЬ ИНВЕСТОРОМ</a>
             </div>
 
         </div>
@@ -204,14 +288,8 @@ Main banner -->
 Наши проекты  -->
 <style>
     #tns1-iw {
-    margin: 1px -30px 7px 1px;
+    margin: 1px -42px 7px 1px;
 }
-
-
-
-
-
-
 
 
 
@@ -222,7 +300,7 @@ Main banner -->
 
 </style>
 
-<section class="blog pb-5">
+<section>
     <div class="container">
         <div class="row">
             <div class="col-12 col-lg-8 mx-auto">
@@ -232,7 +310,7 @@ Main banner -->
             </div>
         </div>
         <div class="row">
-            <div class="col-md-12">
+            <div class="col-12 col-sm-12 col-md-12 col-lg-12 col-xl-12 col-xxl-12">
                 <div class="tiny-slider arrow-dark arrow-hover ">
                     <div class="tiny-slider-inner row row-cols-1 row-cols-md-3" data-arrow="true" data-dots="false"
                          data-items-xl="3"
@@ -315,10 +393,15 @@ Main banner -->
                 </div>
             </div>
         </div>
-        <div class="col pt-5">
-            <center><a href="{% url 'projects' %}" class=" btn btn-sm btn-grad mb-0"><h3>Посмотреть все проекты</h3>
-            </a></center>
-        </div>
+
+        <!--        <div class="row">-->
+        <!--            <div class="col pt-5">-->
+        <!--                <center>-->
+        <!--                    <a href="{% url 'projects' %}" class=" btn btn-sm btn-grad mb-0"><h4>Посмотреть все проекты</h4></a>-->
+        <!--                </center>-->
+        <!--            </div>-->
+        <!--        </div>-->
+
     </div>
     </div>
     <a name="calc"></a>
@@ -328,9 +411,9 @@ blog -->
 
 
 <section id="calc">
-    <div class="container my-round" style="background-color:#f2f2f2; padding:50px; position:relative">
+    <div class="container my-round" style="background-color:#f2f2f2; padding:30px; position:relative;">
         <div class="row">
-            <div class="col-6">
+            <div class="col-12 col-sm-12 col-md-12 col-lg-6 col-xl-6 col-xxl-6">
                 <div class="row pb-4">
                     <div class="col-12">
                         <div class="my-round" style="padding:30px;background-color:white">
@@ -346,7 +429,7 @@ blog -->
                     </div>
                 </div>
                 <div class="row">
-                    <div class="col-6">
+                    <div class="col-12 col-sm-12 col-md-12 col-lg-6 col-xl-6 col-xxl-6 mb-4">
                         <div class="my-round" style="background-color:white;padding:30px">
                             <h3 class="h2">Срок вклада</h3>
 
@@ -374,7 +457,7 @@ blog -->
                             </div>
                         </div>
                     </div>
-                    <div class="col-6">
+                    <div class="col-12 col-sm-12 col-md-12 col-lg-6 col-xl-6 col-xxl-6 mb-4">
                         <div class="my-round green-block" style="padding:30px 10px ">
                             <h3 class="h2 text-center">Доход</h3>
                             <table cellpadding="3" width="100%">
@@ -395,14 +478,14 @@ blog -->
                             </table>
 
 
-                            <h2 class="text-center pt-3">
+                            <h2 class="text-center pt-3 pb-3">
                                 <div class="dohod" data-elem-type='text'>20,750usd</div>
                             </h2>
                         </div>
                     </div>
                 </div>
             </div>
-            <div class="col-4">
+            <div class="col-12 col-sm-12 col-md-12 col-lg-4 col-xl-4 col-xxl-4">
                 <h1>Калькулятор инвестиций</h1>
                 <p class="lead text-dark">Здесь ты можешь рассчитать свой будущий доход или просто посмотреть, как может
                     расти твой капитал. Обрати внимание, что каждый проект имеет свою доходность</p>
@@ -410,9 +493,11 @@ blog -->
             <!--            <div class="col-2" style="background:url(/static/images/6901.png) no-repeat; background-size:cover;">-->
 
             <!--            </div>-->
-            <div class="col-2">
+            <div class="col-lg-2 col-xl-2 col-xxl-2 d-none d-lg-block d-xl-block d-xxl-block">
+
                 <img src="{% static 'images/6901.png' %}"
-                     style="position:absolute; bottom:0px; right:-50px; width:350px">
+                     style="position:absolute; bottom:0px; right:-50px; width:350px" data-aos="fade-left" />
+
             </div>
         </div>
     </div>
@@ -424,17 +509,17 @@ blog -->
 <section class="bg-dark">
     <div class="container">
         <div class="row justify-content-between align-items-center">
-            <div class="col-md-6">
+            <div class="col-12 col-sm-12 col-md-12 col-lg-6 col-xl-6 col-xxl-6">
                 <h2 class="text-white h1">Как это работает</h2>
                 <p class="lead">На сайте Arius Capital ты заполняешь анкету инвестора. Далее наш менеджер связывается с
                     тобой и, учитывая сроки проекта и доходность, помогает подобрать максимально выгодный для тебя
                     вариант инвестиций</p>
-                <img src="{% static 'images/how_it_works.jpg' %}" alt="" class="img-fluid my-round">
+                <img src="{% static 'images/how_it_works.jpg' %}" alt="" class="img-fluid my-round pb-4">
             </div>
-            <div class="col-md-6">
+            <div class="col-12 col-sm-12 col-md-12 col-lg-6 col-xl-6 col-xxl-6">
                 <dl class="row">
-                    <dt class="col-sm-3 how-it-works">
-                        <svg class=" my-round float-start" width="100" height="100"
+                    <dt class="col-3 col-sm-3 col-md-3 col-lg-3 col-xl-3 col-xxl-3 how-it-works">
+                        <svg data-aos="flip-left" data-aos-delay="100" class=" my-round float-start img-fluid" width="100px" height="100px"
                              xmlns="http://www.w3.org/2000/svg" role="img" aria-label="Placeholder: 1"
                              preserveAspectRatio="xMidYMid slice" focusable="false" style="margin: 10px 10px 10px 0px">
                             <title>Placeholder</title>
@@ -442,10 +527,10 @@ blog -->
                             <text x="45%" y="50%" fill="#000000" dy=".3em" class="h1">1</text>
                         </svg>
                     </dt>
-                    <dd class="col-sm-9 how-it-works lead"><span class="align-middle">Кликни на кнопку «Стань инвестором» и заполни анкету инвестора</span>
+                    <dd class="col-9 col-sm-9 how-it-works lead"><span class="align-middle">Кликни на кнопку «Стань инвестором» и заполни анкету инвестора</span>
                     </dd>
-                    <dt class="col-sm-3 how-it-works">
-                        <svg class=" my-round float-start" width="100" height="100"
+                    <dt class="col-3 col-sm-3 col-md-3 col-lg-3 col-xl-3 col-xxl-3 how-it-works">
+                        <svg data-aos="flip-right" data-aos-delay="300" class=" my-round float-start img-fluid" width="100px" height="100px"
                              xmlns="http://www.w3.org/2000/svg" role="img" aria-label="Placeholder: 1"
                              preserveAspectRatio="xMidYMid slice" focusable="false" style="margin: 10px 10px 10px 0px">
                             <title>Placeholder</title>
@@ -453,11 +538,12 @@ blog -->
                             <text x="40%" y="50%" fill="#000000" dy=".3em" class="h1">2</text>
                         </svg>
                     </dt>
-                    <dd class="col-sm-9 how-it-works lead">Наш менеджер свяжется с тобой и поможет подобрать подходящий
+                    <dd class="col-9 col-sm-9 how-it-works lead">Наш менеджер свяжется с тобой и поможет подобрать
+                        подходящий
                         объект для инвестирования
                     </dd>
-                    <dt class="col-sm-3 how-it-works">
-                        <svg class=" my-round float-start" width="100" height="100"
+                    <dt class="col-3 col-sm-3 col-md-3 col-lg-3 col-xl-3 col-xxl-3 how-it-works">
+                        <svg data-aos="flip-up" data-aos-delay="500" class=" my-round float-start img-fluid" width="100px" height="100px"
                              xmlns="http://www.w3.org/2000/svg" role="img" aria-label="Placeholder: 1"
                              preserveAspectRatio="xMidYMid slice" focusable="false" style="margin: 10px 10px 10px 0px">
                             <title>Placeholder</title>
@@ -465,11 +551,11 @@ blog -->
                             <text x="40%" y="50%" fill="#000000" dy=".3em" class="h1">3</text>
                         </svg>
                     </dt>
-                    <dd class="col-sm-9 how-it-works lead">Внеси инвестиции через кассу банка или посредством
+                    <dd class="col-9 col-sm-9 how-it-works lead">Внеси инвестиции через кассу банка или посредством
                         интернет-банкинга (Приват24, Монобанк и т.д.)
                     </dd>
-                    <dt class="col-sm-3 how-it-works">
-                        <svg class=" my-round float-start" width="100" height="100"
+                    <dt class="col-3 col-sm-3 col-md-3 col-lg-3 col-xl-3 col-xxl-3 how-it-works">
+                        <svg data-aos="flip-down" data-aos-delay="700" class=" my-round float-start img-fluid" width="100px" height="100px"
                              xmlns="http://www.w3.org/2000/svg" role="img" aria-label="Placeholder: 1"
                              preserveAspectRatio="xMidYMid slice" focusable="false" style="margin: 10px 10px 10px 0px">
                             <title>Placeholder</title>
@@ -477,7 +563,8 @@ blog -->
                             <text x="40%" y="50%" fill="#000000" dy=".3em" class="h1">4</text>
                         </svg>
                     </dt>
-                    <dd class="col-sm-9 how-it-works lead">Получи на электронную почту письмо-подтверждение, что ты стал
+                    <dd class="col-9 col-sm-9 how-it-works lead">Получи на электронную почту письмо-подтверждение, что
+                        ты стал
                         инвестором!
                     </dd>
                 </dl>
@@ -498,7 +585,7 @@ blog -->
             <div class="col-md-12 mb-5">
                 <h2 class="mb-3 h1">Часто задаваемые вопросы</h2>
                 <div class="accordion accordion-line toggle-icon-left toggle-icon-round" id="accordionExample4">
-                    <div class="accordion-item">
+                    <div class="accordion-item" data-aos="fade-right" data-aos-delay="100">
                         <h2 class="accordion-header" id="heading10">
                             <button class="accordion-button collapsed" type="button" data-bs-toggle="collapse"
                                     data-bs-target="#collapse10" aria-expanded="true" aria-controls="collapse10">
@@ -515,7 +602,7 @@ blog -->
                             </div>
                         </div>
                     </div>
-                    <div class="accordion-item">
+                    <div class="accordion-item" data-aos="fade-right">
                         <h2 class="accordion-header" id="heading11">
                             <button class="accordion-button collapsed" type="button" data-bs-toggle="collapse"
                                     data-bs-target="#collapse11" aria-expanded="false" aria-controls="collapse11">
@@ -539,7 +626,7 @@ blog -->
                             </div>
                         </div>
                     </div>
-                    <div class="accordion-item">
+                    <div class="accordion-item" data-aos="fade-right" data-aos-delay="100">
                         <h2 class="accordion-header" id="heading12">
                             <button class="accordion-button collapsed" type="button" data-bs-toggle="collapse"
                                     data-bs-target="#collapse12" aria-expanded="false" aria-controls="collapse12">
@@ -554,7 +641,7 @@ blog -->
                             </div>
                         </div>
                     </div>
-                    <div class="accordion-item">
+                    <div class="accordion-item" data-aos="fade-right" data-aos-delay="200">
                         <h2 class="accordion-header" id="heading13">
                             <button class="accordion-button collapsed" type="button" data-bs-toggle="collapse"
                                     data-bs-target="#collapse13" aria-expanded="false" aria-controls="collapse13">
@@ -571,7 +658,7 @@ blog -->
                             </div>
                         </div>
                     </div>
-                    <div class="accordion-item">
+                    <div class="accordion-item" data-aos="fade-right" data-aos-delay="300">
                         <h2 class="accordion-header" id="heading14">
                             <button class="accordion-button collapsed" type="button" data-bs-toggle="collapse"
                                     data-bs-target="#collapse14" aria-expanded="false" aria-controls="collapse14">
@@ -598,16 +685,19 @@ blog -->
 </section>
 
 
-<section class="py-2 mb-5">
+<section class="py-2">
     <div class="container">
-        <div class="row d-block d-md-flex bg-index-block-capital p-6 p-sm-6 all-text-white my-round pattern-overlay-3">
-            <div style="col-12">
-                <center><h1>Приумножай свой капитал</h1></center>
+        <div class="row bg-index-block-capital d-md-flex p-6 p-sm-6 all-text-white my-round pattern-overlay-3"
+             data-aos="fade-zoom-in"
+             data-aos-easing="ease-in-back"
+             data-aos-delay="300"
+             data-aos-offset="0">
+            <div class="col-12">
+                <h1 class="text-center">Зарабатывай с Arius Capital</h1>
+
             </div>
-            <div style="col-12"><br>
-                <center>
-                    <a href="{% url 'register' %}" class="btn btn-lg btn-grad">СТАНЬ ИНВЕСТОРОМ</a>
-                </center>
+            <div class="col-12 text-center pt-3">
+                <a href="{% url 'register' %}" class="btn btn-lg btn-grad">СТАНЬ ИНВЕСТОРОМ</a>
             </div>
 
         </div>
@@ -617,15 +707,15 @@ blog -->
 
 <!-- =======================
 	contact us -->
-<section class="p-4 mb-5">
+<section class="pb-5 mb-5">
     <div class="container">
-        <div class="row g-0 my-round overflow-hidden ">
+        <div class="row my-round overflow-hidden ">
             <!--why us left-->
             <div class="col-12 d-none d-lg-block">
                 <h1 class="display-4">Связаться с нами</h1>
             </div>
             <!--why us right-->
-            <div class="col-lg-12  px-5 py-5 p-lg-5e h-bg-gray-round">
+            <div class="col-lg-12 px-5 py-5 p-lg-5e h-bg-gray-round">
 
                 <div class="row">
                     <div class="col">

@@ -153,16 +153,14 @@ header Start-->
     <nav class="navbar navbar-expand-xl">
         <div class="container">
             <!-- Logo -->
-            <a class="navbar-brand" href="{% url 'home' %}">
+            <a class="navbar-brand text-start" href="{% url 'home' %}">
                 <!-- Logo -->
                 <img class="navbar-brand-item" src="{% static 'images/logo_arius.svg' %}" alt="Logo">
             </a>
             <!-- Menu opener button -->
 
 
-            <a class="navbar-toggler ms-auto" href="{% url 'login' %}">
-                <span class="ti-user"></span>
-            </a>
+
 
 
             <button class="navbar-toggler ms-auto" type="button" data-bs-toggle="collapse"
@@ -384,7 +382,7 @@ $(document).ready(function(){
             $(".ajax_loader").show();
        },
        success:function(res) {
-            console.log(res)
+            //console.log(res)
             $("#projectlist").html(res.data)
             $(".ajax_loader").hide();
        }

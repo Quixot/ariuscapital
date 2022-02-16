@@ -4,13 +4,13 @@
 
 {% block content %}
 
-<div class="container">
-    <div class="d-block p-4 p-sm-5 h-bg-gray-round mt-2">
-        <center>
-            <h1>{{title}}</h1>
-        </center>
-    </div>
-</div>
+<!--<div class="container">-->
+<!--    <div class="d-block p-4 p-sm-5 h-bg-gray-round mt-2">-->
+<!--        <center>-->
+<!--            <h1>{{title}}</h1>-->
+<!--        </center>-->
+<!--    </div>-->
+<!--</div>-->
 
 
 
@@ -23,12 +23,12 @@
                 <p class="lead">На сайте Arius Capital ты заполняешь анкету инвестора. Далее наш менеджер связывается с
                     тобой и, учитывая сроки проекта и доходность, помогает подобрать максимально выгодный для тебя
                     вариант инвестиций</p>
-                <img src="{% static 'images/how_it_works.jpg' %}" alt="" class="img-fluid my-round">
+                <img src="{% static 'images/how_it_works.jpg' %}" alt="" class="img-fluid my-round aos" data-aos="zoom-out-right">
             </div>
             <div class="col-md-6">
                 <dl class="row">
                     <dt class="col-3 how-it-works">
-                        <svg class=" my-round float-start" width="100" height="100"
+                        <svg data-aos="flip-left" data-aos-delay="100" class=" my-round float-start" width="100" height="100"
                              xmlns="http://www.w3.org/2000/svg" role="img" aria-label="Placeholder: 1"
                              preserveAspectRatio="xMidYMid slice" focusable="false" style="margin: 10px 10px 10px 0px">
                             <title>Placeholder</title>
@@ -39,7 +39,7 @@
                         <dd class="col-9 how-it-works lead"><span class="align-middle">Кликни на кнопку «Стань инвестором» и заполни анкету инвестора</span>
                     </dd>
                     <dt class="col-3 how-it-works">
-                        <svg class=" my-round float-start" width="100" height="100"
+                        <svg data-aos="flip-left" data-aos-delay="200" class=" my-round float-start" width="100" height="100"
                              xmlns="http://www.w3.org/2000/svg" role="img" aria-label="Placeholder: 1"
                              preserveAspectRatio="xMidYMid slice" focusable="false" style="margin: 10px 10px 10px 0px">
                             <title>Placeholder</title>
@@ -51,7 +51,7 @@
                         объект для инвестирования
                     </dd>
                     <dt class="col-3 how-it-works">
-                        <svg class=" my-round float-start" width="100" height="100"
+                        <svg data-aos="flip-left" data-aos-delay="300" class=" my-round float-start" width="100" height="100"
                              xmlns="http://www.w3.org/2000/svg" role="img" aria-label="Placeholder: 1"
                              preserveAspectRatio="xMidYMid slice" focusable="false" style="margin: 10px 10px 10px 0px">
                             <title>Placeholder</title>
@@ -63,7 +63,7 @@
                         интернет-банкинга (Приват24, Монобанк и т.д.)
                     </dd>
                     <dt class="col-3 how-it-works">
-                        <svg class=" my-round float-start" width="100" height="100"
+                        <svg data-aos="flip-left" data-aos-delay="400" class=" my-round float-start" width="100" height="100"
                              xmlns="http://www.w3.org/2000/svg" role="img" aria-label="Placeholder: 1"
                              preserveAspectRatio="xMidYMid slice" focusable="false" style="margin: 10px 10px 10px 0px">
                             <title>Placeholder</title>
@@ -85,106 +85,103 @@
 
 
 
-<!-- =======================
-Калькулятор проекта -->
-<section class="py-4">
-    <div class="container">
-        <div class="row g-0 my-round" style="background-color:#f2f2f2; position:relative">
-            <div class="col-md-6 vh-md-50">
-
+<section id="calc">
+    <div class="container my-round" style="background-color:#f2f2f2; padding:30px; position:relative;">
+        <div class="row">
+            <div class="col-12 col-sm-12 col-md-12 col-lg-6 col-xl-6 col-xxl-6">
+                <div class="row pb-4">
+                    <div class="col-12">
+                        <div class="my-round" style="padding:30px;background-color:white">
+                            <h2 class="h1">Сумма вклада $<span class="sumlable">20000</span></h2>
+                            <input name="summInvest" type="range" min="100" max="100000" step="100" value="20000"
+                                   id="summInvest"
+                                   oninput="maxPrice.value=this.value" style="width:100%"/>
+                            <p class="h4">
+                                <span>$100</span>
+                                <span class="float-end">$100.000</span>
+                            </p>
+                        </div>
+                    </div>
+                </div>
                 <div class="row">
+                    <div class="col-12 col-sm-12 col-md-12 col-lg-6 col-xl-6 col-xxl-6">
+                        <div class="my-round" style="background-color:white;padding:30px">
+                            <h3 class="h2">Срок вклада</h3>
 
-                <div class="card col-12 m-4 p-4 no-border my-round">
-                    <h2 class="h1">Сумма вклада</h2>
-                    <div class="range-slider" style='--min:0; --max:100; --value:0; --text-value:"75";'>
 
-                        <input name="summInvest" type="range" min="100" max="100000" step="100" value="20000"
-                               id="summInvest"
-                               oninput="maxPrice.value=this.value" style="width:100%"/>
-
-                        <p class="h4">
-                            <span>$100</span>
-                            <span class="float-end">$100.000</span>
-                        </p>
-                        <output></output>
+                            <div class="form-check">
+                                <input value="3 месяца" class="form-check-input" type="radio" name="month"
+                                       id="flexRadioDefault1" checked="checked">
+                                <label class="form-check-label lead text-dark" for="flexRadioDefault1">
+                                    3 месяца
+                                </label>
+                            </div>
+                            <div class="form-check">
+                                <input value="6 месяцев" class="form-check-input" type="radio" name="month"
+                                       id="flexRadioDefault2">
+                                <label class="form-check-label lead text-dark" for="flexRadioDefault2">
+                                    6 месяцев
+                                </label>
+                            </div>
+                            <div class="form-check pb-3">
+                                <input value="12 месяцев" class="form-check-input" type="radio" name="month"
+                                       id="flexRadioDefault3">
+                                <label class="form-check-label lead text-dark" for="flexRadioDefault3">
+                                    12 месяцев
+                                </label>
+                            </div>
+                        </div>
                     </div>
-                    <div>
-                        <input type="number" value="20000" min="100" max="100000" id="maxPrice"
-                               class="form-control" onkeyup="rangeInput.value=this.value"/>
+                    <div class="col-12 col-sm-12 col-md-12 col-lg-6 col-xl-6 col-xxl-6 mt-4 mb-4">
+                        <div class="my-round green-block" style="padding:30px 10px ">
+                            <h3 class="h2 text-center">Доход</h3>
+                            <table cellpadding="3" width="100%">
+                                <tr>
+                                    <td width="40%">
+                                        <h4 class="text-center"
+                                            style="padding:7px;background-color:white;border-radius:10px">
+                                            <div class="percent" data-elem-type='text'>+3.75%</div>
+                                        </h4>
+                                    </td>
+                                    <td width="60%">
+                                        <h4 class="text-center"
+                                            style="padding:7px;background-color:white;border-radius:10px; width:100%">
+                                            <div class="res" data-elem-type='text'>+750</div>
+                                        </h4>
+                                    </td>
+                                </tr>
+                            </table>
+
+
+                            <h2 class="text-center pt-3 pb-3">
+                                <div class="dohod" data-elem-type='text'>20,750usd</div>
+                            </h2>
+                        </div>
                     </div>
                 </div>
-                </div>
-<div class="row">
-                <div class="card col m-4 p-4 no-border my-round">
-                    <h2 class="h1">Срок вклада</h2>
-
-
-                    <div class="form-check">
-                        <input value="3 месяца" class="form-check-input" type="radio" name="month"
-                               id="flexRadioDefault1" checked="checked">
-                        <label class="form-check-label" for="flexRadioDefault1">
-                            3 месяца
-                        </label>
-                    </div>
-                    <div class="form-check">
-                        <input value="6 месяцев" class="form-check-input" type="radio" name="month"
-                               id="flexRadioDefault2">
-                        <label class="form-check-label" for="flexRadioDefault2">
-                            6 месяцев
-                        </label>
-                    </div>
-                    <div class="form-check">
-                        <input value="12 месяцев" class="form-check-input" type="radio" name="month"
-                               id="flexRadioDefault3">
-                        <label class="form-check-label" for="flexRadioDefault3">
-                            12 месяцев
-                        </label>
-                    </div>
-
-                </div>
-
-
-                <div class="card col m-4 p-4 no-border my-round">
-                    <h2 class="h1">Доход</h2>
-                    <div class="percent" data-elem-type='text'>+3.75%</div>
-                    <div class="res" data-elem-type='text'>+750</div>
-                    <div class="dohod" data-elem-type='text'>20,750usd</div>
-                </div>
-
-
-                    </div>
-
             </div>
-
-            <div class="col-md-4 p-md-5 p-4">
+            <div class="col-12 col-sm-12 col-md-12 col-lg-4 col-xl-4 col-xxl-4">
                 <h1>Калькулятор инвестиций</h1>
-                <p class="lead">Здесь ты можешь рассчитать свой будущий доход или просто посмотреть, как может расти
-                    твой капитал. Обрати внимание, что каждый проект имеет свою доходность</p>
-
-                <div class="display-7 mt-4">
-                    <button class="btn btn-lg btn-grad">Стань инвестором</button>
-                </div>
+                <p class="lead text-dark">Здесь ты можешь рассчитать свой будущий доход или просто посмотреть, как может
+                    расти твой капитал. Обрати внимание, что каждый проект имеет свою доходность</p>
             </div>
+            <!--            <div class="col-2" style="background:url(/static/images/6901.png) no-repeat; background-size:cover;">-->
 
-            <div class="col-md-2 ">
-                <img src="{% static 'images/6901.png' %}" alt="" class="d-none d-xl-block d-lg-block"
-                 style="position:absolute; bottom:0px; right:-250px; width:570px; height:705px"/>
+            <!--            </div>-->
+            <div class="col-lg-2 col-xl-2 col-xxl-2 d-none d-lg-block d-xl-block d-xxl-block">
+                <img src="{% static 'images/6901.png' %}"
+                     style="position:absolute; bottom:0px; right:-50px; width:350px">
             </div>
-
-
-
         </div>
     </div>
 </section>
-<!-- =======================
-Калькулятор проекта -->
 
 
 
 
 <section class="py-2 mb-5">
     <div class="container">
-        <div class="row d-block d-md-flex bg-index-block-capital p-6 p-sm-6 all-text-white my-round pattern-overlay-3">
+        <div class="row d-block d-md-flex bg-index-block-capital p-6 p-sm-6 all-text-white my-round pattern-overlay-3" style="margin:0">
             <div style="col-12">
                 <center><h1>Зарабатывай с Arius Capital</h1></center>
             </div>
@@ -203,15 +200,15 @@
 
 <!-- =======================
 	contact us -->
-<section class="p-4 mb-5">
+<section class="pb-5 mb-5">
     <div class="container">
-        <div class="row g-0 my-round overflow-hidden ">
+        <div class="row my-round overflow-hidden ">
             <!--why us left-->
             <div class="col-12 d-none d-lg-block">
                 <h1 class="display-4">Связаться с нами</h1>
             </div>
             <!--why us right-->
-            <div class="col-lg-12  px-5 py-5 p-lg-5e h-bg-gray-round">
+            <div class="col-lg-12 px-5 py-5 p-lg-5e h-bg-gray-round">
 
                 <div class="row">
                     <div class="col">
