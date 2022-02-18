@@ -34,22 +34,22 @@
                                     <td class="text-start">
                                         <span class="d-inline-block" tabindex="0" data-bs-toggle="popover"
                                               data-bs-trigger="hover focus" data-bs-placement="top"
-                                              data-bs-content="Сумма инвестиции в проект">
-                                            <p>{{ el.price }} usd.</p>
+                                              data-bs-content="Уже инвестировано">
+                                            <p>${{ el.total_sum }}</p>
                                         </span>
                                     </td>
-                                    <td class="text-start">
+                                    <td class="text-center">
                                         <span class="d-inline-block" tabindex="0" data-bs-toggle="popover"
                                               data-bs-trigger="hover focus" data-bs-placement="top"
-                                              data-bs-content="Срок инвестиции">
-                                            <p>{{ el.investment_term }} мес.</p>
+                                              data-bs-content="Осталось времени">
+                                            <p>{{ el.days_left.days }} дней</p>
                                         </span>
                                     </td>
                                     <td class="text-end">
                                         <span class="d-inline-block" tabindex="0" data-bs-toggle="popover"
                                               data-bs-trigger="hover focus" data-bs-placement="top"
-                                              data-bs-content="Процент доходности">
-                                            <p>{{ el.income }}%</p>
+                                              data-bs-content="Сумма инвестиции в проект">
+                                            <p>${{ el.price }}</p>
                                         </span>
                                     </td>
                                 </tr>
@@ -62,18 +62,30 @@
 
                                         <div class="progress-bar aos aos-init aos-animate" data-aos="slide-right"
                                              data-aos-delay="200" data-aos-duration="1000" data-aos-easing="ease-in-out"
-                                             role="progressbar" aria-valuenow="85" aria-valuemin="0" aria-valuemax="100"
-                                             style="width:{{el.temp_persend}}%; overflow:visible">
-                                            <span class="progress-percent">{{el.temp_persend}}%</span>
+                                             role="progressbar" aria-valuenow="{{ el.total_perсend }}" aria-valuemin="0" aria-valuemax="100"
+                                             style="width:{{ el.total_perсend|floatformat:0 }}%; overflow:visible">
+                                            <span class="progress-percent">{{el.total_perсend}}%</span>
                                         </div>
                                     </div>
                                 </div>
                             </div>
 
+                            {% if user.is_authenticated %}
 
-                            <a class="btn btn-grad btn-project-invest "
-                               href="/projects/project/{{ el.id }}"
-                            >Инвестировать</a>
+                                {% if el.published %}
+                                <a class="btn btn-grad btn-project-invest " href="/projects/project/{{ el.id }}">Инвестировать</a>
+                                {% else %}
+                                <a class="btn btn-secondary btn-project-invest " href="/projects/project/{{ el.id }}">Читать</a>
+                                {% endif %}
+
+                            {% else %}
+                                {% if el.published %}
+                                <a class="btn btn-grad btn-project-invest " href="{% url 'register' %}">Инвестировать</a>
+                                {% else %}
+                                <a class="btn btn-dark btn-project-invest" href="/projects/project/{{ el.id }}">Читать</a>
+                                {% endif %}
+                            {% endif %}
+
                         </div>
                     </div>
                 </div>

@@ -138,3 +138,9 @@ section {
 #calc .form-check-label {
     padding-left:10px
 }
+
+
+/**** DASHBOARD ****/
+.bg-arius-dark {
+   background-color:#2d2d2d;
+}

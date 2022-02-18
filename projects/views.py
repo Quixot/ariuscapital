@@ -1,5 +1,6 @@
 from django.shortcuts import render
-from .models import Project
+from .models import Project, Order
+from django.db.models import Sum
 
 
 def projects(request):

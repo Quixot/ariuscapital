@@ -394,82 +394,82 @@ $(document).ready(function(){
 
 
 <!-- Modal -->
-<div class="modal fade" id="exampleModal" tabindex="-1" aria-labelledby="exampleModalLabel" aria-hidden="true">
-    <div class="modal-dialog modal-dialog-centered">
-        <div class="modal-content">
-            <div class="modal-header" style="background-color:#c7dd00;padding: 0rem 2.5rem">
+<!--<div class="modal fade" id="exampleModal" tabindex="-1" aria-labelledby="exampleModalLabel" aria-hidden="true">-->
+<!--    <div class="modal-dialog modal-dialog-centered">-->
+<!--        <div class="modal-content">-->
+<!--            <div class="modal-header" style="background-color:#c7dd00;padding: 0rem 2.5rem">-->
 
-                <img src="{% static 'images/poplogo.svg' %}" alt="Arius Capital">
+<!--                <img src="{% static 'images/poplogo.svg' %}" alt="Arius Capital">-->
 
-                <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
-            </div>
-            <div class="modal-body">
-                <h2 class="h2">Подать заявку</h2>
-                <p class="text-dark">Заполни анкету инвестора и наш менеджер свяжется с тобой</p>
+<!--                <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>-->
+<!--            </div>-->
+<!--            <div class="modal-body">-->
+<!--                <h2 class="h2">Подать заявку</h2>-->
+<!--                <p class="text-dark">Заполни анкету инвестора и наш менеджер свяжется с тобой</p>-->
 
-                <div class="form mt-4">
-                    <div>
-                        <!-- имя -->
-                        {% if user.is_authenticated %}
-                        <span class="form-group">
-                            <input type="text" class="form-control" value="{{ user.username }}">
-                        </span>
-                        {% else %}
-                        <span class="form-group">
-                            <input type="text" class="form-control" placeholder="Имя">
-                        </span>
-                        {% endif %}
-                    </div>
-                    <div>
-                        <!-- email -->
-                        {% if user.is_authenticated %}
-                        <span class="form-group">
-                            <input type="text" class="form-control" value="{{ user.email }}">
-                        </span>
-                        {% else %}
-                        <span class="form-group">
-                            <input type="text" class="form-control" placeholder="Email">
-                        </span>
-                        {% endif %}
-                    </div>
+<!--                <div class="form mt-4">-->
+<!--                    <div>-->
+<!--                        &lt;!&ndash; имя &ndash;&gt;-->
+<!--                        {% if user.is_authenticated %}-->
+<!--                        <span class="form-group">-->
+<!--                            <input type="text" class="form-control" value="{{ user.username }}">-->
+<!--                        </span>-->
+<!--                        {% else %}-->
+<!--                        <span class="form-group">-->
+<!--                            <input type="text" class="form-control" placeholder="Имя">-->
+<!--                        </span>-->
+<!--                        {% endif %}-->
+<!--                    </div>-->
+<!--                    <div>-->
+<!--                        &lt;!&ndash; email &ndash;&gt;-->
+<!--                        {% if user.is_authenticated %}-->
+<!--                        <span class="form-group">-->
+<!--                            <input type="text" class="form-control" value="{{ user.email }}">-->
+<!--                        </span>-->
+<!--                        {% else %}-->
+<!--                        <span class="form-group">-->
+<!--                            <input type="text" class="form-control" placeholder="Email">-->
+<!--                        </span>-->
+<!--                        {% endif %}-->
+<!--                    </div>-->
 
-                    <div>
-                        {% if user.is_authenticated %}
-                        <span class="form-group">
-                            <input type="number" required class="form-control" value="{{ user.phone }}"
-                                   placeholder="Телефон">
-                        </span>
-                        {% else %}
-                        <span class="form-group">
-                            <input type="number" required class="form-control" placeholder="Телефон">
-                        </span>
-                        {% endif %}
-                    </div>
+<!--                    <div>-->
+<!--                        {% if user.is_authenticated %}-->
+<!--                        <span class="form-group">-->
+<!--                            <input type="number" required class="form-control" value="{{ user.phone }}"-->
+<!--                                   placeholder="Телефон">-->
+<!--                        </span>-->
+<!--                        {% else %}-->
+<!--                        <span class="form-group">-->
+<!--                            <input type="number" required class="form-control" placeholder="Телефон">-->
+<!--                        </span>-->
+<!--                        {% endif %}-->
+<!--                    </div>-->
 
-                    <div class="form-group">
-                        <h3>Выбор проекта для инвестирования</h3>
+<!--                    <div class="form-group">-->
+<!--                        <h3>Выбор проекта для инвестирования</h3>-->
 
-                        <div class="ajax_loader">loaing...</div>
-                        <div id="projectlist"></div>
-<!--                        ajax here-->
+<!--                        <div class="ajax_loader">loaing...</div>-->
+<!--                        <div id="projectlist"></div>-->
+<!--&lt;!&ndash;                        ajax here&ndash;&gt;-->
 
-                    </div>
+<!--                    </div>-->
 
-                    <div class="custom-control custom-checkbox me-sm-2 mb-4 d-flex">
-                        <input type="checkbox" class="form-check-input mb-0" id="exampleCheck1">
-                        <label class="form-check-label ms-2 text-dark" for="exampleCheck1">Я согласен с <a
-                                href="{% url 'privacy-policy' %}">политикой конфиденциальности</a></label>
-                    </div>
+<!--                    <div class="custom-control custom-checkbox me-sm-2 mb-4 d-flex">-->
+<!--                        <input type="checkbox" class="form-check-input mb-0" id="exampleCheck1">-->
+<!--                        <label class="form-check-label ms-2 text-dark" for="exampleCheck1">Я согласен с <a-->
+<!--                                href="{% url 'privacy-policy' %}">политикой конфиденциальности</a></label>-->
+<!--                    </div>-->
 
-                </div>
+<!--                </div>-->
 
-            </div>
-            <div class="modal-footer">
-                <button type="button" class="btn btn-grad text-center" style="width: 100%;">Отправить заявку</button>
-            </div>
-        </div>
-    </div>
-</div>
+<!--            </div>-->
+<!--            <div class="modal-footer">-->
+<!--                <button type="button" class="btn btn-grad text-center" style="width: 100%;">Отправить заявку</button>-->
+<!--            </div>-->
+<!--        </div>-->
+<!--    </div>-->
+<!--</div>-->
 
 
 </body>

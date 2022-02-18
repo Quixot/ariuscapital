@@ -6,6 +6,8 @@ from projects.models import Project
 
 
 def index(request):
+    if request.user.is_authenticated:
+        return redirect('dashboard')
     projects = Project.objects.all()
     context = {
         'title': 'Arius Capital - Платформа коллективных инвестиций',
