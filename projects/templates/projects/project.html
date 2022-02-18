@@ -6,6 +6,51 @@
 <section>
     <div class="container">
         <div class="row mb-4" data-sticky-container>
+            <div class="col-8">
+                <h2>{{ project.title }}</h2>
+            </div>
+            <div class="col-4">
+                <table width="100%">
+                    <tr>
+                        <td class="text-start">
+                            <span class="d-inline-block" tabindex="0" data-bs-toggle="popover"
+                                  data-bs-trigger="hover focus" data-bs-placement="top"
+                                  data-bs-content="Уже инвестировано">
+                                <p>${{ project.total_sum }}</p>
+                            </span>
+                        </td>
+                        <td class="text-center">
+                            <span class="d-inline-block" tabindex="0" data-bs-toggle="popover"
+                                  data-bs-trigger="hover focus" data-bs-placement="top"
+                                  data-bs-content="Осталось времени">
+                                <p>{{ project.days_left.days }} дней</p>
+                            </span>
+                        </td>
+                        <td class="text-end">
+                            <span class="d-inline-block" tabindex="0" data-bs-toggle="popover"
+                                  data-bs-trigger="hover focus" data-bs-placement="top"
+                                  data-bs-content="Сумма инвестиции в проект">
+                                <p>${{ project.price }}</p>
+                            </span>
+                        </td>
+                    </tr>
+                </table>
+                <div class="progress-dark progress-xs">
+                    <!-- progress item -->
+                    <div class="progress-item pb-4 pt-2">
+                        <div class="progress">
+                            <div class="progress-bar aos aos-init aos-animate" data-aos="slide-right"
+                                 data-aos-delay="200" data-aos-duration="1000" data-aos-easing="ease-in-out"
+                                 role="progressbar" aria-valuenow="{{ project.total_perсend }}" aria-valuemin="0"
+                                 aria-valuemax="100"
+                                 style="width:{{ project.total_perсend|floatformat:0 }}%; overflow:visible">
+                                <span class="progress-percent">{{project.total_perсend}}%</span>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+
             <!-- portfolio images -->
             <div class="col-md-8">
                 <a class="mb-4 d-block" href="{{ project.image_path }}" data-glightbox=""
@@ -15,31 +60,129 @@
             <!-- portfolio details -->
             <div class="col-md-4">
                 <div data-sticky data-margin-top="80" data-sticky-for="767">
-                    <h2>{{ project.title }} </h2>
-                    <p><strong>Суть сделки: </strong>{{ project.deal_sence }} </p>
-                    <p><strong>Почему эта сделка: </strong>{{ project.deal_why }} </p>
-                    <p><strong>Адрес: </strong>{{ project.address }}</p>
-<!--                    <table class="table table-borderless">-->
-<!--                        <tbody>-->
-<!--                        <tr>-->
-<!--                            <th scope="row">Адрес:</th>-->
-<!--                            <td class="text-body"></td>-->
-<!--                        </tr>-->
-<!--                        <tr>-->
-<!--                            <th scope="row">Awards:</th>-->
-<!--                            <td class="text-body">-->
-<!--                                <span class="d-block font-base"> Pineapple Award Design</span>-->
-<!--                                <span class="d-block mt-2"> Project of the Year </span>-->
-<!--                                <span class="d-block mt-2"> Designer of the Year</span>-->
-<!--                            </td>-->
-<!--                        </tr>-->
-<!--                        </tbody>-->
-<!--                    </table>-->
+                    <p class="fs-6 text-dark"><strong>Суть сделки: </strong>{{ project.deal_sence }} </p>
+                    <p class="fs-6 text-dark"><strong>Почему эта сделка: </strong>{{ project.deal_why }} </p>
+                    <p class="fs-6 text-dark"><strong>Адрес: </strong>{{ project.address }}</p>
+                    <!--                    <table class="table table-borderless">-->
+                    <!--                        <tbody>-->
+                    <!--                        <tr>-->
+                    <!--                            <th scope="row">Адрес:</th>-->
+                    <!--                            <td class="text-body"></td>-->
+                    <!--                        </tr>-->
+                    <!--                        <tr>-->
+                    <!--                            <th scope="row">Awards:</th>-->
+                    <!--                            <td class="text-body">-->
+                    <!--                                <span class="d-block font-base"> Pineapple Award Design</span>-->
+                    <!--                                <span class="d-block mt-2"> Project of the Year </span>-->
+                    <!--                                <span class="d-block mt-2"> Designer of the Year</span>-->
+                    <!--                            </td>-->
+                    <!--                        </tr>-->
+                    <!--                        </tbody>-->
+                    <!--                    </table>-->
                     <a class="btn btn-grad" href="#!">Инвестировать в объект</a>
                 </div>
             </div>
             <!-- portfolio details End -->
         </div>
+
+
+        <!-- Калькулятор инвестиций -->
+        <section id="calc">
+            <div class="container my-round" style="background-color:#f2f2f2; padding:30px; position:relative;">
+                <div class="row">
+                    <div class="col-12 col-sm-12 col-md-12 col-lg-6 col-xl-6 col-xxl-6">
+                        <div class="row pb-4">
+                            <div class="col-12">
+                                <div class="my-round" style="padding:30px;background-color:white">
+                                    <h2 class="h1">Сумма вклада $<span class="sumlable">20000</span></h2>
+                                    <input name="summInvest" type="range" min="100" max="100000" step="100"
+                                           value="20000"
+                                           id="summInvest"
+                                           oninput="maxPrice.value=this.value" style="width:100%"/>
+                                    <p class="h4">
+                                        <span>$100</span>
+                                        <span class="float-end">$100.000</span>
+                                    </p>
+                                </div>
+                            </div>
+                        </div>
+                        <div class="row">
+                            <div class="col-12 col-sm-12 col-md-12 col-lg-6 col-xl-6 col-xxl-6 mb-4">
+                                <div class="my-round" style="background-color:white;padding:30px">
+                                    <h3 class="h2">Срок вклада</h3>
+                                    <p>{{ project.investment_term }} мес.</p>
+
+<!--                                    <div class="form-check">-->
+<!--                                        <input value="3 месяца" class="form-check-input" type="radio" name="month"-->
+<!--                                               id="flexRadioDefault1" checked="checked">-->
+<!--                                        <label class="form-check-label lead text-dark" for="flexRadioDefault1">-->
+<!--                                            3 месяца-->
+<!--                                        </label>-->
+<!--                                    </div>-->
+<!--                                    <div class="form-check">-->
+<!--                                        <input value="6 месяцев" class="form-check-input" type="radio" name="month"-->
+<!--                                               id="flexRadioDefault2">-->
+<!--                                        <label class="form-check-label lead text-dark" for="flexRadioDefault2">-->
+<!--                                            6 месяцев-->
+<!--                                        </label>-->
+<!--                                    </div>-->
+<!--                                    <div class="form-check pb-3">-->
+<!--                                        <input value="12 месяцев" class="form-check-input" type="radio" name="month"-->
+<!--                                               id="flexRadioDefault3">-->
+<!--                                        <label class="form-check-label lead text-dark" for="flexRadioDefault3">-->
+<!--                                            12 месяцев-->
+<!--                                        </label>-->
+<!--                                    </div>-->
+                                </div>
+                            </div>
+                            <div class="col-12 col-sm-12 col-md-12 col-lg-6 col-xl-6 col-xxl-6 mb-4">
+                                <div class="my-round green-block" style="padding:30px 10px ">
+                                    <h3 class="h2 text-center">Доход</h3>
+                                    <table cellpadding="3" width="100%">
+                                        <tr>
+                                            <td width="40%">
+                                                <h4 class="text-center"
+                                                    style="padding:7px;background-color:white;border-radius:10px">
+                                                    <div class="percent" data-elem-type='text'>+3.75%</div>
+                                                </h4>
+                                            </td>
+                                            <td width="60%">
+                                                <h4 class="text-center"
+                                                    style="padding:7px;background-color:white;border-radius:10px; width:100%">
+                                                    <div class="res" data-elem-type='text'>+750</div>
+                                                </h4>
+                                            </td>
+                                        </tr>
+                                    </table>
+
+
+                                    <h2 class="text-center pt-3 pb-3">
+                                        <div class="dohod" data-elem-type='text'>20,750usd</div>
+                                    </h2>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="col-12 col-sm-12 col-md-12 col-lg-4 col-xl-4 col-xxl-4">
+                        <h1>Калькулятор инвестиций</h1>
+                        <p class="lead text-dark">Здесь ты можешь рассчитать свой будущий доход или просто посмотреть,
+                            как может
+                            расти твой капитал. Обрати внимание, что каждый проект имеет свою доходность</p>
+                    </div>
+                    <!--            <div class="col-2" style="background:url(/static/images/6901.png) no-repeat; background-size:cover;">-->
+
+                    <!--            </div>-->
+                    <div class="col-lg-2 col-xl-2 col-xxl-2 d-none d-lg-block d-xl-block d-xxl-block">
+
+                        <img src="{% static 'images/6901.png' %}"
+                             style="position:absolute; bottom:0px; right:-50px; width:350px" data-aos="fade-left"/>
+
+                    </div>
+                </div>
+            </div>
+        </section>
+        <!-- Калькулятор инвестиций -->
+
 
         <div class="row mt-4">
             <!-- portfolio testimonial -->
@@ -65,54 +208,83 @@
             </div>
         </div>
 
-<!--        <div class="row">-->
-<!--            <div class="col-md-12">-->
-<!--                &lt;!&ndash; tag and share &ndash;&gt;-->
-<!--                <div class="divider mb-4"></div>-->
-<!--                <div class="row">-->
-<!--                    <div class="tags col-12 col-sm-8 text-center text-sm-start">-->
-<!--                        <a class="mb-2 mb-sm-0" href="#">studio</a>-->
-<!--                        <a class="mb-2 mb-sm-0" href="#">events</a>-->
-<!--                        <a class="mb-2 mb-sm-0" href="#">WordPress</a>-->
-<!--                        <a class="mb-2 mb-sm-0" href="#">gadgets</a>-->
-<!--                        <a class="mb-2 mb-sm-0" href="#">office</a>-->
-<!--                    </div>-->
-<!--                    <div class="col-12 col-sm-4 text-center text-sm-end">-->
-<!--                        <ul class="social-icons si-colored-bg light">-->
-<!--                            <li class="social-icons-item social-facebook mb-0"><a class="social-icons-link" href="#"><i-->
-<!--                                    class="fab fa-facebook-f"></i></a></li>-->
-<!--                            <li class="social-icons-item social-twitter mb-0"><a class="social-icons-link" href="#"><i-->
-<!--                                    class="fab fa-twitter"></i></a></li>-->
-<!--                            <li class="social-icons-item social-gplus mb-0"><a class="social-icons-link" href="#"><i-->
-<!--                                    class="fab fa-google-plus-g"></i></a></li>-->
-<!--                            <li class="social-icons-item social-linkedin mb-0"><a class="social-icons-link" href="#"><i-->
-<!--                                    class="fab fa-linkedin-in"></i></a></li>-->
-<!--                        </ul>-->
-<!--                    </div>-->
-<!--                </div>-->
-<!--                <div class="divider mt-4"></div>-->
+        <!--        <div class="row">-->
+        <!--            <div class="col-md-12">-->
+        <!--                &lt;!&ndash; tag and share &ndash;&gt;-->
+        <!--                <div class="divider mb-4"></div>-->
+        <!--                <div class="row">-->
+        <!--                    <div class="tags col-12 col-sm-8 text-center text-sm-start">-->
+        <!--                        <a class="mb-2 mb-sm-0" href="#">studio</a>-->
+        <!--                        <a class="mb-2 mb-sm-0" href="#">events</a>-->
+        <!--                        <a class="mb-2 mb-sm-0" href="#">WordPress</a>-->
+        <!--                        <a class="mb-2 mb-sm-0" href="#">gadgets</a>-->
+        <!--                        <a class="mb-2 mb-sm-0" href="#">office</a>-->
+        <!--                    </div>-->
+        <!--                    <div class="col-12 col-sm-4 text-center text-sm-end">-->
+        <!--                        <ul class="social-icons si-colored-bg light">-->
+        <!--                            <li class="social-icons-item social-facebook mb-0"><a class="social-icons-link" href="#"><i-->
+        <!--                                    class="fab fa-facebook-f"></i></a></li>-->
+        <!--                            <li class="social-icons-item social-twitter mb-0"><a class="social-icons-link" href="#"><i-->
+        <!--                                    class="fab fa-twitter"></i></a></li>-->
+        <!--                            <li class="social-icons-item social-gplus mb-0"><a class="social-icons-link" href="#"><i-->
+        <!--                                    class="fab fa-google-plus-g"></i></a></li>-->
+        <!--                            <li class="social-icons-item social-linkedin mb-0"><a class="social-icons-link" href="#"><i-->
+        <!--                                    class="fab fa-linkedin-in"></i></a></li>-->
+        <!--                        </ul>-->
+        <!--                    </div>-->
+        <!--                </div>-->
+        <!--                <div class="divider mt-4"></div>-->
 
-<!--                &lt;!&ndash; navigation &ndash;&gt;-->
-<!--                <div class="row post-navigation mt-5">-->
-<!--                    <div class="col-5 position-relative">-->
-<!--                        <a href="#" class="post-prev">-->
-<!--                            <p class="m-2 m-lg-0">Previous Post</p>-->
-<!--                            <h6 class="text-truncate d-none d-lg-block">The Pink Chair</h6></a>-->
-<!--                    </div>-->
-<!--                    <div class="col-2">-->
-<!--                        <a href="portfolio-grid-column-3.html" class="all-post" title="View all post"> <i-->
-<!--                                class="fa fa-th"></i> </a>-->
-<!--                    </div>-->
-<!--                    <div class="col-5 position-relative">-->
-<!--                        <a href="#" class="post-next">-->
-<!--                            <p class="m-2 m-lg-0">Next Post</p>-->
-<!--                            <h6 class="text-truncate d-none d-lg-block">Black & white</h6></a>-->
-<!--                    </div>-->
-<!--                </div>-->
-<!--            </div>-->
-<!--        </div>-->
+        <!--                &lt;!&ndash; navigation &ndash;&gt;-->
+        <!--                <div class="row post-navigation mt-5">-->
+        <!--                    <div class="col-5 position-relative">-->
+        <!--                        <a href="#" class="post-prev">-->
+        <!--                            <p class="m-2 m-lg-0">Previous Post</p>-->
+        <!--                            <h6 class="text-truncate d-none d-lg-block">The Pink Chair</h6></a>-->
+        <!--                    </div>-->
+        <!--                    <div class="col-2">-->
+        <!--                        <a href="portfolio-grid-column-3.html" class="all-post" title="View all post"> <i-->
+        <!--                                class="fa fa-th"></i> </a>-->
+        <!--                    </div>-->
+        <!--                    <div class="col-5 position-relative">-->
+        <!--                        <a href="#" class="post-next">-->
+        <!--                            <p class="m-2 m-lg-0">Next Post</p>-->
+        <!--                            <h6 class="text-truncate d-none d-lg-block">Black & white</h6></a>-->
+        <!--                    </div>-->
+        <!--                </div>-->
+        <!--            </div>-->
+        <!--        </div>-->
     </div>
     <!-- portfolio End -->
 </section>
 
 {% endblock content %}
+
+
+{% block calc %}
+<script type="text/javascript">
+    $(document).ready(function() {
+        //УКАЖИТЕ ГОДОВОЙ %
+        var years = 15;
+
+
+        #$(document).on('change input','[name="summInvest"],[name="month"]',function() {
+        $(document).on('change input','[name="summInvest"],[name="month"]',function() {
+
+            var invest = parseInt($('[name="summInvest"]').val());
+            //var month = parseInt($('[name="month"]:checked').val());
+            val month = parseInt({{ project.investment_term }})
+            $('.t-range__value-txt').text(invest.toLocaleString())
+            var res = invest*years*month/1200;
+            var dohod = res+invest;
+            $('.res').text('+'+res.toLocaleString());
+            $('.dohod').text(dohod.toLocaleString()+' usd');
+            $('.percent').text('+'+(years*month/12)+'%');
+            $('.sumlable').html(invest);
+            //console.log(res);
+            //console.log(dohod);
+        })
+        setTimeout(function() {$('[name="summInvest"]').trigger('change') },1500);
+    })
+</script>
+{% endblock calc %}

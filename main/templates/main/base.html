@@ -348,31 +348,13 @@ footer  -->
 <!--Template Functions-->
 <script src="{% static 'assets/js/functions.js' %}"></script>
 
+
+{% block calc %}
+
+{% endblock calc %}
+
+
 <script type="text/javascript">
-    $(document).ready(function() {
-        //УКАЖИТЕ ГОДОВОЙ %
-        var years = 15;
-
-
-        $(document).on('change input','[name="summInvest"],[name="month"]',function() {
-
-            var invest = parseInt($('[name="summInvest"]').val());
-            var month = parseInt($('[name="month"]:checked').val());
-            $('.t-range__value-txt').text(invest.toLocaleString())
-            var res = invest*years*month/1200;
-            var dohod = res+invest;
-            $('.res').text('+'+res.toLocaleString());
-            $('.dohod').text(dohod.toLocaleString()+' usd');
-            $('.percent').text('+'+(years*month/12)+'%');
-            $('.sumlable').html(invest);
-            //console.log(res);
-            //console.log(dohod);
-        })
-        setTimeout(function() {$('[name="summInvest"]').trigger('change') },1500);
-    })
-
-
-
 $(document).ready(function(){
     $(".ajax_loader").hide();
     $.ajax({
@@ -388,8 +370,6 @@ $(document).ready(function(){
        }
     });
 });
-
-
 </script>
 
 
