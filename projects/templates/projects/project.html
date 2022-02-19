@@ -6,31 +6,46 @@
 <section>
     <div class="container">
         <div class="row mb-4" data-sticky-container>
-            <div class="col-8">
+
+            <div class="col-12">
                 <h2>{{ project.title }}</h2>
             </div>
-            <div class="col-4">
-                <table width="100%">
+
+            <!-- portfolio images -->
+            <div class="col-md-8">
+                <a class="mb-4 d-block" href="{{ project.image_path }}" data-glightbox=""
+                   data-gallery="portfolio"><img src="{{ project.image_path }}" alt=""></a>
+            </div>
+
+            <!-- portfolio details -->
+            <div class="col-md-4">
+                <div data-sticky data-margin-top="80" data-sticky-for="767">
+                    <table width="100%">
+                    <tr>
+                        <td>Интерес</td>
+                        <td class="text-center">Осталось</td>
+                        <td class="text-end">Цель</td>
+                    </tr>
                     <tr>
                         <td class="text-start">
                             <span class="d-inline-block" tabindex="0" data-bs-toggle="popover"
                                   data-bs-trigger="hover focus" data-bs-placement="top"
                                   data-bs-content="Уже инвестировано">
-                                <p>${{ project.total_sum }}</p>
+                                <p class="fw-bold text-dark">${{ project.total_sum }}</p>
                             </span>
                         </td>
                         <td class="text-center">
                             <span class="d-inline-block" tabindex="0" data-bs-toggle="popover"
                                   data-bs-trigger="hover focus" data-bs-placement="top"
                                   data-bs-content="Осталось времени">
-                                <p>{{ project.days_left.days }} дней</p>
+                                <p class="fw-bold text-dark">{{ project.days_left.days }} дней</p>
                             </span>
                         </td>
                         <td class="text-end">
                             <span class="d-inline-block" tabindex="0" data-bs-toggle="popover"
                                   data-bs-trigger="hover focus" data-bs-placement="top"
                                   data-bs-content="Сумма инвестиции в проект">
-                                <p>${{ project.price }}</p>
+                                <p class="fw-bold text-dark">${{ project.price }}</p>
                             </span>
                         </td>
                     </tr>
@@ -49,37 +64,11 @@
                         </div>
                     </div>
                 </div>
-            </div>
 
-            <!-- portfolio images -->
-            <div class="col-md-8">
-                <a class="mb-4 d-block" href="{{ project.image_path }}" data-glightbox=""
-                   data-gallery="portfolio"><img src="{{ project.image_path }}" alt=""></a>
-
-            </div>
-            <!-- portfolio details -->
-            <div class="col-md-4">
-                <div data-sticky data-margin-top="80" data-sticky-for="767">
+                    <a class="btn btn-grad mb-4" href="{% url 'register' %}" style="width:100%">Инвестировать в объект</a>
                     <p class="fs-6 text-dark"><strong>Суть сделки: </strong>{{ project.deal_sence }} </p>
                     <p class="fs-6 text-dark"><strong>Почему эта сделка: </strong>{{ project.deal_why }} </p>
                     <p class="fs-6 text-dark"><strong>Адрес: </strong>{{ project.address }}</p>
-                    <!--                    <table class="table table-borderless">-->
-                    <!--                        <tbody>-->
-                    <!--                        <tr>-->
-                    <!--                            <th scope="row">Адрес:</th>-->
-                    <!--                            <td class="text-body"></td>-->
-                    <!--                        </tr>-->
-                    <!--                        <tr>-->
-                    <!--                            <th scope="row">Awards:</th>-->
-                    <!--                            <td class="text-body">-->
-                    <!--                                <span class="d-block font-base"> Pineapple Award Design</span>-->
-                    <!--                                <span class="d-block mt-2"> Project of the Year </span>-->
-                    <!--                                <span class="d-block mt-2"> Designer of the Year</span>-->
-                    <!--                            </td>-->
-                    <!--                        </tr>-->
-                    <!--                        </tbody>-->
-                    <!--                    </table>-->
-                    <a class="btn btn-grad" href="#!">Инвестировать в объект</a>
                 </div>
             </div>
             <!-- portfolio details End -->
@@ -108,31 +97,14 @@
                         </div>
                         <div class="row">
                             <div class="col-12 col-sm-12 col-md-12 col-lg-6 col-xl-6 col-xxl-6 mb-4">
-                                <div class="my-round" style="background-color:white;padding:30px">
-                                    <h3 class="h2">Срок вклада</h3>
-                                    <p>{{ project.investment_term }} мес.</p>
-
-<!--                                    <div class="form-check">-->
-<!--                                        <input value="3 месяца" class="form-check-input" type="radio" name="month"-->
-<!--                                               id="flexRadioDefault1" checked="checked">-->
-<!--                                        <label class="form-check-label lead text-dark" for="flexRadioDefault1">-->
-<!--                                            3 месяца-->
-<!--                                        </label>-->
-<!--                                    </div>-->
-<!--                                    <div class="form-check">-->
-<!--                                        <input value="6 месяцев" class="form-check-input" type="radio" name="month"-->
-<!--                                               id="flexRadioDefault2">-->
-<!--                                        <label class="form-check-label lead text-dark" for="flexRadioDefault2">-->
-<!--                                            6 месяцев-->
-<!--                                        </label>-->
-<!--                                    </div>-->
-<!--                                    <div class="form-check pb-3">-->
-<!--                                        <input value="12 месяцев" class="form-check-input" type="radio" name="month"-->
-<!--                                               id="flexRadioDefault3">-->
-<!--                                        <label class="form-check-label lead text-dark" for="flexRadioDefault3">-->
-<!--                                            12 месяцев-->
-<!--                                        </label>-->
-<!--                                    </div>-->
+                                <div class="my-round h-100" style="background-color:white;padding:30px">
+                                    <h3 class="h2 text-center">Срок вклада</h3>
+<!--                                    <h4 class="text-dark text-center" id="month">{{ project.investment_term }} мес.</h4>-->
+                                    <h4 class="text-center"
+                                                    style="padding:7px;background-color:#c7dd00;border-radius:10px">
+                                                    <div id="month">{{ project.investment_term }} мес.</div>
+                                                </h4>
+                                    </p>
                                 </div>
                             </div>
                             <div class="col-12 col-sm-12 col-md-12 col-lg-6 col-xl-6 col-xxl-6 mb-4">
@@ -143,13 +115,13 @@
                                             <td width="40%">
                                                 <h4 class="text-center"
                                                     style="padding:7px;background-color:white;border-radius:10px">
-                                                    <div class="percent" data-elem-type='text'>+3.75%</div>
+                                                    <div class="percent" data-elem-type='text'>+{{ project.income }}%</div>
                                                 </h4>
                                             </td>
                                             <td width="60%">
                                                 <h4 class="text-center"
                                                     style="padding:7px;background-color:white;border-radius:10px; width:100%">
-                                                    <div class="res" data-elem-type='text'>+750</div>
+                                                    <div class="res" data-elem-type='text'>+0</div>
                                                 </h4>
                                             </td>
                                         </tr>
@@ -184,76 +156,6 @@
         <!-- Калькулятор инвестиций -->
 
 
-        <div class="row mt-4">
-            <!-- portfolio testimonial -->
-            <div class="col-md-6">
-                <h4 class="mb-4">Client testimonial</h4>
-                <blockquote class="blockquote" cite="#">
-                    <h5 class="mb-2 text-light-gray">Design everything on the assumption that people are not heartless
-                        or stupid but marvelously capable, given the chance. Mr be cottage so related minuter is.
-                        Delicate say and blessing ladyship exertion few Margaret. Delight herself welcome against
-                        smiling its for. Suspected discovery by he affection household of principle perfectly he.</h5>
-                    <cite>– Allen Smith</cite>
-                </blockquote>
-            </div>
-            <!-- portfolio information -->
-            <div class="col-md-6">
-                <h4 class="mb-4">Additional information</h4>
-                <p>Residence certainly elsewhere something she preferred cordially law. Age his surprise formerly Mrs
-                    perceive few standstill moderate. Of in power match on truth worse voice would. Large an it sense
-                    shall an match learn. By expect it result silent in formal of. Ask eat questions abilities described
-                    elsewhere assurance.</p>
-                <p> Appetite in unlocked advanced breeding position concerns as. Cheerful get shutters yet for repeated
-                    screened. An no am cause hopes at three. Prevent behaved fertile he is mistake on. </p>
-            </div>
-        </div>
-
-        <!--        <div class="row">-->
-        <!--            <div class="col-md-12">-->
-        <!--                &lt;!&ndash; tag and share &ndash;&gt;-->
-        <!--                <div class="divider mb-4"></div>-->
-        <!--                <div class="row">-->
-        <!--                    <div class="tags col-12 col-sm-8 text-center text-sm-start">-->
-        <!--                        <a class="mb-2 mb-sm-0" href="#">studio</a>-->
-        <!--                        <a class="mb-2 mb-sm-0" href="#">events</a>-->
-        <!--                        <a class="mb-2 mb-sm-0" href="#">WordPress</a>-->
-        <!--                        <a class="mb-2 mb-sm-0" href="#">gadgets</a>-->
-        <!--                        <a class="mb-2 mb-sm-0" href="#">office</a>-->
-        <!--                    </div>-->
-        <!--                    <div class="col-12 col-sm-4 text-center text-sm-end">-->
-        <!--                        <ul class="social-icons si-colored-bg light">-->
-        <!--                            <li class="social-icons-item social-facebook mb-0"><a class="social-icons-link" href="#"><i-->
-        <!--                                    class="fab fa-facebook-f"></i></a></li>-->
-        <!--                            <li class="social-icons-item social-twitter mb-0"><a class="social-icons-link" href="#"><i-->
-        <!--                                    class="fab fa-twitter"></i></a></li>-->
-        <!--                            <li class="social-icons-item social-gplus mb-0"><a class="social-icons-link" href="#"><i-->
-        <!--                                    class="fab fa-google-plus-g"></i></a></li>-->
-        <!--                            <li class="social-icons-item social-linkedin mb-0"><a class="social-icons-link" href="#"><i-->
-        <!--                                    class="fab fa-linkedin-in"></i></a></li>-->
-        <!--                        </ul>-->
-        <!--                    </div>-->
-        <!--                </div>-->
-        <!--                <div class="divider mt-4"></div>-->
-
-        <!--                &lt;!&ndash; navigation &ndash;&gt;-->
-        <!--                <div class="row post-navigation mt-5">-->
-        <!--                    <div class="col-5 position-relative">-->
-        <!--                        <a href="#" class="post-prev">-->
-        <!--                            <p class="m-2 m-lg-0">Previous Post</p>-->
-        <!--                            <h6 class="text-truncate d-none d-lg-block">The Pink Chair</h6></a>-->
-        <!--                    </div>-->
-        <!--                    <div class="col-2">-->
-        <!--                        <a href="portfolio-grid-column-3.html" class="all-post" title="View all post"> <i-->
-        <!--                                class="fa fa-th"></i> </a>-->
-        <!--                    </div>-->
-        <!--                    <div class="col-5 position-relative">-->
-        <!--                        <a href="#" class="post-next">-->
-        <!--                            <p class="m-2 m-lg-0">Next Post</p>-->
-        <!--                            <h6 class="text-truncate d-none d-lg-block">Black & white</h6></a>-->
-        <!--                    </div>-->
-        <!--                </div>-->
-        <!--            </div>-->
-        <!--        </div>-->
     </div>
     <!-- portfolio End -->
 </section>
@@ -265,15 +167,11 @@
 <script type="text/javascript">
     $(document).ready(function() {
         //УКАЖИТЕ ГОДОВОЙ %
-        var years = 15;
+        var years = {{ project.income }};
 
-
-        #$(document).on('change input','[name="summInvest"],[name="month"]',function() {
         $(document).on('change input','[name="summInvest"],[name="month"]',function() {
-
             var invest = parseInt($('[name="summInvest"]').val());
-            //var month = parseInt($('[name="month"]:checked').val());
-            val month = parseInt({{ project.investment_term }})
+            var month = parseInt($('[id="month"]').html());
             $('.t-range__value-txt').text(invest.toLocaleString())
             var res = invest*years*month/1200;
             var dohod = res+invest;

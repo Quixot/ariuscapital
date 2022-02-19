@@ -1,14 +1,13 @@
-{% extends 'main/base.html' %}
+{% extends 'dashboard/base.html' %}
+{% load static %}
+
 
 {% block content %}
 
-<div>
-    <div class="container">
-<!--        <div class="d-block p-4 p-sm-5 h-bg-gray-round">-->
-<!--            <center>-->
-<!--                <h1>{{title}}</h1>-->
-<!--            </center>-->
-<!--        </div>-->
+
+<!-- Begin Page Content -->
+<div class="container-fluid">
+
         {% if projects %}
         <section class="by-5">
             <div class="row row-cols-1 row-cols-md-3">
@@ -95,8 +94,8 @@
         {% else %}
         <h1>Ни один проект не добавлен!</h1>
         {% endif %}
-    </div>
+
 </div>
 
 
-{% endblock content %}
+{% endblock %}

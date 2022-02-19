@@ -24,12 +24,18 @@
     <link rel="stylesheet" type="text/css" href="{% static 'assets/vendor/font-awesome/css/all.min.css' %}"/>
     <link rel="stylesheet" type="text/css" href="{% static 'assets/vendor/themify-icons/css/themify-icons.css' %}"/>
 
+        <!-- Custom styles for this template-->
+    <link href="{% static 'css/sb-admin-2.css' %}" rel="stylesheet">
+
     <!-- Theme CSS -->
-    <!--    <link rel="stylesheet" type="text/css" href="{% static 'assets/css/style.css' %}"/>-->
+<!--        <link rel="stylesheet" type="text/css" href="{% static 'assets/css/style.css' %}"/>-->
     <link rel="stylesheet" type="text/css" href="{% static 'css/styles.css' %}">
 
-    <!-- Custom styles for this template-->
-    <link href="{% static 'css/sb-admin-2.css' %}" rel="stylesheet">
+    <style>
+        .navbar-nav .nav-link {
+            line-height: 0px;
+        }
+    </style>
 
 </head>
 
@@ -70,45 +76,38 @@
 
         <!-- Nav Item - Charts -->
         <li class="nav-item">
-            <a class="nav-link" href="">
-                <i class="fas fa-fw fa-chart-area"></i>
-                <span>Портфель</span></a>
+            <a class="nav-link" href="{% url 'wallet' %}">
+                <i class="fas fa-fw fa-wallet"></i>
+                <span>Кошелек</span></a>
         </li>
 
         <!-- Divider -->
-        <hr class="sidebar-divider">
+<!--        <hr class="sidebar-divider">-->
 
-        <!-- Heading -->
-        <div class="sidebar-heading">
-            Addons
-        </div>
+<!--        &lt;!&ndash; Heading &ndash;&gt;-->
+<!--        <div class="sidebar-heading">-->
+<!--            Addons-->
+<!--        </div>-->
 
-        <!-- Nav Item - Pages Collapse Menu -->
         <li class="nav-item">
-            <a class="nav-link collapsed" href="#" data-toggle="collapse" data-target="#collapsePages"
-               aria-expanded="true" aria-controls="collapsePages">
-                <i class="fas fa-fw fa-folder"></i>
-                <span>Проекты</span>
-            </a>
-            <div id="collapsePages" class="collapse" aria-labelledby="headingPages" data-parent="#accordionSidebar">
-                <div class="bg-white py-2 collapse-inner rounded">
-<!--                    <h6 class="collapse-header">Login Screens:</h6>-->
-                    <a class="collapse-item" href="/current_projects/1">Жилая </br>недвижимость</a>
-                    <a class="collapse-item" href="register.html">Коммерческая </br>недвижимость</a>
-                    <a class="collapse-item" href="forgot-password.html">Участок</a>
-<!--                    <div class="collapse-divider"></div>-->
-<!--                    <h6 class="collapse-header">Other Pages:</h6>-->
-<!--                    <a class="collapse-item" href="404.html">404 Page</a>-->
-<!--                    <a class="collapse-item" href="blank.html">Blank Page</a>-->
-                </div>
-            </div>
+            <a class="nav-link" href="{% url 'invest' %}">
+                <i class="fas fa-fw fa-chart-line"></i>
+                <span>Инвестировать</span></a>
         </li>
+
+        <li class="nav-item">
+            <a class="nav-link" href="{% url 'sell' %}">
+                <i class="fas fa-fw fa-tags"></i>
+                <span>Продать</span></a>
+        </li>
+
+        <hr class="sidebar-divider">
 
         <!-- Nav Item - Charts -->
         <li class="nav-item">
-            <a class="nav-link" href="">
-                <i class="fas fa-fw fa-chart-area"></i>
-                <span>Проекты</span></a>
+            <a class="nav-link" href="{% url 'verification' %}">
+                <i class="fas fa-fw fa-user-circle"></i>
+                <span>Верификация</span></a>
         </li>
 
 <!--        &lt;!&ndash; Nav Item - Tables &ndash;&gt;-->
@@ -120,23 +119,22 @@
 
 
 <!-- Nav Item - Pages Collapse Menu -->
-        <li class="nav-item">
-            <a class="nav-link collapsed" href="#" data-toggle="collapse" data-target="#collapseTwo"
-               aria-expanded="true" aria-controls="collapseTwo">
-                <i class="fas fa-fw fa-cog"></i>
-                <span>Components</span>
-            </a>
-            <div id="collapseTwo" class="collapse" aria-labelledby="headingTwo" data-parent="#accordionSidebar">
-                <div class="bg-white py-2 collapse-inner rounded">
-                    <!--                    <h6 class="collapse-header">Custom Components:</h6>-->
-                    <a class="collapse-item" href="buttons.html">Buttons</a>
-                    <a class="collapse-item" href="cards.html">Cards</a>
-                </div>
-            </div>
-        </li>
+<!--        <li class="nav-item">-->
+<!--            <a class="nav-link collapsed" href="#" data-toggle="collapse" data-target="#collapseTwo"-->
+<!--               aria-expanded="true" aria-controls="collapseTwo">-->
+<!--                <i class="fas fa-fw fa-cog"></i>-->
+<!--                <span>Components</span>-->
+<!--            </a>-->
+<!--            <div id="collapseTwo" class="collapse" aria-labelledby="headingTwo" data-parent="#accordionSidebar">-->
+<!--                <div class="bg-white py-2 collapse-inner rounded">-->
+<!--                    &lt;!&ndash;                    <h6 class="collapse-header">Custom Components:</h6>&ndash;&gt;-->
+<!--                    <a class="collapse-item" href="buttons.html">Buttons</a>-->
+<!--                    <a class="collapse-item" href="cards.html">Cards</a>-->
+<!--                </div>-->
+<!--            </div>-->
+<!--        </li>-->
 
-        <!-- Divider -->
-        <hr class="sidebar-divider d-none d-md-block">
+
 
         <!-- Sidebar Toggler (Sidebar) -->
         <!--        <div class="text-center d-none d-md-inline">-->

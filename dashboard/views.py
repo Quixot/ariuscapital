@@ -6,6 +6,20 @@ def dashboard(request):
     return render(request, 'dashboard/dashboard.html')
 
 
-def current_projects(request, id):
-    projects = Project.objects.filter(type=id)
-    return render(request, 'dashboard/projects.html', {'projects': projects})
+def wallet(request):
+    projects = Order.objects.filter(user=request.user.id)
+    return render(request, 'dashboard/wallet.html', {'projects': projects})
+
+
+def invest(request):
+    projects = Project.objects.all()
+    return render(request, 'dashboard/invest.html', {'projects': projects})
+
+
+def sell(request):
+    projects = Order.objects.filter(user=request.user.id)
+    return render(request, 'dashboard/sell.html', {'projects': projects})
+
+
+def verification(request):
+    return render(request, 'dashboard/verification.html')

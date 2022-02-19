@@ -9,9 +9,11 @@ def index(request):
     if request.user.is_authenticated:
         return redirect('dashboard')
     projects = Project.objects.all()
+    latest_id = Project.objects.latest('id')
     context = {
         'title': 'Arius Capital - Платформа коллективных инвестиций',
         'projects': projects,
+        'latest_id': latest_id,
     }
     return render(request, 'main/index.html', context)
 

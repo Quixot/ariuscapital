@@ -1,0 +1,88 @@
+{% extends 'dashboard/base.html' %}
+{% load static %}
+
+
+{% block content %}
+
+
+<!-- Begin Page Content -->
+<div class="container-fluid">
+
+    <!-- Content Row -->
+    <div class="row">
+        <div class="col">
+            <form name="verification" class="">
+                <h1 class="h1">Верификация</h1>
+                <p>Перед тем, как начать инвестировать, Вам необходимо веревицировать себя. Ответьте на несколько
+                    вопросов и приложите скан докуметов удостоверяющих личность</p>
+                <section class="row">
+                    <div class="form-group col-6">
+                        <label class="control-label">Имя</label>
+                        <input class="form-control ng-pristine ng-untouched ng-valid ng-not-empty"
+                               name="firstName" ng-model="application.firstName">
+                    </div>
+                    <div class="form-group col-6">
+                        <label class="control-label">Фамилия</label>
+                        <input class="form-control ng-pristine ng-untouched ng-valid ng-not-empty"
+                               name="lastName" ng-model="application.lastName">
+                    </div>
+                    <div class="form-group col-6">
+                        <label class="control-label">Мобильный номер с кодом</label>
+                        <div class="intl-tel-input allow-dropdown">
+                            <input international-phone-number=""
+                                   class="form-control"
+                                   name="phone"
+                                   placeholder="например +38 012 345 6789"
+                                   autocomplete="off">
+                        </div>
+                    </div>
+                </section>
+
+                <section class="">
+                    <h2 class="h2">Дата рождения</h2>
+                    <div class="row">
+                        <div class="form-group col-4">
+                            <label
+                                    class="control-label">День</label><input
+                                class="form-control ng-pristine ng-untouched ng-valid ng-empty ng-valid-min ng-valid-max"
+                                min="1" max="31" prevent-typing-greater="" type="number" placeholder="DD"
+                                name="dateOfBirth" ng-model="birthday.day"></div>
+                        <div class="form-group col-4">
+                            <label class="control-label">Месяц</label>
+                            <input class="form-control"
+                                   min="1" max="12" prevent-typing-greater="" type="number" placeholder="MM"
+                                   name="dateOfBirth" ng-model="birthday.month">
+                        </div>
+                        <div class="form-group col-4">
+                            <label class="control-label">Год</label>
+                            <input class="form-control" min="1922" max="2022" prevent-typing-greater="" type="number"
+                                   placeholder="YYYY"
+                                   name="dateOfBirth" ng-model="birthday.year" maxlength="4">
+                        </div>
+                    </div>
+                </section>
+
+
+                <h2>Документ удостоверяющий личность</h2>
+                <p>Мы должны инентифицировать Вашу личность, перед тем, как позволить инвестировать. Ваш документ будет
+                    использоваться только для этих целей!</p>
+                <p>Please attach a <strong>valid and unedited government issued identification document</strong>
+                    that contains:</p>
+                <ul>
+                    <li>Photo</li>
+                    <li>Full Name</li>
+                    <li>Date of Birth <em>or</em> your permanent residential address</li>
+                    <li>Must be a <strong>color</strong> image</li>
+                </ul>
+                <p>Please note that all documents need to be written in Latin-alphabet characters (A to Z) and may
+                    include multinational unique characters such as Þ, ß, Æ and Ø.</p><!---->
+
+                <button id="submit-application-btn" class="btn btn-dark">Сохранить
+                </button>
+            </form>
+        </div>
+    </div>
+</div>
+
+
+{% endblock %}
